@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Karibase — CSS framework for admin dashboards &amp; floating bots</title><meta name="description" content="Karibase is a progressive CSS framework for building efficient, scalable dashboards, admin panels and floating assistants."><link rel="icon" type="image/svg+xml" href="/karibase/logo.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"><link rel="stylesheet" href="/karibase/css/karibase.css"><link rel="stylesheet" href="/karibase/css/karibase-admin-utilities.css"><script>
+      ;(() => {
+        const saved = localStorage.getItem('karibase-theme')
+        document.documentElement.setAttribute('mode', saved === 'light' ? 'light' : 'dark')
+      })()
+    </script><script>(function(){const base = "/karibase";
+
+      // Prefix root-absolute links/images with the site base (/karibase on Pages)
+      document.addEventListener('DOMContentLoaded', () => {
+        if (!base) return
+        document
+          .querySelectorAll('a[href^="/"]:not([href^="//"]), img[src^="/"], form[action^="/"]')
+          .forEach((el) => {
+            const attr = el.tagName === 'A' ? 'href' : el.tagName === 'IMG' ? 'src' : 'action'
+            const v = el.getAttribute(attr)
+            if (v && !v.startsWith(base)) el.setAttribute(attr, base + v)
+          })
+      })
+    })();</script><link rel="stylesheet" href="/karibase/_astro/Base.Cz5nYg__.css"></head><body><div class="landing"><nav class="site-nav"><a href="/" class="brand"><img src="/logo.svg" alt="Karibase logo"><span>Karibase</span></a><div class="site-nav-links"><a href="/introduction">Docs</a><a href="/components">Components</a><a href="/customize">Themes</a><a href="https://github.com/Jesusdev-cup/karibase" target="_blank" rel="noopener">GitHub</a><button class="icon-btn" data-theme-toggle aria-label="Toggle theme"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button><a href="/installation" class="btn btn-primary">Get Started</a></div></nav><header class="hero"><a href="/getting-started" class="hero-badge"><i class="fas fa-rocket"></i> v2.1.0 — now with 12 theme presets <i class="fas fa-arrow-right"></i></a><h1>The CSS framework for <span class="gradient">admin dashboards</span> and floating bots</h1><p>Karibase gives you a complete design system for control panels and AI assistants — components, utilities, dark mode and themes in a single stylesheet.</p><div class="hero-cta"><a href="/installation" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a><a href="/components" class="btn btn-ghost"><i class="fas fa-cubes"></i> Browse components</a></div><div class="hero-install"><span><span class="prompt">$</span> npm install karibase</span><button data-copy="npm install karibase" aria-label="Copy install command" type="button"><i class="fas fa-copy"></i></button></div></header><section class="section section-center"><div class="section-eyebrow">Why Karibase</div><h2>Everything a dashboard needs.<br>Nothing it doesn't.</h2><p class="section-sub">Built for back-office products: predictable layering, accessible markup patterns and components that feel at home in dense admin UIs.</p><div class="feature-grid"><div class="feature-card"><div class="f-icon"><i class="fas fa-table-columns"></i></div><h3>Admin dashboards</h3><p>A complete component kit for control panels: cards, tables, stats, charts and layouts ready to compose.</p></div><div class="feature-card"><div class="f-icon"><i class="fas fa-robot"></i></div><h3>Floating bots</h3><p>First-class styles for chat widgets and AI assistants — panels, bubbles, launchers and states built in.</p></div><div class="feature-card"><div class="f-icon"><i class="fas fa-moon"></i></div><h3>Dark mode native</h3><p>Flip the mode attribute and every component adapts. Design tokens keep both themes consistent.</p></div><div class="feature-card"><div class="f-icon"><i class="fas fa-palette"></i></div><h3>12+ theme presets</h3><p>RetailRidge, CommerceCraft, Blogify, Clinic and more — swap the whole look by loading one stylesheet.</p></div><div class="feature-card"><div class="f-icon"><i class="fas fa-layer-group"></i></div><h3>Cascade layers</h3><p>Predictable specificity out of the box. Karibase styles live in layers your own CSS can safely override.</p></div><div class="feature-card"><div class="f-icon"><i class="fas fa-bolt"></i></div><h3>Zero JavaScript required</h3><p>Pure CSS classes for every component. Optional JS helpers exist, but nothing is mandatory.</p></div></div></section><section class="section section-center"><div class="section-eyebrow">Themes</div><h2>Twelve looks, one API</h2><p class="section-sub">Every preset ships as a standalone stylesheet. Load one and the whole component library re-skins itself.</p><div class="theme-grid"><a href="/customize" class="theme-card"><div class="theme-swatch" style="background:linear-gradient(135deg,#0ea5e9,#22d3ee)"></div><span>RetailRidge</span></a><a href="/customize" class="theme-card"><div class="theme-swatch" style="background:linear-gradient(135deg,#8b5cf6,#c084fc)"></div><span>CommerceCraft</span></a><a href="/customize" class="theme-card"><div class="theme-swatch" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)"></div><span>Blogify</span></a><a href="/customize" class="theme-card"><div class="theme-swatch" style="background:linear-gradient(135deg,#10b981,#34d399)"></div><span>Flexiweb</span></a><a href="/customize" class="theme-card"><div class="theme-swatch" style="background:linear-gradient(135deg,#6366f1,#818cf8)"></div><span>Edinburgh</span></a><a href="/customize" class="theme-card"><div class="theme-swatch" style="background:linear-gradient(135deg,#ec4899,#f472b6)"></div><span>Kelion</span></a><a href="/customize" class="theme-card"><div class="theme-swatch" style="background:linear-gradient(135deg,#eab308,#fde047)"></div><span>Aureon</span></a><a href="/customize" class="theme-card"><div class="theme-swatch" style="background:linear-gradient(135deg,#14b8a6,#2dd4bf)"></div><span>Archeon</span></a><a href="/customize" class="theme-card"><div class="theme-swatch" style="background:linear-gradient(135deg,#06b6d4,#67e8f9)"></div><span>Clinic</span></a><a href="/customize" class="theme-card"><div class="theme-swatch" style="background:linear-gradient(135deg,#ea2845,#ff7a18)"></div><span>Dashboard</span></a><a href="/customize" class="theme-card"><div class="theme-swatch" style="background:linear-gradient(135deg,#f97316,#fb923c)"></div><span>Builder</span></a><a href="/customize" class="theme-card"><div class="theme-swatch" style="background:linear-gradient(135deg,#64748b,#94a3b8)"></div><span>Printifix</span></a></div></section><section class="cta-band"><h2>Start building your panel today</h2><p>One CSS file. Zero config. Works with plain HTML, React, Vue or anything else.</p><div class="hero-cta"><a href="/quick-start" class="btn btn-primary">Quick start <i class="fas fa-arrow-right"></i></a><a href="/download" class="btn btn-ghost"><i class="fas fa-download"></i> Download</a></div></section><footer class="site-footer"><div class="site-footer-inner"><div><a href="/" class="brand" style="margin-bottom:16px"><img src="/logo.svg" alt="Karibase logo"><span>Karibase</span></a><p class="foot-note">A progressive CSS framework for modern dashboards, admin panels and floating assistants.</p></div><div><h4>Resources</h4><ul><li><a href="/introduction">Documentation</a></li><li><a href="/components">Components</a></li><li><a href="/customize">Customize</a></li><li><a href="/tools">Tools</a></li></ul></div><div><h4>Community</h4><ul><li><a href="https://github.com/Jesusdev-cup/karibase" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://github.com/Jesusdev-cup/karibase/issues" target="_blank" rel="noopener">Issues</a></li><li><a href="/contribute">Contribute</a></li></ul></div><div><h4>More</h4><ul><li><a href="/getting-started">Getting started</a></li><li><a href="/download">Download</a></li><li><a href="/tools/css-extractor">CSS Extractor</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Karibase. MIT License.</p></div></footer></div><script>
+      ;(() => {
+        // Theme toggle
+        document.addEventListener('click', (e) => {
+          const btn = e.target.closest('[data-theme-toggle]')
+          if (btn) {
+            const next = document.documentElement.getAttribute('mode') === 'dark' ? 'light' : 'dark'
+            document.documentElement.setAttribute('mode', next)
+            localStorage.setItem('karibase-theme', next)
+            return
+          }
+          // Mobile docs nav
+          if (e.target.closest('[data-nav-toggle]')) {
+            document.body.classList.toggle('nav-open')
+            return
+          }
+          // Generic show/hide/toggle targets (ported from v-if demos)
+          const applyState = (v, on) => {
+            document.querySelectorAll(`[data-kb-target="${v}"]`).forEach((el) => {
+              el.hidden = on === undefined ? !el.hidden : !on
+            })
+            document.querySelectorAll(`[data-kb-target-inv="${v}"]`).forEach((el) => {
+              el.hidden = on === undefined ? !el.hidden : on
+            })
+            document.querySelectorAll('[data-kb-class]').forEach((o) => {
+              o.dataset.kbClass.split(' ').forEach((pair) => {
+                const [key, cls] = pair.split(':')
+                if (key === v) o.classList.toggle(cls, on === undefined ? undefined : on)
+              })
+            })
+          }
+          const toggler = e.target.closest('[data-kb-toggle]')
+          if (toggler) {
+            applyState(toggler.dataset.kbToggle)
+            return
+          }
+          const shower = e.target.closest('[data-kb-show]')
+          if (shower) {
+            applyState(shower.dataset.kbShow, true)
+            return
+          }
+          const hider = e.target.closest('[data-kb-hide]')
+          if (hider) {
+            const v = hider.dataset.kbHide
+            // an element that is both hide-trigger and target of the same var is
+            // an overlay: only closes when the backdrop itself is clicked
+            const isOverlay = hider.dataset.kbTarget === v
+            if (!isOverlay || e.target === hider) applyState(v, false)
+            return
+          }
+          // Copy buttons
+          const copy = e.target.closest('[data-copy]')
+          if (copy) {
+            const block = copy.closest('.code-block, .hero-install')
+            const code = block?.querySelector('code') || block?.querySelector('.copy-src')
+            const text = copy.dataset.copy || code?.textContent || ''
+            navigator.clipboard?.writeText(text).then(() => {
+              const icon = copy.querySelector('i')
+              if (icon) {
+                icon.className = 'fas fa-check'
+                setTimeout(() => (icon.className = 'fas fa-copy'), 1500)
+              }
+            })
+            return
+          }
+          // Alert dismiss
+          const alertClose = e.target.closest('.kb-alert-close')
+          if (alertClose) {
+            const alert = alertClose.closest('.kb-alert')
+            if (alert) alert.remove()
+          }
+        })
+
+        // Hover-driven visibility (@mouseenter/@mouseleave port)
+        document.addEventListener('mouseover', (e) => {
+          const on = e.target.closest('[data-kb-hover-on]')
+          if (on && !on.contains(e.relatedTarget)) {
+            const v = on.dataset.kbHoverOn
+            document.querySelectorAll(`[data-kb-target="${v}"]`).forEach((el) => (el.hidden = false))
+            document.querySelectorAll('[data-kb-class]').forEach((o) => {
+              o.dataset.kbClass.split(' ').forEach((pair) => {
+                const [key, cls] = pair.split(':')
+                if (key === v) o.classList.add(cls)
+              })
+            })
+          }
+          const off = e.target.closest('[data-kb-hover-off]')
+          if (off && !off.contains(e.relatedTarget)) {
+            const v = off.dataset.kbHoverOff
+            document.querySelectorAll(`[data-kb-target="${v}"]`).forEach((el) => (el.hidden = true))
+            document.querySelectorAll('[data-kb-class]').forEach((o) => {
+              o.dataset.kbClass.split(' ').forEach((pair) => {
+                const [key, cls] = pair.split(':')
+                if (key === v) o.classList.remove(cls)
+              })
+            })
+          }
+        })
+      })()
+    </script></body></html>

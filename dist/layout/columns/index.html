@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Columns — Karibase</title><meta name="description" content="Karibase is a progressive CSS framework for building efficient, scalable dashboards, admin panels and floating assistants."><link rel="icon" type="image/svg+xml" href="/karibase/logo.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"><link rel="stylesheet" href="/karibase/css/karibase.css"><link rel="stylesheet" href="/karibase/css/karibase-admin-utilities.css"><script>
+      ;(() => {
+        const saved = localStorage.getItem('karibase-theme')
+        document.documentElement.setAttribute('mode', saved === 'light' ? 'light' : 'dark')
+      })()
+    </script><script>(function(){const base = "/karibase";
+
+      // Prefix root-absolute links/images with the site base (/karibase on Pages)
+      document.addEventListener('DOMContentLoaded', () => {
+        if (!base) return
+        document
+          .querySelectorAll('a[href^="/"]:not([href^="//"]), img[src^="/"], form[action^="/"]')
+          .forEach((el) => {
+            const attr = el.tagName === 'A' ? 'href' : el.tagName === 'IMG' ? 'src' : 'action'
+            const v = el.getAttribute(attr)
+            if (v && !v.startsWith(base)) el.setAttribute(attr, base + v)
+          })
+      })
+    })();</script><link rel="stylesheet" href="/karibase/_astro/Base.Cz5nYg__.css"></head><body><header class="site-header"><button class="icon-btn docs-menu-btn" data-nav-toggle aria-label="Toggle navigation"><i class="fas fa-bars"></i></button><a href="/" class="brand"><img src="/logo.svg" alt="Karibase logo"><span>Karibase</span></a><nav><a href="/introduction" class="active">Docs</a><a href="/components">Components</a><a href="/customize">Themes</a></nav><div class="header-search"><i class="fas fa-search"></i><input type="search" placeholder="Search documentation…" aria-label="Search documentation" data-nav-search><kbd>/</kbd></div><div class="header-actions"><a class="icon-btn" href="https://github.com/Jesusdev-cup/karibase" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a><button class="icon-btn" data-theme-toggle aria-label="Toggle theme"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button><a href="/installation" class="btn btn-primary">Get Started</a></div></header><div class="docs-shell"><aside class="docs-sidebar" data-sidebar><section><h3>Getting Started</h3><ul><li data-nav-item="getting started"><a href="/getting-started" class>Getting Started</a></li><li data-nav-item="download"><a href="/download" class>Download</a></li><li data-nav-item="contents"><a href="/contents" class>Contents</a></li><li data-nav-item="browsers &amp; devices"><a href="/browsers-devices" class>Browsers &amp; devices</a></li><li data-nav-item="javascript"><a href="/javascript" class>JavaScript</a></li><li data-nav-item="webpack"><a href="/webpack" class>Webpack</a></li><li data-nav-item="parcel"><a href="/parcel" class>Parcel</a></li><li data-nav-item="vite"><a href="/vite" class>Vite</a></li><li data-nav-item="accessibility"><a href="/accessibility" class>Accessibility</a></li><li data-nav-item="rfs"><a href="/rfs" class>RFS</a></li><li data-nav-item="rtl"><a href="/rtl" class>RTL</a></li><li data-nav-item="contribute"><a href="/contribute" class>Contribute</a></li></ul></section><section><h3>Customize</h3><ul><li data-nav-item="overview"><a href="/customize" class>Overview</a></li><li data-nav-item="sass"><a href="/customize/sass" class>Sass</a></li><li data-nav-item="options"><a href="/customize/options" class>Options</a></li><li data-nav-item="color"><a href="/customize/color" class>Color</a></li><li data-nav-item="color modes"><a href="/customize/color-modes" class>Color modes</a></li><li data-nav-item="components"><a href="/customize/components" class>Components</a></li><li data-nav-item="css variables"><a href="/customize/css-variables" class>CSS variables</a></li><li data-nav-item="optimize"><a href="/customize/optimize" class>Optimize</a></li></ul></section><section><h3>Layout</h3><ul><li data-nav-item="breakpoints"><a href="/layout/breakpoints" class>Breakpoints</a></li><li data-nav-item="containers"><a href="/layout/containers" class>Containers</a></li><li data-nav-item="grid"><a href="/layout/grid" class>Grid</a></li><li data-nav-item="columns"><a href="/layout/columns" class>Columns</a></li><li data-nav-item="gutters"><a href="/layout/gutters" class>Gutters</a></li><li data-nav-item="utilities"><a href="/layout/utilities" class>Utilities</a></li><li data-nav-item="z-index"><a href="/layout/z-index" class>Z-index</a></li><li data-nav-item="css grid"><a href="/layout/css-grid" class>CSS Grid</a></li></ul></section><section><h3>Content</h3><ul><li data-nav-item="reboot"><a href="/content/reboot" class>Reboot</a></li><li data-nav-item="typography"><a href="/content/typography" class>Typography</a></li><li data-nav-item="images"><a href="/content/images" class>Images</a></li><li data-nav-item="tables"><a href="/content/tables" class>Tables</a></li><li data-nav-item="figures"><a href="/content/figures" class>Figures</a></li></ul></section><section><h3>Forms</h3><ul><li data-nav-item="overview"><a href="/forms" class>Overview</a></li><li data-nav-item="form control"><a href="/forms/form-control" class>Form control</a></li><li data-nav-item="select"><a href="/forms/select" class>Select</a></li><li data-nav-item="checks &amp; radios"><a href="/forms/checks-radios" class>Checks &amp; radios</a></li><li data-nav-item="range"><a href="/forms/range" class>Range</a></li><li data-nav-item="input group"><a href="/forms/input-group" class>Input group</a></li><li data-nav-item="floating labels"><a href="/forms/floating-labels" class>Floating labels</a></li><li data-nav-item="layout"><a href="/forms/layout" class>Layout</a></li><li data-nav-item="validation"><a href="/forms/validation" class>Validation</a></li></ul></section><section><h3>Components</h3><ul><li data-nav-item="overview"><a href="/components" class>Overview</a></li><li data-nav-item="buttons"><a href="/components/buttons" class>Buttons</a></li><li data-nav-item="cards"><a href="/components/cards" class>Cards</a></li><li data-nav-item="forms"><a href="/components/forms" class>Forms</a></li><li data-nav-item="tables"><a href="/components/tables" class>Tables</a></li><li data-nav-item="navigation"><a href="/components/navigation" class>Navigation</a></li><li data-nav-item="modals"><a href="/components/modals" class>Modals</a></li><li data-nav-item="alerts"><a href="/components/alerts" class>Alerts</a></li><li data-nav-item="charts"><a href="/components/charts" class>Charts</a></li><li data-nav-item="badges"><a href="/components/badges" class>Badges</a></li><li data-nav-item="avatars"><a href="/components/avatars" class>Avatars</a></li><li data-nav-item="dropdowns"><a href="/components/dropdowns" class>Dropdowns</a></li><li data-nav-item="tooltips"><a href="/components/tooltips" class>Tooltips</a></li><li data-nav-item="floating bots ⭐"><a href="/components/floating-bots" class>Floating Bots ⭐</a></li></ul></section><section><h3>Examples</h3><ul><li data-nav-item="login examples"><a href="/login-examples" class>Login Examples</a></li></ul></section><section><h3>Layout (Legacy)</h3><ul><li data-nav-item="grid system"><a href="/layout" class>Grid System</a></li></ul></section><section><h3>Utilities (Legacy)</h3><ul><li data-nav-item="overview"><a href="/utilities" class>Overview</a></li></ul></section><section><h3>Advanced (Legacy)</h3><ul><li data-nav-item="theming"><a href="/theming" class>Theming</a></li></ul></section><section><h3>Tools (Legacy)</h3><ul><li data-nav-item="tools"><a href="/tools" class>Tools</a></li></ul></section></aside><script type="module">var e=document.querySelector(`[data-nav-search]`),t=document.querySelectorAll(`[data-nav-item]`);e?.addEventListener(`input`,()=>{let n=(e?.value||``).trim().toLowerCase();t.forEach(e=>e.classList.toggle(`hidden`,!!n&&!e.dataset.navItem.includes(n))),document.querySelectorAll(`.docs-sidebar section`).forEach(e=>{let t=e.querySelectorAll(`li:not(.hidden)`).length>0;e.classList.toggle(`hidden`,!t)})}),document.addEventListener(`keydown`,t=>{t.key===`/`&&document.activeElement!==e&&(t.preventDefault(),e?.focus())});</script><main class="docs-main"><article class="docs-article"><nav class="docs-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/layout">Layout</a><span>/</span><span class="docs-breadcrumb-current">Columns</span></nav><h1>Columns</h1><p class="docs-lead">Column utilities in Karibase</p><div class="docs-section"><h2 class="docs-heading docs-heading-2" id="basic-columns">Basic Columns</h2><p class="docs-text">Create basic column layouts:</p><div class="docs-example"><div class="kb-columns"><div class="kb-column">Column 1</div><div class="kb-column">Column 2</div><div class="kb-column">Column 3</div></div></div><div class="code-block"><div class="code-block-header"><span class="code-block-title">HTML</span><button class="code-block-copy" data-copy title="Copy code" type="button"><i class="fas fa-copy"></i> Copy</button></div><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"kb-columns"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"kb-column"</span><span style="color:#E1E4E8">>Column 1&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"kb-column"</span><span style="color:#E1E4E8">>Column 2&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"kb-column"</span><span style="color:#E1E4E8">>Column 3&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre></div></div><div class="docs-section"><h2 class="docs-heading docs-heading-2" id="column-sizes">Column Sizes</h2><p class="docs-text">Control column sizes:</p><div class="docs-example"><div class="kb-columns"><div class="kb-column kb-column-25">25%</div><div class="kb-column kb-column-50">50%</div><div class="kb-column kb-column-25">25%</div></div></div><div class="code-block"><div class="code-block-header"><span class="code-block-title">HTML</span><button class="code-block-copy" data-copy title="Copy code" type="button"><i class="fas fa-copy"></i> Copy</button></div><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"kb-columns"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"kb-column kb-column-25"</span><span style="color:#E1E4E8">>25%&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"kb-column kb-column-50"</span><span style="color:#E1E4E8">>50%&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"kb-column kb-column-25"</span><span style="color:#E1E4E8">>25%&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre></div></div><div class="docs-section"><h2 class="docs-heading docs-heading-2" id="responsive-columns">Responsive Columns</h2><p class="docs-text">Responsive column layouts:</p><div class="docs-example"><div class="kb-columns"><div class="kb-column kb-column-100 kb-column-md-50 kb-column-lg-33">Responsive column</div></div></div><div class="code-block"><div class="code-block-header"><span class="code-block-title">HTML</span><button class="code-block-copy" data-copy title="Copy code" type="button"><i class="fas fa-copy"></i> Copy</button></div><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"kb-columns"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"kb-column kb-column-100 kb-column-md-50 kb-column-lg-33"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    Responsive column</span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre></div></div><nav class="docs-next-prev"><a href="/layout/grid" class="docs-prev"><span><i class="fas fa-arrow-left"></i> Previous</span><span class="pn-name">Grid</span></a><a href="/layout/gutters" class="docs-next"><span>Next <i class="fas fa-arrow-right"></i></span><span class="pn-name">Gutters</span></a></nav></article></main><aside class="docs-toc" data-toc hidden><div class="toc-title">On this page</div><nav data-toc-nav></nav><div class="toc-contribute"><div class="toc-title">Contribute</div><a href="https://github.com/Jesusdev-cup/karibase" target="_blank" rel="noopener"><i class="fas fa-pen"></i> Edit this page</a><a href="https://github.com/Jesusdev-cup/karibase/issues" target="_blank" rel="noopener"><i class="fas fa-lightbulb"></i> Give feedback</a></div></aside><script type="module">var e=document.querySelector(`[data-toc]`),t=document.querySelector(`[data-toc-nav]`),n=Array.from(document.querySelectorAll(`.docs-article h2[id], .docs-article h3[id]`));if(e&&t&&n.length){e.hidden=!1;let r=n.map(e=>{let n=document.createElement(`a`);return n.href=`#${e.id}`,n.textContent=e.textContent?.trim()||``,n.dataset.tocLink=e.id,e.tagName===`H3`&&(n.style.paddingLeft=`28px`),t.appendChild(n),n}),i=()=>{let e=r[0];for(let t of n)t.getBoundingClientRect().top<=100&&(e=r.find(e=>e.dataset.tocLink===t.id)||e);r.forEach(t=>t.classList.toggle(`active`,t===e))};window.addEventListener(`scroll`,i,{passive:!0}),i()}</script></div><script>
+      ;(() => {
+        // Theme toggle
+        document.addEventListener('click', (e) => {
+          const btn = e.target.closest('[data-theme-toggle]')
+          if (btn) {
+            const next = document.documentElement.getAttribute('mode') === 'dark' ? 'light' : 'dark'
+            document.documentElement.setAttribute('mode', next)
+            localStorage.setItem('karibase-theme', next)
+            return
+          }
+          // Mobile docs nav
+          if (e.target.closest('[data-nav-toggle]')) {
+            document.body.classList.toggle('nav-open')
+            return
+          }
+          // Generic show/hide/toggle targets (ported from v-if demos)
+          const applyState = (v, on) => {
+            document.querySelectorAll(`[data-kb-target="${v}"]`).forEach((el) => {
+              el.hidden = on === undefined ? !el.hidden : !on
+            })
+            document.querySelectorAll(`[data-kb-target-inv="${v}"]`).forEach((el) => {
+              el.hidden = on === undefined ? !el.hidden : on
+            })
+            document.querySelectorAll('[data-kb-class]').forEach((o) => {
+              o.dataset.kbClass.split(' ').forEach((pair) => {
+                const [key, cls] = pair.split(':')
+                if (key === v) o.classList.toggle(cls, on === undefined ? undefined : on)
+              })
+            })
+          }
+          const toggler = e.target.closest('[data-kb-toggle]')
+          if (toggler) {
+            applyState(toggler.dataset.kbToggle)
+            return
+          }
+          const shower = e.target.closest('[data-kb-show]')
+          if (shower) {
+            applyState(shower.dataset.kbShow, true)
+            return
+          }
+          const hider = e.target.closest('[data-kb-hide]')
+          if (hider) {
+            const v = hider.dataset.kbHide
+            // an element that is both hide-trigger and target of the same var is
+            // an overlay: only closes when the backdrop itself is clicked
+            const isOverlay = hider.dataset.kbTarget === v
+            if (!isOverlay || e.target === hider) applyState(v, false)
+            return
+          }
+          // Copy buttons
+          const copy = e.target.closest('[data-copy]')
+          if (copy) {
+            const block = copy.closest('.code-block, .hero-install')
+            const code = block?.querySelector('code') || block?.querySelector('.copy-src')
+            const text = copy.dataset.copy || code?.textContent || ''
+            navigator.clipboard?.writeText(text).then(() => {
+              const icon = copy.querySelector('i')
+              if (icon) {
+                icon.className = 'fas fa-check'
+                setTimeout(() => (icon.className = 'fas fa-copy'), 1500)
+              }
+            })
+            return
+          }
+          // Alert dismiss
+          const alertClose = e.target.closest('.kb-alert-close')
+          if (alertClose) {
+            const alert = alertClose.closest('.kb-alert')
+            if (alert) alert.remove()
+          }
+        })
+
+        // Hover-driven visibility (@mouseenter/@mouseleave port)
+        document.addEventListener('mouseover', (e) => {
+          const on = e.target.closest('[data-kb-hover-on]')
+          if (on && !on.contains(e.relatedTarget)) {
+            const v = on.dataset.kbHoverOn
+            document.querySelectorAll(`[data-kb-target="${v}"]`).forEach((el) => (el.hidden = false))
+            document.querySelectorAll('[data-kb-class]').forEach((o) => {
+              o.dataset.kbClass.split(' ').forEach((pair) => {
+                const [key, cls] = pair.split(':')
+                if (key === v) o.classList.add(cls)
+              })
+            })
+          }
+          const off = e.target.closest('[data-kb-hover-off]')
+          if (off && !off.contains(e.relatedTarget)) {
+            const v = off.dataset.kbHoverOff
+            document.querySelectorAll(`[data-kb-target="${v}"]`).forEach((el) => (el.hidden = true))
+            document.querySelectorAll('[data-kb-class]').forEach((o) => {
+              o.dataset.kbClass.split(' ').forEach((pair) => {
+                const [key, cls] = pair.split(':')
+                if (key === v) o.classList.remove(cls)
+              })
+            })
+          }
+        })
+      })()
+    </script><script src="/karibase/js/karibase.min.js"></script></body></html>

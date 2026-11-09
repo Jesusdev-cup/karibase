@@ -1,5 +1,0 @@
-export { default as DocsArticle } from './DocsArticle.vue'
-export { default as DocsBreadcrumb } from './DocsBreadcrumb.vue'
-export { default as DocsExample } from './DocsExample.vue'
-export { default as DocsPrevNext } from './DocsPrevNext.vue'
-export { default as DocsSection } from './DocsSection.vue'

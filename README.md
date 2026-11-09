@@ -258,13 +258,13 @@ Point `PLUGINS_DIR` at another plugins folder if needed
 
 ```
 src/
-├── config/
-│   ├── plugins.js / .json        # plugin → stylesheets registry
-│   └── arc-templates.js / .json  # resolved tokens per template kit
-└── styles/
-    ├── karibase-plugins.css      # @import index of all plugin styles
-    ├── plugins/<plugin>/...      # extracted CSS, mirrored structure
-    └── themes/karibase-theme-<kit>.css  # 21 ARC theme presets
+└── config/
+    ├── plugins.js / .json        # plugin → stylesheets registry
+    └── arc-templates.js / .json  # resolved tokens per template kit
+public/styles/
+├── karibase-plugins.css          # @import index of all plugin styles
+├── plugins/<plugin>/...          # extracted CSS, mirrored structure
+└── themes/karibase-theme-<kit>.css  # 21 ARC theme presets
 ```
 
 Theme presets mirror `Arc_ST_Templates::design_system()` token resolution
@@ -280,34 +280,57 @@ karibase_enqueue_theme( 'nomad' );              // one ARC kit theme
 karibase_enqueue_plugin_styles( 'ix-projects' ); // all extracted plugin CSS
 ```
 
+## Docs site (Astro)
+
+The documentation site and landing page are built with
+[Astro](https://astro.build) — no frontend framework, static output:
+
+```bash
+npm install
+npm run dev        # astro dev server
+npm run build      # build:css + astro build → dist/
+npm run preview    # serve the production build locally
+npm run build:css  # rebuild public/css/karibase.css from public/styles/
+```
+
+The site deploys to GitHub Pages automatically on every push to `main`
+(`.github/workflows/deploy.yml`) at `https://jesusdev-cup.github.io/karibase/`.
+
 ## File Structure
 
 ```
 karibase/
 ├── public/
-│   ├── logo.svg              # UCLA-themed logo
-│   └── css-extractor.html    # CSS extraction tool
+│   ├── logo.svg              # Karibase brand logo
+│   ├── css-extractor.html    # CSS extraction tool
+│   ├── css/karibase.css      # Built framework bundle (generated)
+│   ├── styles/               # CSS framework source files
+│   │   ├── karibase.css      # @import entry point
+│   │   ├── karibase-plugins.css  # All plugin styles (generated)
+│   │   ├── plugins/          # Extracted plugin styles (generated)
+│   │   └── themes/           # ARC kit themes (generated)
+│   └── js/                   # JavaScript components
+│       ├── karibase.min.js   # Framework JS bundle
+│       ├── karibase-ui.js    # Core UI components
+│       ├── karibase-modal.js # Modal system
+│       ├── karibase-inactivity-detector.js
+│       └── karibase-auto-seo.js
 ├── src/
 │   ├── config/               # Generated registries + app config
 │   │   ├── index.js
+│   │   ├── navigation.js     # Docs sidebar/routes registry
 │   │   ├── plugins.js        # plugin styles registry (generated)
 │   │   └── arc-templates.js  # ARC kit tokens registry (generated)
-│   ├── styles/               # CSS framework files
-│   │   ├── karibase.css      # Main framework CSS
-│   │   ├── karibase-plugins.css  # All plugin styles (generated)
-│   │   ├── plugins/          # Extracted plugin styles (generated)
-│   │   ├── themes/           # ARC kit themes (generated)
-│   │   └── [theme files]
-│   ├── js/                   # JavaScript components
-│   │   ├── karibase-ui.js    # Core UI components
-│   │   ├── karibase-modal.js # Modal system
-│   │   ├── karibase-inactivity-detector.js
-│   │   └── karibase-auto-seo.js
-│   └── composables/          # Vue composables (for docs)
-│       └── usePageInfo.js
+│   ├── pages/                # Astro docs pages (one per docs entry)
+│   ├── layouts/              # Base + DocsLayout shells
+│   ├── components/           # Docs UI components (.astro)
+│   └── styles/global.css     # Site chrome styles
+├── scripts/
+│   └── convert.mjs           # Legacy Vue views → Astro converter
 ├── extract-plugin-styles.js  # Plugin CSS/inline-style extractor
 ├── build-arc-themes.js       # ARC kit theme generator
-├── index.html
+├── build-css.js              # PostCSS framework bundle build
+├── astro.config.mjs
 ├── package.json
 └── README.md
 ```
