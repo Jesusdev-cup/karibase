@@ -1,0 +1,372 @@
+/*!
+ * Karibase Theme - Archeon
+ * Architecture/Construction theme inspired by solacewp.com/archeon
+ * 
+ * Features:
+ * - Architecture-focused design
+ * - Construction aesthetic
+ * - Professional color palette
+ * - Project showcase layouts
+ */
+
+:root {
+  --kb-archeon-primary: #1f2937;
+  --kb-archeon-secondary: #d97706;
+  --kb-archeon-accent: #059669;
+  --kb-archeon-success: #10b981;
+  --kb-archeon-dark: #111827;
+  --kb-archeon-light: #f3f4f6;
+  --kb-archeon-muted: #6b7280;
+  --kb-archeon-white: #ffffff;
+  --kb-archeon-border: #e5e7eb;
+  --kb-archeon-shadow: rgba(17, 24, 39, 0.1);
+  --kb-archeon-gradient: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+}
+
+.kb-archeon-theme {
+  background-color: var(--kb-archeon-white);
+  color: var(--kb-archeon-dark);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Archeon Navigation */
+.kb-archeon-nav {
+  background: var(--kb-archeon-white);
+  border-bottom: 1px solid var(--kb-archeon-border);
+  padding: 20px 0;
+}
+
+.kb-archeon-nav-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--kb-archeon-primary);
+  text-decoration: none;
+}
+
+.kb-archeon-nav-menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kb-archeon-nav-link {
+  color: var(--kb-archeon-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.kb-archeon-nav-link:hover {
+  color: var(--kb-archeon-secondary);
+}
+
+/* Archeon Hero */
+.kb-archeon-hero {
+  background: var(--kb-archeon-gradient);
+  color: var(--kb-archeon-white);
+  padding: 120px 0;
+  text-align: center;
+}
+
+.kb-archeon-hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.kb-archeon-hero-subtitle {
+  font-size: 20px;
+  opacity: 0.9;
+  margin: 0 0 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Services Section */
+.kb-archeon-services {
+  padding: 80px 0;
+}
+
+.kb-archeon-services-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-archeon-dark);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.kb-archeon-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.kb-archeon-service-card {
+  background: var(--kb-archeon-white);
+  border: 1px solid var(--kb-archeon-border);
+  border-radius: 12px;
+  padding: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kb-archeon-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--kb-archeon-shadow);
+}
+
+.kb-archeon-service-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--kb-archeon-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--kb-archeon-secondary);
+  margin-bottom: 24px;
+}
+
+.kb-archeon-service-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--kb-archeon-dark);
+  margin: 0 0 12px;
+}
+
+.kb-archeon-service-description {
+  font-size: 16px;
+  color: var(--kb-archeon-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Projects Gallery */
+.kb-archeon-projects {
+  background: var(--kb-archeon-light);
+  padding: 80px 0;
+}
+
+.kb-archeon-projects-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-archeon-dark);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.kb-archeon-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 32px;
+}
+
+.kb-archeon-project-card {
+  background: var(--kb-archeon-white);
+  border: 1px solid var(--kb-archeon-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.kb-archeon-project-card:hover {
+  transform: translateY(-4px);
+}
+
+.kb-archeon-project-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.kb-archeon-project-info {
+  padding: 24px;
+}
+
+.kb-archeon-project-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--kb-archeon-dark);
+  margin: 0 0 8px;
+}
+
+.kb-archeon-project-location {
+  font-size: 14px;
+  color: var(--kb-archeon-muted);
+  margin: 0 0 12px;
+}
+
+.kb-archeon-project-description {
+  font-size: 14px;
+  color: var(--kb-archeon-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Testimonials */
+.kb-archeon-testimonials {
+  padding: 80px 0;
+}
+
+.kb-archeon-testimonials-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-archeon-dark);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.kb-archeon-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.kb-archeon-testimonial-card {
+  background: var(--kb-archeon-white);
+  border: 1px solid var(--kb-archeon-border);
+  border-radius: 12px;
+  padding: 32px;
+  transition: transform 0.3s ease;
+}
+
+.kb-archeon-testimonial-card:hover {
+  transform: translateY(-4px);
+}
+
+.kb-archeon-testimonial-quote {
+  font-size: 16px;
+  color: var(--kb-archeon-dark);
+  line-height: 1.8;
+  margin: 0 0 24px;
+  font-style: italic;
+}
+
+.kb-archeon-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.kb-archeon-testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.kb-archeon-testimonial-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--kb-archeon-dark);
+  margin: 0;
+}
+
+.kb-archeon-testimonial-role {
+  font-size: 14px;
+  color: var(--kb-archeon-muted);
+  margin: 0;
+}
+
+/* FAQ Section */
+.kb-archeon-faq {
+  background: var(--kb-archeon-light);
+  padding: 80px 0;
+}
+
+.kb-archeon-faq-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-archeon-dark);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.kb-archeon-faq-item {
+  background: var(--kb-archeon-white);
+  border: 1px solid var(--kb-archeon-border);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.kb-archeon-faq-question {
+  padding: 20px 24px;
+  font-weight: 600;
+  color: var(--kb-archeon-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.kb-archeon-faq-question:hover {
+  background: var(--kb-archeon-light);
+}
+
+.kb-archeon-faq-answer {
+  padding: 0 24px 24px;
+  color: var(--kb-archeon-muted);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.kb-archeon-cta {
+  background: var(--kb-archeon-dark);
+  color: var(--kb-archeon-white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.kb-archeon-cta-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.kb-archeon-cta-subtitle {
+  font-size: 18px;
+  opacity: 0.9;
+  margin: 0 0 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+.kb-archeon-btn-primary {
+  background: var(--kb-archeon-secondary);
+  color: var(--kb-archeon-white);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kb-archeon-btn-primary:hover {
+  background: #b45309;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+.kb-archeon-btn-secondary {
+  background: var(--kb-archeon-white);
+  color: var(--kb-archeon-dark);
+  border: 1px solid var(--kb-archeon-border);
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kb-archeon-btn-secondary:hover {
+  background: var(--kb-archeon-light);
+  border-color: var(--kb-archeon-secondary);
+}

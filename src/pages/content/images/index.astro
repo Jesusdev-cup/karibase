@@ -1,0 +1,53 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Images — Karibase">
+<DocsArticle
+    title="Images"
+    lead="Image styles and responsive images in Karibase"
+    breadcrumb={[{ name: 'Content', path: '/content' }, { name: 'Images' }]}
+    prev={{ name: 'Typography', path: '/content/typography' }}
+    next={{ name: 'Tables', path: '/content/tables' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="responsive-images">Responsive Images</h2>
+      <p class="docs-text">Images are responsive by default:</p>
+      <CodeBlock code={`<img src="image.jpg" class="kb-img-fluid" alt="Responsive image">`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="image-thumbnails">Image Thumbnails</h2>
+      <p class="docs-text">Create thumbnail images:</p>
+      <CodeBlock code={`<img src="image.jpg" class="kb-img-thumbnail" alt="Thumbnail">`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="rounded-images">Rounded Images</h2>
+      <p class="docs-text">Add rounded corners to images:</p>
+      <CodeBlock code={`<img src="image.jpg" class="kb-img-rounded" alt="Rounded image">`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="circle-images">Circle Images</h2>
+      <p class="docs-text">Create circular images:</p>
+      <CodeBlock code={`<img src="image.jpg" class="kb-img-circle" alt="Circle image">`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="figure-captions">Figure Captions</h2>
+      <p class="docs-text">Add captions to images:</p>
+      <CodeBlock code={`<figure class="kb-figure">
+  <img src="image.jpg" class="kb-img-fluid" alt="Image">
+  <figcaption class="kb-figure-caption">Image caption</figcaption>
+</figure>`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

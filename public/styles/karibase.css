@@ -1,0 +1,119 @@
+/*!
+ * Karibase CSS Framework - Main Entry Point
+ * Inspired by: Argon Dashboard, Black Dashboard, Karibase Admin, Sakai React, Bulma, Bootstrap
+ * Version: 2.0.0
+ * 
+ * A comprehensive CSS framework for building modern admin dashboards and SaaS applications.
+ * Extracted and improved from the best patterns of popular dashboard frameworks.
+ * 
+ * @author Karibase Team
+ * @license MIT
+ * @copyright 2026
+ */
+
+/* ========================================
+   IMPORT ORDER
+   ========================================
+   1. Variables (Design Tokens)
+   2. Bootstrap Integration (Grid & Utilities)
+   3. Reset (Modern CSS Reset)
+   4. Base (Typography, Tables, etc.)
+   5. Components (Dashboard Components)
+   6. Components Extended (Advanced Components)
+   7. Components React (React-Inspired Components)
+   8. Utilities (Basic Utility Classes)
+   9. Utilities Extended (Advanced Utility Classes)
+   10. Dark Mode (Dark Theme Support)
+   ======================================== */
+
+/* Import Design Tokens */
+@import url('karibase-variables.css');
+
+/* Import Bootstrap Integration (Grid System & Utility Classes) */
+@import url('karibase-bootstrap.css');
+
+/* Import Modern CSS Reset */
+@import url('karibase-reset.css');
+
+/* Import Base Styles */
+@import url('karibase-base.css');
+
+/* Import Layout System */
+@import url('karibase-layout.css');
+
+/* Import Dashboard Components */
+@import url('karibase-components.css');
+
+/* Import Extended Components */
+@import url('karibase-components-extended.css');
+
+/* Import React-Inspired Components */
+@import url('karibase-components-react.css');
+
+/* Import Basic Utilities */
+@import url('karibase-utilities.css');
+
+/* Import Extended Utilities */
+@import url('karibase-utilities-extended.css');
+
+/* Import Scale Utilities */
+@import url('karibase-utility-scale.css');
+
+/* Import Unique Styles from CascadeProjects */
+@import url('karibase-cascade-unique.css');
+
+/* Import Dark Mode Support */
+@import url('karibase-dark-mode.css');
+
+/* ========================================
+   FRAMEWORK INFO
+   ========================================
+   
+   Karibase CSS Framework v2.0.0
+   
+   Features:
+   - Complete design system with CSS variables
+   - Modern CSS reset for cross-browser consistency
+   - Bootstrap 5.3.8 grid system and utilities integration
+   - Comprehensive component library
+   - Dashboard-specific layouts (sidebar, header, etc.)
+   - React-inspired components for modern apps
+   - Extensive utility classes for rapid development
+   - Built-in dark mode support
+   - Responsive design out of the box
+   - Accessibility-first approach
+   - No JavaScript required for core functionality
+   
+   Inspired by:
+   - Argon Dashboard (Creative Tim)
+   - Black Dashboard (Creative Tim)
+   - Karibase Admin (Karibase CSS Framework)
+   - Sakai React (PrimeFaces)
+   - Bulma CSS Framework
+   - Bootstrap 5
+   
+   Usage:
+   Simply link this file in your HTML:
+   <link rel="stylesheet" href="css/karibase.css">
+   
+   Or import individual modules for better performance:
+   <link rel="stylesheet" href="css/karibase-variables.css">
+   <link rel="stylesheet" href="css/karibase-bootstrap.css">
+   <link rel="stylesheet" href="css/karibase-reset.css">
+   <link rel="stylesheet" href="css/karibase-base.css">
+   <link rel="stylesheet" href="css/karibase-components.css">
+   <link rel="stylesheet" href="css/karibase-components-extended.css">
+   <link rel="stylesheet" href="css/karibase-components-react.css">
+   <link rel="stylesheet" href="css/karibase-utilities.css">
+   <link rel="stylesheet" href="css/karibase-utilities-extended.css">
+   <link rel="stylesheet" href="css/karibase-dark-mode.css">
+   
+   Documentation:
+   See README.md for complete documentation and examples.
+   
+   Support:
+   For issues and questions, please open an issue on GitHub.
+   
+   License:
+   MIT License - Free for personal and commercial use.
+   ======================================== */

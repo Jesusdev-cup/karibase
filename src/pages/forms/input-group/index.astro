@@ -1,0 +1,83 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Input group — Karibase">
+<DocsArticle
+    title="Input group"
+    lead="Input group components in Karibase"
+    breadcrumb={[{ name: 'Forms', path: '/forms' }, { name: 'Input group' }]}
+    prev={{ name: 'Range', path: '/forms/range' }}
+    next={{ name: 'Floating labels', path: '/forms/floating-labels' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
+      <p class="docs-text">
+        Input groups allow you to prepend and append text or buttons to text-based inputs. They are useful 
+        for adding context to form inputs.
+      </p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="basic-input-group">Basic Input Group</h2>
+      <p class="docs-text">Basic input group with text:</p>
+      <CodeBlock code={`<div class="kb-input-group">
+  <span class="kb-input-group-text">@</span>
+  <input type="text" class="kb-input" placeholder="Username">
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="append">Append</h2>
+      <p class="docs-text">Input group with appended text:</p>
+      <CodeBlock code={`<div class="kb-input-group">
+  <input type="text" class="kb-input" placeholder="Recipient's username">
+  <span class="kb-input-group-text">@example.com</span>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="buttons">Buttons</h2>
+      <p class="docs-text">Input group with buttons:</p>
+      <CodeBlock code={`<div class="kb-input-group">
+  <button class="kb-btn kb-btn-outline-secondary" type="button">Button</button>
+  <input type="text" class="kb-input" placeholder="">
+  <button class="kb-btn kb-btn-outline-secondary" type="button">Button</button>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="dropdowns">Dropdowns</h2>
+      <p class="docs-text">Input group with dropdown:</p>
+      <CodeBlock code={`<div class="kb-input-group">
+  <button class="kb-btn kb-btn-outline-secondary dropdown-toggle" type="button">
+    Dropdown
+  </button>
+  <input type="text" class="kb-input" placeholder="">
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="sizing">Sizing</h2>
+      <p class="docs-text">Input group sizing:</p>
+      <CodeBlock code={`<div class="kb-input-group kb-input-group-sm">
+  <!-- Small input group -->
+</div>
+
+<div class="kb-input-group">
+  <!-- Default input group -->
+</div>
+
+<div class="kb-input-group kb-input-group-lg">
+  <!-- Large input group -->
+</div>`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

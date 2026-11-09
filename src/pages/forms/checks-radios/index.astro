@@ -1,0 +1,95 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Checks & radios — Karibase">
+<DocsArticle
+    title="Checks & radios"
+    lead="Checkboxes and radio buttons in Karibase"
+    breadcrumb={[{ name: 'Forms', path: '/forms' }, { name: 'Checks & radios' }]}
+    prev={{ name: 'Select', path: '/forms/select' }}
+    next={{ name: 'Range', path: '/forms/range' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="checkboxes">Checkboxes</h2>
+      <p class="docs-text">Checkbox components:</p>
+      <CodeBlock code={`<div class="kb-form-check">
+  <input class="kb-form-check-input" type="checkbox" id="check1">
+  <label class="kb-form-check-label" for="check1">
+    Default checkbox
+  </label>
+</div>
+
+<div class="kb-form-check">
+  <input class="kb-form-check-input" type="checkbox" id="check2" checked>
+  <label class="kb-form-check-label" for="check2">
+    Checked checkbox
+  </label>
+</div>
+
+<div class="kb-form-check">
+  <input class="kb-form-check-input" type="checkbox" id="check3" disabled>
+  <label class="kb-form-check-label" for="check3">
+    Disabled checkbox
+  </label>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="radios">Radios</h2>
+      <p class="docs-text">Radio button components:</p>
+      <CodeBlock code={`<div class="kb-form-check">
+  <input class="kb-form-check-input" type="radio" name="radio1" id="radio1">
+  <label class="kb-form-check-label" for="radio1">
+    Default radio
+  </label>
+</div>
+
+<div class="kb-form-check">
+  <input class="kb-form-check-input" type="radio" name="radio1" id="radio2" checked>
+  <label class="kb-form-check-label" for="radio2">
+    Default checked radio
+  </label>
+</div>
+
+<div class="kb-form-check">
+  <input class="kb-form-check-input" type="radio" name="radio1" id="radio3" disabled>
+  <label class="kb-form-check-label" for="radio3">
+    Disabled radio
+  </label>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="inline">Inline</h2>
+      <p class="docs-text">Inline checkboxes and radios:</p>
+      <CodeBlock code={`<div class="kb-form-check kb-form-check-inline">
+  <input class="kb-form-check-input" type="checkbox" id="inline1">
+  <label class="kb-form-check-label" for="inline1">1</label>
+</div>
+
+<div class="kb-form-check kb-form-check-inline">
+  <input class="kb-form-check-input" type="checkbox" id="inline2">
+  <label class="kb-form-check-label" for="inline2">2</label>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="switches">Switches</h2>
+      <p class="docs-text">Toggle switches:</p>
+      <CodeBlock code={`<div class="kb-form-check kb-form-switch">
+  <input class="kb-form-check-input" type="checkbox" id="switch1">
+  <label class="kb-form-check-label" for="switch1">
+    Toggle switch
+  </label>
+</div>`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

@@ -1,0 +1,5 @@
+@layer theme, base, components, utilities;
+
+@import './karibase-framework-theme.css' layer(theme);
+@import './karibase-framework-preflight.css' layer(base);
+@import './karibase-utilities.css' layer(utilities);

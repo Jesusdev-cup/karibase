@@ -1,0 +1,276 @@
+/*!
+ * Karibase CSS Framework v2.0.0 - Modern Entry Point
+ * 
+ * This file uses modern CSS features:
+ * - Cascade Layers (@layer) for style isolation
+ * - Container Queries for component-level responsiveness
+ * - CSS Custom Properties for dynamic theming
+ * - Native CSS functions (clamp, min, max, etc.)
+ * 
+ * @license MIT
+ * @copyright 2026
+ */
+
+/* ========================================
+   CASCADE LAYERS CONFIGURATION
+   ========================================
+   Layer order determines specificity:
+   1. reset - CSS reset and normalization
+   2. variables - Design tokens and CSS custom properties
+   3. base - Base HTML element styles
+   4. components - Reusable UI components
+   5. utilities - Utility classes
+   6. overrides - User customizations (highest priority)
+   ======================================== */
+
+@layer reset, variables, base, components, utilities, overrides;
+
+/* ========================================
+   LAYER: RESET
+   ======================================== */
+@layer reset {
+  @import url('karibase-reset.css');
+}
+
+/* ========================================
+   LAYER: VARIABLES
+   ======================================== */
+@layer variables {
+  @import url('karibase-variables.css');
+  
+  /* Additional modern CSS variables */
+  :root {
+    /* Container Query Support */
+    --kb-container-sm: 20rem;
+    --kb-container-md: 40rem;
+    --kb-container-lg: 60rem;
+    --kb-container-xl: 80rem;
+    
+    /* Fluid Typography */
+    --kb-fluid-min: 16px;
+    --kb-fluid-preferred: 20px;
+    --kb-fluid-max: 24px;
+    
+    /* Modern Spacing */
+    --kb-space-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+    --kb-space-sm: clamp(0.5rem, 1vw, 1rem);
+    --kb-space-md: clamp(1rem, 2vw, 2rem);
+    --kb-space-lg: clamp(2rem, 4vw, 4rem);
+    --kb-space-xl: clamp(4rem, 8vw, 8rem);
+  }
+}
+
+/* ========================================
+   LAYER: BASE
+   ======================================== */
+@layer base {
+  @import url('karibase-base.css');
+  
+  /* Modern base styles with CSS functions */
+  html {
+    font-size: clamp(16px, 1vw + 1rem, 20px);
+  }
+  
+  body {
+    /* Fluid spacing using clamp() */
+    padding: var(--kb-space-md);
+  }
+}
+
+/* ========================================
+   LAYER: COMPONENTS
+   ======================================== */
+@layer components {
+  @import url('karibase-bootstrap.css');
+  @import url('karibase-layout.css');
+  @import url('karibase-components.css');
+  @import url('karibase-components-extended.css');
+  @import url('karibase-components-react.css');
+  @import url('karibase-dashboard.css');
+  @import url('karibase-container-queries.css');
+  
+  /* Container Query Support for Components */
+  @container (min-width: 400px) {
+    .kb-card {
+      padding: var(--kb-space-md);
+    }
+  }
+  
+  @container (min-width: 600px) {
+    .kb-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--kb-space-md);
+    }
+  }
+}
+
+/* ========================================
+   LAYER: UTILITIES
+   ======================================== */
+@layer utilities {
+  @import url('karibase-utilities.css');
+  @import url('karibase-utilities-extended.css');
+  @import url('karibase-utility-scale.css');
+  
+  /* Modern utility classes with CSS functions */
+  .kb-text-fluid {
+    font-size: clamp(var(--kb-fluid-min), 2.5vw, var(--kb-fluid-max));
+  }
+  
+  .kb-container-fluid {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: max(1.5rem, 5vw);
+  }
+  
+  .kb-container-query {
+    container-type: inline-size;
+    container-name: kb-component;
+  }
+}
+
+/* ========================================
+   LAYER: DARK MODE
+   ======================================== */
+@layer overrides {
+  @import url('karibase-dark-mode.css');
+  @import url('karibase-cascade-unique.css');
+  
+  /* Modern dark mode with prefers-color-scheme */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --kb-text-primary: var(--kb-gray-100);
+      --kb-bg-primary: var(--kb-gray-900);
+    }
+  }
+}
+
+/* ========================================
+   MODERN CSS FEATURES DEMO
+   ======================================== */
+
+/* CSS Grid with auto-fit and minmax */
+.kb-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: var(--kb-space-md);
+}
+
+/* Aspect Ratio (native CSS) */
+.kb-aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.kb-aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.kb-aspect-poster {
+  aspect-ratio: 2 / 3;
+}
+
+/* Scroll-driven animations (modern browsers) */
+@supports (animation-timeline: scroll()) {
+  .kb-scroll-animate {
+    animation: fade-in linear;
+    animation-timeline: scroll();
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* View Transitions API (modern browsers) */
+@supports (view-transition-name: none) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.3s;
+  }
+}
+
+/* CSS Nesting (modern browsers) */
+@supports (selector(&)) {
+  .kb-card {
+    & .kb-card-header {
+      padding: var(--kb-space-sm);
+    }
+    
+    & .kb-card-body {
+      padding: var(--kb-space-md);
+    }
+    
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATION
+   ======================================== */
+
+/* Content-visibility for off-screen elements */
+.kb-offscreen {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* Will-change optimization */
+.kb-animate {
+  will-change: transform, opacity;
+}
+
+/* GPU acceleration hints */
+.kb-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --kb-border-color: currentColor;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+.kb-focus-visible:focus-visible {
+  outline: 2px solid var(--kb-primary-color);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  @layer components {
+    .kb-no-print {
+      display: none !important;
+    }
+  }
+  
+  @layer base {
+    body {
+      font-size: 12pt;
+      line-height: 1.5;
+    }
+  }
+}

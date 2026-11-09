@@ -1,0 +1,70 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro'
+import DocsArticle from '../../components/DocsArticle.astro'
+import CodeBlock from '../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Download — Karibase">
+<DocsArticle
+    title="Download"
+    lead="Download Karibase CSS Framework"
+    prev={{ name: 'Getting Started', path: '/getting-started' }}
+    next={{ name: 'Contents', path: '/contents' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="cdn-links">CSS/JS Files Only</h2>
+      <p class="docs-text">Karibase works with plain CSS and JavaScript files. No npm, no build tools, no framework dependencies.</p>
+      <CodeBlock title="HTML" code={`<!-- CSS -->
+<link rel="stylesheet" href="karibase.css">
+
+<!-- JavaScript -->
+<script src="karibase.js"></script>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="download-files">Download Framework Files</h2>
+      <p class="docs-text">Download the complete framework files from the Home page:</p>
+      <ul class="docs-list">
+        <li><strong>karibase.css</strong> - Complete CSS framework with all components</li>
+        <li><strong>karibase.js</strong> - JavaScript components (modals, inactivity detector, auto SEO)</li>
+      </ul>
+      <p class="docs-text">Simply link these files in your HTML and start using Karibase immediately.</p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="quick-start">Quick Start</h2>
+      <p class="docs-text">Create a basic dashboard in minutes:</p>
+      <CodeBlock title="HTML" code={`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title>
+    <link rel="stylesheet" href="karibase.css">
+</head>
+<body>
+    <div class="kb-dashboard">
+        <header class="kb-header">
+            <div class="kb-logo">My App</div>
+        </header>
+        <main class="kb-content">
+            <h1 class="kb-heading">Dashboard</h1>
+            <div class="kb-grid kb-grid-3">
+                <div class="kb-card">
+                    <h3 class="kb-card-title">Total Users</h3>
+                    <p class="kb-card-text">1,234</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="karibase.js"></script>
+</body>
+</html>`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

@@ -1,0 +1,21 @@
+---
+interface Item { name: string; path?: string }
+interface Props {
+  items?: Item[]
+  home?: Item | null
+}
+
+const { items = [], home = { name: 'Home', path: '/' } } = Astro.props
+const all = home ? [home, ...items] : items
+---
+
+<nav class="docs-breadcrumb" aria-label="Breadcrumb">
+  {all.map((item, i) => (
+    <>
+      {i > 0 && <span>/</span>}
+      {item.path
+        ? <a href={item.path}>{item.name}</a>
+        : <span class="docs-breadcrumb-current">{item.name}</span>}
+    </>
+  ))}
+</nav>

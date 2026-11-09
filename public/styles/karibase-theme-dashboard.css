@@ -1,0 +1,261 @@
+/*!
+ * Karibase Theme - Admin Dashboard Sales
+ * Dashboard theme inspired by admin-dashboard-V2 Sales
+ * 
+ * Features:
+ * - Vibrant violet accent
+ * - Professional sidebar navigation
+ * - Sales-focused color palette
+ * - Dark mode support
+ * - OKLCH color system
+ */
+
+:root {
+  --kb-dashboard-radius: 0.75rem;
+  --kb-dashboard-background: oklch(0.985 0.002 250);
+  --kb-dashboard-foreground: oklch(0.18 0.02 260);
+  --kb-dashboard-card: oklch(1 0 0);
+  --kb-dashboard-card-foreground: oklch(0.18 0.02 260);
+  --kb-dashboard-popover: oklch(1 0 0);
+  --kb-dashboard-popover-foreground: oklch(0.18 0.02 260);
+  --kb-dashboard-primary: oklch(0.58 0.22 280);
+  --kb-dashboard-primary-foreground: oklch(0.99 0 0);
+  --kb-dashboard-secondary: oklch(0.96 0.005 260);
+  --kb-dashboard-secondary-foreground: oklch(0.22 0.02 260);
+  --kb-dashboard-muted: oklch(0.96 0.005 260);
+  --kb-dashboard-muted-foreground: oklch(0.5 0.02 260);
+  --kb-dashboard-accent: oklch(0.94 0.02 280);
+  --kb-dashboard-accent-foreground: oklch(0.25 0.05 280);
+  --kb-dashboard-destructive: oklch(0.62 0.22 25);
+  --kb-dashboard-destructive-foreground: oklch(0.99 0 0);
+  --kb-dashboard-success: oklch(0.7 0.16 155);
+  --kb-dashboard-success-foreground: oklch(0.15 0.04 155);
+  --kb-dashboard-warning: oklch(0.8 0.16 75);
+  --kb-dashboard-warning-foreground: oklch(0.25 0.06 75);
+  --kb-dashboard-info: oklch(0.7 0.13 230);
+  --kb-dashboard-info-foreground: oklch(0.18 0.05 230);
+  --kb-dashboard-border: oklch(0.92 0.005 260);
+  --kb-dashboard-input: oklch(0.92 0.005 260);
+  --kb-dashboard-ring: oklch(0.58 0.22 280);
+  --kb-dashboard-sidebar: oklch(0.21 0.02 265);
+  --kb-dashboard-sidebar-foreground: oklch(0.85 0.01 260);
+  --kb-dashboard-sidebar-muted: oklch(0.6 0.02 260);
+  --kb-dashboard-sidebar-active: oklch(0.58 0.22 280);
+  --kb-dashboard-font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.kb-dashboard-theme {
+  background-color: var(--kb-dashboard-background);
+  color: var(--kb-dashboard-foreground);
+  font-family: var(--kb-dashboard-font-sans);
+  border-color: var(--kb-dashboard-border);
+  -webkit-font-smoothing: antialiased;
+}
+
+.kb-dashboard-theme.dark {
+  --kb-dashboard-background: oklch(0.16 0.02 260);
+  --kb-dashboard-foreground: oklch(0.96 0.005 260);
+  --kb-dashboard-card: oklch(0.21 0.02 265);
+  --kb-dashboard-card-foreground: oklch(0.96 0.005 260);
+  --kb-dashboard-popover: oklch(0.21 0.02 265);
+  --kb-dashboard-popover-foreground: oklch(0.96 0.005 260);
+  --kb-dashboard-primary: oklch(0.7 0.2 280);
+  --kb-dashboard-primary-foreground: oklch(0.15 0.02 260);
+  --kb-dashboard-secondary: oklch(0.27 0.02 260);
+  --kb-dashboard-secondary-foreground: oklch(0.96 0.005 260);
+  --kb-dashboard-muted: oklch(0.27 0.02 260);
+  --kb-dashboard-muted-foreground: oklch(0.7 0.02 260);
+  --kb-dashboard-accent: oklch(0.3 0.05 280);
+  --kb-dashboard-accent-foreground: oklch(0.96 0.005 260);
+  --kb-dashboard-border: oklch(1 0 0 / 10%);
+  --kb-dashboard-input: oklch(1 0 0 / 12%);
+  --kb-dashboard-ring: oklch(0.7 0.2 280);
+  --kb-dashboard-sidebar: oklch(0.16 0.02 260);
+  --kb-dashboard-sidebar-foreground: oklch(0.85 0.01 260);
+  --kb-dashboard-sidebar-muted: oklch(0.55 0.02 260);
+  --kb-dashboard-sidebar-active: oklch(0.7 0.2 280);
+}
+
+/* Dashboard Sidebar */
+.kb-dashboard-sidebar {
+  background: var(--kb-dashboard-sidebar);
+  border-right: 1px solid var(--kb-dashboard-border);
+  color: var(--kb-dashboard-sidebar-foreground);
+  width: 280px;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.kb-dashboard-sidebar-header {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--kb-dashboard-sidebar-foreground);
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--kb-dashboard-border);
+}
+
+.kb-dashboard-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kb-dashboard-nav-item {
+  margin-bottom: 8px;
+}
+
+.kb-dashboard-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: var(--kb-dashboard-sidebar-foreground);
+  text-decoration: none;
+  border-radius: var(--kb-dashboard-radius);
+  transition: all 0.2s ease;
+}
+
+.kb-dashboard-nav-link:hover {
+  background: var(--kb-dashboard-sidebar-muted);
+  color: var(--kb-dashboard-sidebar-foreground);
+}
+
+.kb-dashboard-nav-link.active {
+  background: var(--kb-dashboard-sidebar-active);
+  color: white;
+}
+
+/* Dashboard Cards */
+.kb-dashboard-card {
+  background: var(--kb-dashboard-card);
+  border: 1px solid var(--kb-dashboard-border);
+  border-radius: var(--kb-dashboard-radius);
+  color: var(--kb-dashboard-card-foreground);
+  padding: 24px;
+  transition: all 0.2s ease;
+}
+
+.kb-dashboard-card:hover {
+  border-color: var(--kb-dashboard-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats Cards */
+.kb-dashboard-stat-card {
+  background: var(--kb-dashboard-card);
+  border: 1px solid var(--kb-dashboard-border);
+  border-radius: var(--kb-dashboard-radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kb-dashboard-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--kb-dashboard-primary);
+}
+
+.kb-dashboard-stat-label {
+  font-size: 14px;
+  color: var(--kb-dashboard-muted-foreground);
+  font-weight: 500;
+}
+
+.kb-dashboard-stat-change {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.kb-dashboard-stat-change.positive {
+  color: var(--kb-dashboard-success);
+}
+
+.kb-dashboard-stat-change.negative {
+  color: var(--kb-dashboard-destructive);
+}
+
+/* Dashboard Buttons */
+.kb-dashboard-btn-primary {
+  background: var(--kb-dashboard-primary);
+  color: var(--kb-dashboard-primary-foreground);
+  border: none;
+  border-radius: var(--kb-dashboard-radius);
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.kb-dashboard-btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.kb-dashboard-btn-secondary {
+  background: var(--kb-dashboard-secondary);
+  color: var(--kb-dashboard-secondary-foreground);
+  border: 1px solid var(--kb-dashboard-border);
+  border-radius: var(--kb-dashboard-radius);
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.kb-dashboard-btn-secondary:hover {
+  background: var(--kb-dashboard-muted);
+}
+
+/* Sales Table */
+.kb-dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.kb-dashboard-table th {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--kb-dashboard-border);
+  color: var(--kb-dashboard-muted-foreground);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kb-dashboard-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--kb-dashboard-border);
+  color: var(--kb-dashboard-foreground);
+}
+
+.kb-dashboard-table tr:hover {
+  background: var(--kb-dashboard-muted);
+}
+
+/* Status Badges */
+.kb-dashboard-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.kb-dashboard-badge-success {
+  background: var(--kb-dashboard-success);
+  color: var(--kb-dashboard-success-foreground);
+}
+
+.kb-dashboard-badge-warning {
+  background: var(--kb-dashboard-warning);
+  color: var(--kb-dashboard-warning-foreground);
+}
+
+.kb-dashboard-badge-info {
+  background: var(--kb-dashboard-info);
+  color: var(--kb-dashboard-info-foreground);
+}

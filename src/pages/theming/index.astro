@@ -1,0 +1,207 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro'
+import DocsArticle from '../../components/DocsArticle.astro'
+import CodeBlock from '../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Theming — Karibase">
+<DocsArticle
+    title="Theming"
+    lead="Customize Karibase to match your brand"
+    prev={{ name: 'Utilities', path: '/utilities' }}
+    next={{ name: 'Introduction', path: '/introduction' }}
+  >
+
+    <h2 class="docs-heading docs-heading-2" id="css-variables">CSS Variables</h2>
+    <p class="docs-text">Karibase uses CSS variables for easy customization. Override these variables to create your custom theme:</p>
+
+    <CodeBlock code={`:root {
+  /* Primary Colors */
+  --kb-primary-color: #ea2845;
+  --kb-primary-light: #ff4d6a;
+  --kb-primary-dark: #c91f3a;
+
+  /* Secondary Colors */
+  --kb-secondary-color: #6366f1;
+  --kb-secondary-light: #818cf8;
+  --kb-secondary-dark: #4f46e5;
+
+  /* Neutral Colors */
+  --kb-text-primary: #1a1a1a;
+  --kb-text-secondary: #666666;
+  --kb-text-muted: #999999;
+
+  --kb-bg-primary: #ffffff;
+  --kb-bg-secondary: #f8f9fa;
+  --kb-bg-tertiary: #e9ecef;
+
+  /* Borders */
+  --kb-border-color: #dee2e6;
+  --kb-border-radius: 8px;
+
+  /* Spacing */
+  --kb-spacing-xs: 4px;
+  --kb-spacing-sm: 8px;
+  --kb-spacing-md: 16px;
+  --kb-spacing-lg: 24px;
+  --kb-spacing-xl: 32px;
+
+  /* Typography */
+  --kb-font-family: 'Source Sans Pro', sans-serif;
+  --kb-font-size-base: 16px;
+  --kb-font-size-lg: 18px;
+  --kb-font-size-xl: 20px;
+
+  /* Shadows */
+  --kb-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --kb-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --kb-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+}`} />
+
+    <h2 class="docs-heading docs-heading-2" id="custom-theme">Custom Theme Example</h2>
+    <p class="docs-text">Create a custom theme by overriding variables:</p>
+
+    <CodeBlock code={`:root {
+  /* Custom Blue Theme */
+  --kb-primary-color: #3b82f6;
+  --kb-primary-light: #60a5fa;
+  --kb-primary-dark: #2563eb;
+
+  --kb-secondary-color: #10b981;
+  --kb-secondary-light: #34d399;
+  --kb-secondary-dark: #059669;
+}`} />
+
+    <h2 class="docs-heading docs-heading-2" id="dark-mode">Dark Mode</h2>
+    <p class="docs-text">Karibase includes built-in dark mode support. Override variables for dark theme:</p>
+
+    <CodeBlock code={`[data-theme="dark"] {
+  --kb-text-primary: #ffffff;
+  --kb-text-secondary: #b0b0b0;
+  --kb-text-muted: #808080;
+
+  --kb-bg-primary: #1a1a1a;
+  --kb-bg-secondary: #242424;
+  --kb-bg-tertiary: #2d2d2d;
+
+  --kb-border-color: #404040;
+}`} />
+
+    <h2 class="docs-heading docs-heading-2" id="component-theming">Component Theming</h2>
+    <p class="docs-text">Customize specific components:</p>
+
+    <CodeBlock code={`/* Custom Button Styles */
+.kb-btn-primary {
+  background: linear-gradient(135deg, var(--kb-primary-color), var(--kb-primary-dark));
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--kb-border-radius);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.kb-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--kb-shadow-md);
+}`} />
+
+    <div class="docs-callout docs-callout-info">
+      <div class="docs-callout-icon">
+        <i class="fas fa-info-circle"></i>
+      </div>
+      <div class="docs-callout-content">
+        <h4 class="docs-callout-title">Best Practices</h4>
+        <p class="docs-callout-text">Always define your custom variables after importing Karibase CSS to ensure your overrides take effect.</p>
+      </div>
+    </div>
+
+    <h2 class="docs-heading docs-heading-2" id="preset-themes">Preset Themes</h2>
+    <p class="docs-text">Karibase includes several preset themes:</p>
+
+    <div class="docs-themes-grid">
+      <div class="docs-theme-card">
+        <div class="docs-theme-preview docs-theme-default"></div>
+        <h4 class="docs-theme-name">Default</h4>
+        <p class="docs-theme-desc">Red primary color</p>
+      </div>
+      <div class="docs-theme-card">
+        <div class="docs-theme-preview docs-theme-blue"></div>
+        <h4 class="docs-theme-name">Ocean</h4>
+        <p class="docs-theme-desc">Blue primary color</p>
+      </div>
+      <div class="docs-theme-card">
+        <div class="docs-theme-preview docs-theme-green"></div>
+        <h4 class="docs-theme-name">Forest</h4>
+        <p class="docs-theme-desc">Green primary color</p>
+      </div>
+      <div class="docs-theme-card">
+        <div class="docs-theme-preview docs-theme-purple"></div>
+        <h4 class="docs-theme-name">Royal</h4>
+        <p class="docs-theme-desc">Purple primary color</p>
+      </div>
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+<style>
+
+.docs-themes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.docs-theme-card {
+  background-color: var(--docs-bg-secondary);
+  border: 1px solid var(--docs-border-color);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: var(--docs-transition);
+}
+
+.docs-theme-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--docs-shadow-md);
+}
+
+.docs-theme-preview {
+  width: 100%;
+  height: 80px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.docs-theme-default {
+  background: linear-gradient(135deg, #ea2845, #ea2868);
+}
+
+.docs-theme-blue {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+}
+
+.docs-theme-green {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.docs-theme-purple {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.docs-theme-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--docs-text-primary);
+  margin: 0 0 8px;
+}
+
+.docs-theme-desc {
+  font-size: 14px;
+  color: var(--docs-text-secondary);
+  margin: 0;
+}
+</style>

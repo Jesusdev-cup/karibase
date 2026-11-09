@@ -1,0 +1,73 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Tables — Karibase">
+<DocsArticle
+    title="Tables"
+    lead="Table styles in Karibase"
+    breadcrumb={[{ name: 'Content', path: '/content' }, { name: 'Tables' }]}
+    prev={{ name: 'Images', path: '/content/images' }}
+    next={{ name: 'Figures', path: '/content/figures' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="basic-table">Basic Table</h2>
+      <p class="docs-text">Use the basic table class:</p>
+      <CodeBlock code={`<table class="kb-table">
+  <thead>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cell 1</td>
+      <td>Cell 2</td>
+    </tr>
+  </tbody>
+</table>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="striped-table">Striped Table</h2>
+      <p class="docs-text">Add striped rows:</p>
+      <CodeBlock code={`<table class="kb-table kb-table-striped">
+  <!-- Table content -->
+</table>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="bordered-table">Bordered Table</h2>
+      <p class="docs-text">Add borders to the table:</p>
+      <CodeBlock code={`<table class="kb-table kb-table-bordered">
+  <!-- Table content -->
+</table>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="hover-table">Hover Table</h2>
+      <p class="docs-text">Add hover effect to rows:</p>
+      <CodeBlock code={`<table class="kb-table kb-table-hover">
+  <!-- Table content -->
+</table>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="responsive-table">Responsive Table</h2>
+      <p class="docs-text">Make tables responsive:</p>
+      <CodeBlock code={`<div class="kb-table-responsive">
+  <table class="kb-table">
+    <!-- Table content -->
+  </table>
+</div>`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

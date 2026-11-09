@@ -1,0 +1,26 @@
+---
+import Base from './Base.astro'
+import DocsHeader from '../components/DocsHeader.astro'
+import DocsSidebar from '../components/DocsSidebar.astro'
+import DocsToc from '../components/DocsToc.astro'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const { title, description } = Astro.props
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<Base title={title} description={description}>
+  <DocsHeader />
+  <div class="docs-shell">
+    <DocsSidebar />
+    <main class="docs-main">
+      <slot />
+    </main>
+    <DocsToc />
+  </div>
+  <script slot="scripts" is:inline src={`${base}/js/karibase.min.js`}></script>
+</Base>

@@ -1,0 +1,572 @@
+/*!
+ * Karibase CSS Framework - Reset CSS
+ * Modern CSS Reset inspired by Karibase Preflight and Bootstrap Reboot
+ * Normalized styles for consistent cross-browser rendering
+ */
+
+/* ============================================
+   CSS RESET - Modern & Normalized
+   ============================================ */
+
+/* --- Document & Box Sizing --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    scroll-behavior: smooth;
+}
+
+/* --- Root Variables --- */
+:root {
+    font-family: var(--kb-font-family-base, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
+    font-size: var(--kb-font-size-base, 16px);
+    line-height: var(--kb-line-height-normal, 1.5);
+    color: var(--kb-text-primary, #1a1a1a);
+    background-color: var(--kb-bg-primary, #ffffff);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Body Reset --- */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+}
+
+/* --- Typography Reset --- */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+figure, hr,
+fieldset, legend {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+/* --- Lists --- */
+ol, ul {
+    list-style: none;
+}
+
+/* --- Links --- */
+a {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Images & Media --- */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+img, svg {
+    border-style: none;
+}
+
+/* --- Tables --- */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-indent: 0;
+}
+
+caption {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    color: var(--kb-text-secondary, #6b7280);
+    text-align: left;
+    caption-side: bottom;
+}
+
+th {
+    font-weight: var(--kb-font-weight-semibold, 600);
+    text-align: inherit;
+}
+
+/* --- Forms --- */
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--kb-primary-color, #ea2845);
+    outline-offset: 2px;
+}
+
+input,
+textarea,
+select {
+    background-color: var(--kb-bg-primary, #ffffff);
+    border: 1px solid var(--kb-border-color, #dee2e6);
+    color: var(--kb-text-primary, #1a1a1a);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--kb-text-muted, #9ca3af);
+    opacity: 1;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 0;
+    border-color: var(--kb-primary-color, #ea2845);
+    box-shadow: 0 0 0 3px rgba(234, 40, 69, 0.1);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+    background-color: var(--kb-bg-secondary, #f9fafb);
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+/* --- Form Elements --- */
+fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+legend {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-size: calc(1.275rem + 0.3vw);
+    line-height: inherit;
+}
+
+@media (min-width: 1200px) {
+    legend {
+        font-size: 1.5rem;
+    }
+}
+
+[type="checkbox"],
+[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--kb-bg-primary, #ffffff);
+    margin: 0;
+    font: inherit;
+    color: var(--kb-text-primary, #1a1a1a);
+    width: 1.15em;
+    height: 1.15em;
+    border: 1px solid var(--kb-border-color, #dee2e6);
+    display: grid;
+    place-content: center;
+}
+
+[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--kb-primary-color, #ea2845);
+    transform-origin: center;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+[type="radio"] {
+    border-radius: 50%;
+}
+
+[type="radio"]::before {
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--kb-primary-color, #ea2845);
+}
+
+[type="checkbox"]:checked::before,
+[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+[type="checkbox"]:checked,
+[type="radio"]:checked {
+    border-color: var(--kb-primary-color, #ea2845);
+}
+
+[type="checkbox"]:disabled,
+[type="radio"]:disabled {
+    border-color: var(--kb-border-color, #dee2e6);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* --- Code & Pre --- */
+code,
+kbd,
+samp {
+    font-family: var(--kb-font-family-mono, 'Inconsolata', monospace);
+    font-size: 1em;
+}
+
+pre {
+    font-family: var(--kb-font-family-mono, 'Inconsolata', monospace);
+    font-size: 1em;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    overflow: auto;
+}
+
+code {
+    font-size: 87.5%;
+    color: var(--kb-primary-color, #ea2845);
+    word-wrap: break-word;
+}
+
+a > code {
+    color: inherit;
+}
+
+kbd {
+    padding: 0.2rem 0.4rem;
+    font-size: 87.5%;
+    color: var(--kb-text-primary, #1a1a1a);
+    background-color: var(--kb-bg-tertiary, #e9ecef);
+    border-radius: 0.25rem;
+}
+
+kbd kbd {
+    padding: 0;
+    font-size: 100%;
+    font-weight: 700;
+}
+
+/* --- Blockquote --- */
+blockquote {
+    margin: 0 0 1rem;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid var(--kb-primary-color, #ea2845);
+    background-color: var(--kb-bg-secondary, #f9fafb);
+    color: var(--kb-text-secondary, #6b7280);
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- HR --- */
+hr {
+    border: 0;
+    border-top: 1px solid var(--kb-border-color, #dee2e6);
+    margin: 1rem 0;
+    opacity: 1;
+}
+
+/* --- Address --- */
+address {
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;
+}
+
+/* --- Details & Summary --- */
+details,
+summary {
+    display: block;
+}
+
+summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* --- Dialog --- */
+dialog {
+    border: none;
+    border-radius: var(--kb-radius-lg, 0.75rem);
+    box-shadow: var(--kb-shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+    padding: 1rem;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* --- Progress --- */
+progress {
+    vertical-align: baseline;
+}
+
+/* --- Meter --- */
+meter {
+    vertical-align: baseline;
+}
+
+/* --- Abbr --- */
+abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+/* --- Mark --- */
+mark {
+    background-color: var(--kb-warning-100, #fef3c7);
+    color: var(--kb-text-primary, #1a1a1a);
+    padding: 0.2em 0.4em;
+}
+
+/* --- Small --- */
+small {
+    font-size: 87.5%;
+}
+
+/* --- Sub & Sup --- */
+sub,
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/* --- Figure --- */
+figure {
+    margin: 0 0 1rem;
+}
+
+/* --- BDI --- */
+bdi {
+    unicode-bidi: isolate;
+}
+
+/* --- BDO --- */
+bdo {
+    unicode-bidi: bidi-override;
+}
+
+/* --- Template --- */
+template {
+    display: none;
+}
+
+/* --- Hidden --- */
+[hidden] {
+    display: none !important;
+}
+
+/* --- Focus Styles --- */
+:focus-visible {
+    outline: 2px solid var(--kb-primary-color, #ea2845);
+    outline-offset: 2px;
+}
+
+/* --- Selection --- */
+::selection {
+    background-color: var(--kb-primary-color, #ea2845);
+    color: var(--kb-color-white, #ffffff);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--kb-bg-secondary, #f9fafb);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--kb-border-color, #dee2e6);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--kb-text-muted, #9ca3af);
+}
+
+/* --- Print Styles --- */
+@media print {
+    *,
+    *::before,
+    *::after {
+        background-color: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]::after {
+        content: " (" attr(title) ")";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #000;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    body {
+        min-width: 992px !important;
+    }
+}
+
+/* --- Accessibility --- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* --- High Contrast Mode --- */
+@media (prefers-contrast: high) {
+    *,
+    *::before,
+    *::after {
+        border-color: currentColor !important;
+    }
+}
+
+/* --- Dark Mode Print --- */
+@media print {
+    .dark,
+    [data-theme="dark"],
+    [mode="dark"] {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+}

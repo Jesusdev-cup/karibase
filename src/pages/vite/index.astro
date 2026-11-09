@@ -1,0 +1,70 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro'
+import DocsArticle from '../../components/DocsArticle.astro'
+import CodeBlock from '../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Vite — Karibase">
+<DocsArticle
+    title="Vite"
+    lead="Using Karibase with Vite"
+    prev={{ name: 'Parcel', path: '/parcel' }}
+    next={{ name: 'Accessibility', path: '/accessibility' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="installation">Installation</h2>
+      <p class="docs-text">Install Karibase in your Vite project:</p>
+      <CodeBlock code={`npm install karibase`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="importing">Importing</h2>
+      <p class="docs-text">Import Karibase in your main entry file:</p>
+      <CodeBlock code={`// main.js
+import 'karibase/css/karibase.css'`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="vue-setup">Vue Setup</h2>
+      <p class="docs-text">For Vue projects with Vite:</p>
+      <CodeBlock code={`// main.js
+import { createApp } from 'vue'
+import App from './App.vue'
+import 'karibase/css/karibase.css'
+
+const app = createApp(App)
+app.mount('#app')`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="react-setup">React Setup</h2>
+      <p class="docs-text">For React projects with Vite:</p>
+      <CodeBlock code={`// main.jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import 'karibase/css/karibase.css'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="customization">Customization</h2>
+      <p class="docs-text">Customize Karibase with CSS variables:</p>
+      <CodeBlock code={`:root {
+  --kb-primary: #ea2845;
+  --kb-secondary: #6366f1;
+  --kb-radius: 12px;
+}`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

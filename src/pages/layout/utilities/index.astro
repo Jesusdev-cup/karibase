@@ -1,0 +1,70 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Utilities — Karibase">
+<DocsArticle
+    title="Utilities"
+    lead="Layout utilities in Karibase"
+    breadcrumb={[{ name: 'Layout', path: '/layout' }, { name: 'Utilities' }]}
+    prev={{ name: 'Gutters', path: '/layout/gutters' }}
+    next={{ name: 'Z-index', path: '/layout/z-index' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
+      <p class="docs-text">
+        Layout utilities provide quick and flexible ways to control the layout of your elements without 
+        writing custom CSS.
+      </p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="display">Display</h2>
+      <p class="docs-text">Control display properties:</p>
+      <CodeBlock code={`<div class="kb-d-none">Hidden</div>
+<div class="kb-d-inline">Inline</div>
+<div class="kb-d-inline-block">Inline block</div>
+<div class="kb-d-block">Block</div>
+<div class="kb-d-flex">Flex</div>
+<div class="kb-d-grid">Grid</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="flexbox">Flexbox</h2>
+      <p class="docs-text">Flexbox utilities:</p>
+      <CodeBlock code={`<div class="kb-d-flex kb-flex-row">
+  <div class="kb-flex-grow-1">Grow</div>
+  <div class="kb-flex-shrink-0">Shrink</div>
+</div>
+
+<div class="kb-d-flex kb-justify-center kb-align-center">
+  Centered content
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="position">Position</h2>
+      <p class="docs-text">Position utilities:</p>
+      <CodeBlock code={`<div class="kb-position-relative">Relative</div>
+<div class="kb-position-absolute">Absolute</div>
+<div class="kb-position-fixed">Fixed</div>
+<div class="kb-position-sticky">Sticky</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="spacing">Spacing</h2>
+      <p class="docs-text">Spacing utilities:</p>
+      <CodeBlock code={`<div class="kb-m-0">No margin</div>
+<div class="kb-m-4">Margin 1rem</div>
+<div class="kb-p-4">Padding 1rem</div>
+<div class="kb-mx-auto">Horizontal auto margin</div>`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

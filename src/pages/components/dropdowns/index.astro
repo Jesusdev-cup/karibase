@@ -1,0 +1,247 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Dropdowns — Karibase">
+<DocsArticle
+    title="Dropdowns"
+    lead="Toggleable content overlays"
+    breadcrumb={[{ name: 'Components', path: '/components' }, { name: 'Dropdowns' }]}
+    prev={{ name: 'Avatars', path: '/components/avatars' }}
+    next={{ name: 'Tooltips', path: '/components/tooltips' }}
+  >
+
+    <h2 class="docs-heading docs-heading-2" id="basic-dropdown">Basic Dropdown</h2>
+    <p class="docs-text">A simple dropdown menu:</p>
+
+    <div class="docs-preview">
+      <div class="kb-dropdown" data-kb-class="dropdownOpen:kb-dropdown-open">
+        <button class="kb-btn kb-btn-primary" data-kb-toggle="dropdownOpen">
+          Dropdown
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="kb-dropdown-menu" data-kb-target="dropdownOpen" hidden>
+          <a href="#" class="kb-dropdown-item">Action</a>
+          <a href="#" class="kb-dropdown-item">Another action</a>
+          <a href="#" class="kb-dropdown-item">Something else</a>
+          <div class="kb-dropdown-divider"></div>
+          <a href="#" class="kb-dropdown-item">Separated link</a>
+        </div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-dropdown">
+  <button class="kb-btn kb-btn-primary">
+    Dropdown
+    <i class="fas fa-chevron-down"></i>
+  </button>
+  <div class="kb-dropdown-menu">
+    <a href="#" class="kb-dropdown-item">Action</a>
+    <a href="#" class="kb-dropdown-item">Another action</a>
+    <div class="kb-dropdown-divider"></div>
+    <a href="#" class="kb-dropdown-item">Separated link</a>
+  </div>
+</div>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="dropdown-variants">Dropdown Variants</h2>
+    <p class="docs-text">Dropdowns with different button styles:</p>
+
+    <div class="docs-preview">
+      <div class="kb-dropdown" data-kb-class="dropdownOpen2:kb-dropdown-open">
+        <button class="kb-btn kb-btn-secondary" data-kb-toggle="dropdownOpen2">
+          Secondary
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="kb-dropdown-menu" data-kb-target="dropdownOpen2" hidden>
+          <a href="#" class="kb-dropdown-item">Action</a>
+          <a href="#" class="kb-dropdown-item">Another action</a>
+        </div>
+      </div>
+
+      <div class="kb-dropdown" data-kb-class="dropdownOpen3:kb-dropdown-open">
+        <button class="kb-btn kb-btn-success" data-kb-toggle="dropdownOpen3">
+          Success
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="kb-dropdown-menu" data-kb-target="dropdownOpen3" hidden>
+          <a href="#" class="kb-dropdown-item">Action</a>
+          <a href="#" class="kb-dropdown-item">Another action</a>
+        </div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<button class="kb-btn kb-btn-secondary">...</button>
+<button class="kb-btn kb-btn-success">...</button>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="dropdown-directions">Dropdown Directions</h2>
+    <p class="docs-text">Dropdowns that open in different directions:</p>
+
+    <div class="docs-preview">
+      <div class="kb-dropdown" data-kb-class="dropdownUp:kb-dropdown-open">
+        <button class="kb-btn kb-btn-primary" data-kb-toggle="dropdownUp">
+          Drop Up
+          <i class="fas fa-chevron-up"></i>
+        </button>
+        <div class="kb-dropdown-menu kb-dropdown-menu-up" data-kb-target="dropdownUp" hidden>
+          <a href="#" class="kb-dropdown-item">Action</a>
+          <a href="#" class="kb-dropdown-item">Another action</a>
+        </div>
+      </div>
+
+      <div class="kb-dropdown" data-kb-class="dropdownRight:kb-dropdown-open">
+        <button class="kb-btn kb-btn-primary" data-kb-toggle="dropdownRight">
+          Drop Right
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="kb-dropdown-menu kb-dropdown-menu-right" data-kb-target="dropdownRight" hidden>
+          <a href="#" class="kb-dropdown-item">Action</a>
+          <a href="#" class="kb-dropdown-item">Another action</a>
+        </div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-dropdown-menu kb-dropdown-menu-up">...</div>
+<div class="kb-dropdown-menu kb-dropdown-menu-right">...</div>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="dropdown-with-icons">Dropdown with Icons</h2>
+    <p class="docs-text">Dropdown items with icons:</p>
+
+    <div class="docs-preview">
+      <div class="kb-dropdown" data-kb-class="dropdownIcons:kb-dropdown-open">
+        <button class="kb-btn kb-btn-primary" data-kb-toggle="dropdownIcons">
+          Menu
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="kb-dropdown-menu" data-kb-target="dropdownIcons" hidden>
+          <a href="#" class="kb-dropdown-item">
+            <i class="fas fa-user"></i>
+            Profile
+          </a>
+          <a href="#" class="kb-dropdown-item">
+            <i class="fas fa-cog"></i>
+            Settings
+          </a>
+          <a href="#" class="kb-dropdown-item">
+            <i class="fas fa-bell"></i>
+            Notifications
+          </a>
+          <div class="kb-dropdown-divider"></div>
+          <a href="#" class="kb-dropdown-item">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<a href="#" class="kb-dropdown-item">
+  <i class="fas fa-user"></i>
+  Profile
+</a>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="split-dropdown">Split Button Dropdown</h2>
+    <p class="docs-text">Dropdown with split button:</p>
+
+    <div class="docs-preview">
+      <div class="kb-dropdown kb-dropdown-split" data-kb-class="splitDropdown:kb-dropdown-open">
+        <button class="kb-btn kb-btn-primary">Action</button>
+        <button class="kb-btn kb-btn-primary kb-dropdown-toggle" data-kb-toggle="splitDropdown">
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="kb-dropdown-menu" data-kb-target="splitDropdown" hidden>
+          <a href="#" class="kb-dropdown-item">Action</a>
+          <a href="#" class="kb-dropdown-item">Another action</a>
+        </div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-dropdown kb-dropdown-split">
+  <button class="kb-btn kb-btn-primary">Action</button>
+  <button class="kb-btn kb-btn-primary kb-dropdown-toggle">
+    <i class="fas fa-chevron-down"></i>
+  </button>
+  <div class="kb-dropdown-menu">...</div>
+</div>`} />
+
+  </DocsArticle>
+</DocsLayout>
+<style>
+
+.kb-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.kb-dropdown-split {
+  display: inline-flex;
+}
+
+.kb-dropdown-split .kb-btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.kb-dropdown-split .kb-btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.kb-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: var(--docs-bg-primary);
+  border: 1px solid var(--docs-border-color);
+  border-radius: 8px;
+  box-shadow: var(--docs-shadow-lg);
+  padding: 8px 0;
+  margin-top: 8px;
+  z-index: 100;
+}
+
+.kb-dropdown-menu-up {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.kb-dropdown-menu-right {
+  left: auto;
+  right: 0;
+}
+
+.kb-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  color: var(--docs-text-primary);
+  text-decoration: none;
+  font-size: 14px;
+  transition: var(--docs-transition);
+}
+
+.kb-dropdown-item:hover {
+  background-color: var(--docs-bg-tertiary);
+  color: var(--docs-primary-color);
+}
+
+.kb-dropdown-item i {
+  width: 16px;
+  text-align: center;
+}
+
+.kb-dropdown-divider {
+  height: 1px;
+  background-color: var(--docs-border-color);
+  margin: 8px 0;
+}
+</style>

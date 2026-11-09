@@ -1,0 +1,21 @@
+---
+import { Code } from 'astro:components'
+
+interface Props {
+  code: string
+  lang?: string
+  title?: string
+}
+
+const { code, lang = 'html', title = '' } = Astro.props
+---
+
+<div class="code-block">
+  <div class="code-block-header">
+    <span class="code-block-title">{title || lang}</span>
+    <button class="code-block-copy" data-copy title="Copy code" type="button">
+      <i class="fas fa-copy"></i> Copy
+    </button>
+  </div>
+  <Code code={code} lang={lang as any} theme="github-dark" />
+</div>

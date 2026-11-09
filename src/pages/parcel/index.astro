@@ -1,0 +1,45 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro'
+import DocsArticle from '../../components/DocsArticle.astro'
+import CodeBlock from '../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Parcel — Karibase">
+<DocsArticle
+    title="Parcel"
+    lead="Using Karibase with Parcel bundler"
+    prev={{ name: 'Webpack', path: '/webpack' }}
+    next={{ name: 'Vite', path: '/vite' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="installation">Installation</h2>
+      <p class="docs-text">Install Karibase and Parcel:</p>
+      <CodeBlock code={`npm install karibase
+npm install --save-dev parcel`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="usage">Usage</h2>
+      <p class="docs-text">Import Karibase in your entry file:</p>
+      <CodeBlock code={`// index.js
+import 'karibase/css/karibase.css'`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="running">Running</h2>
+      <p class="docs-text">Start the development server:</p>
+      <CodeBlock code={`npx parcel src/index.html`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="building">Building</h2>
+      <p class="docs-text">Build for production:</p>
+      <CodeBlock code={`npx parcel build src/index.html`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

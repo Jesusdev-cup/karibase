@@ -1,0 +1,105 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro'
+import DocsArticle from '../../components/DocsArticle.astro'
+import CodeBlock from '../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Quick Start — Karibase">
+<DocsArticle
+    title="Quick Start"
+    lead="Get up and running with Karibase in minutes"
+    breadcrumb={[{ name: 'Getting Started', path: '/introduction' }, { name: 'Quick Start' }]}
+    prev={{ name: 'Installation', path: '/installation' }}
+    next={{ name: 'Components', path: '/components' }}
+  >
+
+    <h2 class="docs-heading docs-heading-2" id="basic-setup">Basic Setup</h2>
+    <p class="docs-text">Create a new HTML file and add the Karibase CSS:</p>
+
+    <CodeBlock code={`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Karibase App</title>
+  <link rel="stylesheet" href="css/karibase.css">
+</head>
+<body>
+  <div class="kb-container">
+    <h1>Hello, Karibase!</h1>
+    <button class="kb-btn kb-btn-primary">Click me</button>
+  </div>
+</body>
+</html>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="vue-setup">Vue.js Setup</h2>
+    <p class="docs-text">Using Karibase with Vue.js:</p>
+
+    <CodeBlock code={`// main.js
+import { createApp } from 'vue'
+import App from './App.vue'
+import 'karibase/css/karibase.css'
+
+createApp(App).mount('#app')`} />
+
+    <h2 class="docs-heading docs-heading-2" id="react-setup">React Setup</h2>
+    <p class="docs-text">Using Karibase with React:</p>
+
+    <CodeBlock code={`// index.js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import 'karibase/css/karibase.css'
+
+ReactDOM.render(<App />, document.getElementById('root'))`} />
+
+    <h2 class="docs-heading docs-heading-2" id="first-component">First Component</h2>
+    <p class="docs-text">Create your first component using Karibase classes:</p>
+
+    <CodeBlock code={`<div class="kb-card">
+  <div class="kb-card-header">
+    <h3 class="kb-card-title">My Card</h3>
+  </div>
+  <div class="kb-card-body">
+    <p class="kb-text">This is a card component.</p>
+    <button class="kb-btn kb-btn-primary">Action</button>
+  </div>
+</div>`} />
+
+    <div class="docs-preview">
+      <div class="kb-card">
+        <div class="kb-card-header">
+          <h3 class="kb-card-title">My Card</h3>
+        </div>
+        <div class="kb-card-body">
+          <p class="kb-text">This is a card component.</p>
+          <button class="kb-btn kb-btn-primary">Action</button>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="docs-heading docs-heading-2" id="customization">Customization</h2>
+    <p class="docs-text">Customize Karibase using CSS variables:</p>
+
+    <CodeBlock code={`:root {
+  --kb-primary-color: #ea2845;
+  --kb-secondary-color: #6366f1;
+  --kb-border-radius: 8px;
+  --kb-font-family: 'Your Font', sans-serif;
+}`} />
+
+    <div class="docs-callout docs-callout-success">
+      <div class="docs-callout-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <div class="docs-callout-content">
+        <h4 class="docs-callout-title">You're ready!</h4>
+        <p class="docs-callout-text">You now have Karibase set up and ready to use. Check out the Components section to learn more about available components.</p>
+      </div>
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

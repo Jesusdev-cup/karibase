@@ -1,0 +1,194 @@
+/*!
+ * Karibase Theme - Clinic Companion
+ * Medical/Healthcare theme inspired by clinic-companion-main
+ * 
+ * Features:
+ * - OKLCH color system
+ * - Medical-focused color palette
+ * - Chart colors for data visualization
+ * - Sidebar navigation styles
+ * - Dark mode support
+ */
+
+:root {
+  --kb-clinic-radius: 0.75rem;
+  --kb-clinic-background: oklch(0.985 0.005 220);
+  --kb-clinic-foreground: oklch(0.22 0.04 230);
+  --kb-clinic-card: oklch(1 0 0);
+  --kb-clinic-card-foreground: oklch(0.22 0.04 230);
+  --kb-clinic-popover: oklch(1 0 0);
+  --kb-clinic-popover-foreground: oklch(0.22 0.04 230);
+  --kb-clinic-primary: oklch(0.55 0.11 200);
+  --kb-clinic-primary-foreground: oklch(0.99 0.005 200);
+  --kb-clinic-primary-glow: oklch(0.72 0.13 195);
+  --kb-clinic-secondary: oklch(0.95 0.02 220);
+  --kb-clinic-secondary-foreground: oklch(0.3 0.06 230);
+  --kb-clinic-muted: oklch(0.96 0.01 220);
+  --kb-clinic-muted-foreground: oklch(0.5 0.03 230);
+  --kb-clinic-accent: oklch(0.93 0.05 195);
+  --kb-clinic-accent-foreground: oklch(0.3 0.08 210);
+  --kb-clinic-success: oklch(0.65 0.15 160);
+  --kb-clinic-success-foreground: oklch(0.99 0.005 160);
+  --kb-clinic-warning: oklch(0.78 0.15 75);
+  --kb-clinic-warning-foreground: oklch(0.25 0.05 75);
+  --kb-clinic-destructive: oklch(0.6 0.22 25);
+  --kb-clinic-destructive-foreground: oklch(0.99 0.005 25);
+  --kb-clinic-info: oklch(0.62 0.13 230);
+  --kb-clinic-info-foreground: oklch(0.99 0.005 230);
+  --kb-clinic-border: oklch(0.92 0.01 220);
+  --kb-clinic-input: oklch(0.92 0.01 220);
+  --kb-clinic-ring: oklch(0.55 0.11 200);
+  --kb-clinic-chart-1: oklch(0.55 0.11 200);
+  --kb-clinic-chart-2: oklch(0.65 0.15 160);
+  --kb-clinic-chart-3: oklch(0.62 0.13 230);
+  --kb-clinic-chart-4: oklch(0.78 0.15 75);
+  --kb-clinic-chart-5: oklch(0.6 0.18 320);
+  --kb-clinic-sidebar: oklch(0.32 0.05 220);
+  --kb-clinic-sidebar-foreground: oklch(0.92 0.02 220);
+  --kb-clinic-sidebar-primary: oklch(0.78 0.13 195);
+  --kb-clinic-sidebar-primary-foreground: oklch(0.2 0.04 230);
+  --kb-clinic-sidebar-accent: oklch(0.38 0.06 220);
+  --kb-clinic-sidebar-accent-foreground: oklch(0.99 0.005 220);
+  --kb-clinic-sidebar-border: oklch(0.4 0.05 220);
+  --kb-clinic-sidebar-ring: oklch(0.78 0.13 195);
+  --kb-clinic-gradient-primary: linear-gradient(135deg, oklch(0.55 0.11 200), oklch(0.72 0.13 195));
+  --kb-clinic-gradient-hero: linear-gradient(135deg, oklch(0.42 0.09 215), oklch(0.6 0.14 195));
+  --kb-clinic-gradient-subtle: linear-gradient(180deg, oklch(0.985 0.005 220), oklch(0.96 0.015 215));
+  --kb-clinic-shadow-elegant: 0 10px 30px -12px color-mix(in oklab, oklch(0.55 0.11 200) 30%, transparent);
+  --kb-clinic-shadow-card: 0 1px 3px 0 oklch(0.22 0.04 230 / 0.06), 0 1px 2px -1px oklch(0.22 0.04 230 / 0.06);
+  --kb-clinic-transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kb-clinic-theme {
+  background-color: var(--kb-clinic-background);
+  color: var(--kb-clinic-foreground);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  border-color: var(--kb-clinic-border);
+}
+
+.kb-clinic-theme.dark {
+  --kb-clinic-background: oklch(0.18 0.03 230);
+  --kb-clinic-foreground: oklch(0.96 0.01 220);
+  --kb-clinic-card: oklch(0.24 0.04 230);
+  --kb-clinic-card-foreground: oklch(0.96 0.01 220);
+  --kb-clinic-popover: oklch(0.24 0.04 230);
+  --kb-clinic-popover-foreground: oklch(0.96 0.01 220);
+  --kb-clinic-primary: oklch(0.72 0.13 195);
+  --kb-clinic-primary-foreground: oklch(0.18 0.03 230);
+  --kb-clinic-secondary: oklch(0.3 0.04 230);
+  --kb-clinic-secondary-foreground: oklch(0.96 0.01 220);
+  --kb-clinic-muted: oklch(0.3 0.04 230);
+  --kb-clinic-muted-foreground: oklch(0.7 0.03 220);
+  --kb-clinic-accent: oklch(0.35 0.06 200);
+  --kb-clinic-accent-foreground: oklch(0.96 0.01 220);
+  --kb-clinic-border: oklch(1 0 0 / 10%);
+  --kb-clinic-input: oklch(1 0 0 / 12%);
+  --kb-clinic-ring: oklch(0.72 0.13 195);
+}
+
+/* Medical Card Styles */
+.kb-clinic-card {
+  background: var(--kb-clinic-card);
+  border: 1px solid var(--kb-clinic-border);
+  border-radius: var(--kb-clinic-radius);
+  color: var(--kb-clinic-card-foreground);
+  box-shadow: var(--kb-clinic-shadow-card);
+  transition: var(--kb-clinic-transition-smooth);
+}
+
+.kb-clinic-card:hover {
+  box-shadow: var(--kb-clinic-shadow-elegant);
+}
+
+/* Medical Buttons */
+.kb-clinic-btn-primary {
+  background: var(--kb-clinic-primary);
+  color: var(--kb-clinic-primary-foreground);
+  border: none;
+  border-radius: var(--kb-clinic-radius);
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--kb-clinic-transition-smooth);
+}
+
+.kb-clinic-btn-primary:hover {
+  background: var(--kb-clinic-primary-glow);
+}
+
+.kb-clinic-btn-success {
+  background: var(--kb-clinic-success);
+  color: var(--kb-clinic-success-foreground);
+  border: none;
+  border-radius: var(--kb-clinic-radius);
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--kb-clinic-transition-smooth);
+}
+
+.kb-clinic-btn-warning {
+  background: var(--kb-clinic-warning);
+  color: var(--kb-clinic-warning-foreground);
+  border: none;
+  border-radius: var(--kb-clinic-radius);
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--kb-clinic-transition-smooth);
+}
+
+/* Medical Sidebar */
+.kb-clinic-sidebar {
+  background: var(--kb-clinic-sidebar);
+  border-right: 1px solid var(--kb-clinic-sidebar-border);
+  color: var(--kb-clinic-sidebar-foreground);
+}
+
+.kb-clinic-sidebar-link {
+  color: var(--kb-clinic-sidebar-foreground);
+  text-decoration: none;
+  padding: 12px 16px;
+  display: block;
+  border-radius: var(--kb-clinic-radius);
+  transition: var(--kb-clinic-transition-smooth);
+}
+
+.kb-clinic-sidebar-link:hover,
+.kb-clinic-sidebar-link.active {
+  background: var(--kb-clinic-sidebar-accent);
+  color: var(--kb-clinic-sidebar-accent-foreground);
+}
+
+.kb-clinic-sidebar-link.active {
+  background: var(--kb-clinic-sidebar-primary);
+  color: var(--kb-clinic-sidebar-primary-foreground);
+}
+
+/* Chart Colors */
+.kb-clinic-chart-1 { background: var(--kb-clinic-chart-1); }
+.kb-clinic-chart-2 { background: var(--kb-clinic-chart-2); }
+.kb-clinic-chart-3 { background: var(--kb-clinic-chart-3); }
+.kb-clinic-chart-4 { background: var(--kb-clinic-chart-4); }
+.kb-clinic-chart-5 { background: var(--kb-clinic-chart-5); }
+
+/* Utility Classes */
+.kb-clinic-transition-smooth {
+  transition: var(--kb-clinic-transition-smooth);
+}
+
+.kb-clinic-shadow-elegant {
+  box-shadow: var(--kb-clinic-shadow-elegant);
+}
+
+.kb-clinic-bg-gradient-primary {
+  background-image: var(--kb-clinic-gradient-primary);
+}
+
+.kb-clinic-bg-gradient-hero {
+  background-image: var(--kb-clinic-gradient-hero);
+}
+
+.kb-clinic-bg-gradient-subtle {
+  background-image: var(--kb-clinic-gradient-subtle);
+}

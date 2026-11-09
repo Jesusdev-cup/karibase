@@ -1,0 +1,65 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Gutters — Karibase">
+<DocsArticle
+    title="Gutters"
+    lead="Gutter utilities in Karibase"
+    breadcrumb={[{ name: 'Layout', path: '/layout' }, { name: 'Gutters' }]}
+    prev={{ name: 'Columns', path: '/layout/columns' }}
+    next={{ name: 'Utilities', path: '/layout/utilities' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
+      <p class="docs-text">
+        Gutters are the spacing between columns in the grid system. Karibase provides utilities to control 
+        gutter spacing at different breakpoints.
+      </p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="default-gutters">Default Gutters</h2>
+      <p class="docs-text">The default gutter size is 1.5rem (24px):</p>
+      <CodeBlock code={`<div class="kb-grid kb-gutter">
+  <div class="kb-col-6">Column 1</div>
+  <div class="kb-col-6">Column 2</div>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="gutter-sizes">Gutter Sizes</h2>
+      <p class="docs-text">Available gutter sizes:</p>
+      <CodeBlock code={`<div class="kb-grid kb-gutter-sm">
+  <!-- Small gutters (0.5rem) -->
+</div>
+
+<div class="kb-grid kb-gutter-md">
+  <!-- Medium gutters (1rem) -->
+</div>
+
+<div class="kb-grid kb-gutter-lg">
+  <!-- Large gutters (1.5rem) -->
+</div>
+
+<div class="kb-grid kb-gutter-xl">
+  <!-- Extra large gutters (2rem) -->
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="no-gutters">No Gutters</h2>
+      <p class="docs-text">Remove gutters completely:</p>
+      <CodeBlock code={`<div class="kb-grid kb-gutter-0">
+  <!-- No gutters -->
+</div>`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

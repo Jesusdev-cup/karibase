@@ -1,0 +1,118 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Color — Karibase">
+<DocsArticle
+    title="Color"
+    lead="Color system and customization in Karibase"
+    breadcrumb={[{ name: 'Customize', path: '/customize' }, { name: 'Color' }]}
+    prev={{ name: 'Options', path: '/customize/options' }}
+    next={{ name: 'Color modes', path: '/customize/color-modes' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="color-system">Color System</h2>
+      <p class="docs-text">Karibase uses a comprehensive color system:</p>
+      <ul class="docs-list">
+        <li><strong>Primary:</strong> Main brand color</li>
+        <li><strong>Secondary:</strong> Secondary brand color</li>
+        <li><strong>Success:</strong> Positive feedback</li>
+        <li><strong>Warning:</strong> Cautionary feedback</li>
+        <li><strong>Danger:</strong> Negative feedback</li>
+        <li><strong>Info:</strong> Informational feedback</li>
+      </ul>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="customizing-colors">Customizing Colors</h2>
+      <p class="docs-text">Override colors with CSS variables:</p>
+      <CodeBlock code={`:root {
+  --kb-primary: #ea2845;
+  --kb-primary-light: #f5a3b0;
+  --kb-primary-dark: #b81c32;
+
+  --kb-secondary: #6366f1;
+  --kb-secondary-light: #a5a8ff;
+  --kb-secondary-dark: #4f46e5;
+
+  --kb-success: #10b981;
+  --kb-warning: #f59e0b;
+  --kb-danger: #ef4444;
+  --kb-info: #3b82f6;
+}`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="color-palette">Color Palette</h2>
+      <p class="docs-text">Karibase includes a complete color palette:</p>
+      <div class="docs-color-grid">
+        <div class="docs-color-item">
+          <div class="docs-color-swatch" style="background: #ea2845;"></div>
+          <span>Primary</span>
+        </div>
+        <div class="docs-color-item">
+          <div class="docs-color-swatch" style="background: #6366f1;"></div>
+          <span>Secondary</span>
+        </div>
+        <div class="docs-color-item">
+          <div class="docs-color-swatch" style="background: #10b981;"></div>
+          <span>Success</span>
+        </div>
+        <div class="docs-color-item">
+          <div class="docs-color-swatch" style="background: #f59e0b;"></div>
+          <span>Warning</span>
+        </div>
+        <div class="docs-color-item">
+          <div class="docs-color-swatch" style="background: #ef4444;"></div>
+          <span>Danger</span>
+        </div>
+        <div class="docs-color-item">
+          <div class="docs-color-swatch" style="background: #3b82f6;"></div>
+          <span>Info</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="semantic-colors">Semantic Colors</h2>
+      <p class="docs-text">Use semantic colors for meaning:</p>
+      <CodeBlock code={`<button class="kb-btn kb-btn-success">Success</button>
+<button class="kb-btn kb-btn-warning">Warning</button>
+<button class="kb-btn kb-btn-danger">Danger</button>`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+<style>
+
+.docs-color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.docs-color-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.docs-color-swatch {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  box-shadow: var(--docs-shadow-md);
+}
+
+.docs-color-item span {
+  font-size: 14px;
+  color: var(--docs-text-secondary);
+}
+</style>

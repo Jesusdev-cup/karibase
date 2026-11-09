@@ -1,0 +1,346 @@
+/*!
+ * Karibase - CSS Variables & Design Tokens
+ * UCLA Branding - Created by a UCLA Graduate
+ * Sistema de diseño completo con tokens para colores, tipografía, espaciado, sombras y bordes
+ */
+
+/* ============================================
+   ROOT VARIABLES - Light Mode (Default)
+   ============================================ */
+:root {
+    /* --- UCLA Primary Colors --- */
+    --kb-primary-50: #f0f6fc;
+    --kb-primary-100: #dbe9f6;
+    --kb-primary-200: #b7d3ed;
+    --kb-primary-300: #93bce4;
+    --kb-primary-400: #6fa5db;
+    --kb-primary-500: #2774AE;  /* UCLA Blue */
+    --kb-primary-600: #1E5A8A;
+    --kb-primary-700: #164066;
+    --kb-primary-800: #0E2642;
+    --kb-primary-900: #071C21;
+    --kb-primary-950: #031010;
+
+    --kb-primary-color: var(--kb-primary-500);
+    --kb-primary-light: var(--kb-primary-400);
+    --kb-primary-dark: var(--kb-primary-600);
+    --kb-primary-accent: #1E5A8A;
+
+    /* --- UCLA Secondary Colors (Gold) --- */
+    --kb-secondary-50: #fff9e6;
+    --kb-secondary-100: #fff3cc;
+    --kb-secondary-200: #ffe799;
+    --kb-secondary-300: #ffdb66;
+    --kb-secondary-400: #ffcf33;
+    --kb-secondary-500: #FFD100;  /* UCLA Gold */
+    --kb-secondary-600: #cca700;
+    --kb-secondary-700: #997d00;
+    --kb-secondary-800: #665400;
+    --kb-secondary-900: #332a00;
+    --kb-secondary-950: #191500;
+
+    --kb-secondary-color: var(--kb-secondary-500);
+    --kb-secondary-light: var(--kb-secondary-400);
+    --kb-secondary-dark: var(--kb-secondary-600);
+
+    /* --- Success Colors --- */
+    --kb-success-50: #ecfdf5;
+    --kb-success-100: #d1fae5;
+    --kb-success-200: #a7f3d0;
+    --kb-success-300: #6ee7b7;
+    --kb-success-400: #34d399;
+    --kb-success-500: #10b981;
+    --kb-success-600: #059669;
+    --kb-success-700: #047857;
+    --kb-success-800: #065f46;
+    --kb-success-900: #064e3b;
+    --kb-success-950: #022c22;
+
+    --kb-success-color: var(--kb-success-500);
+    --kb-success-light: var(--kb-success-400);
+    --kb-success-dark: var(--kb-success-600);
+
+    /* --- Warning Colors --- */
+    --kb-warning-50: #fffbeb;
+    --kb-warning-100: #fef3c7;
+    --kb-warning-200: #fde68a;
+    --kb-warning-300: #fcd34d;
+    --kb-warning-400: #fbbf24;
+    --kb-warning-500: #f59e0b;
+    --kb-warning-600: #d97706;
+    --kb-warning-700: #b45309;
+    --kb-warning-800: #92400e;
+    --kb-warning-900: #78350f;
+    --kb-warning-950: #451a03;
+
+    --kb-warning-color: var(--kb-warning-500);
+    --kb-warning-light: var(--kb-warning-400);
+    --kb-warning-dark: var(--kb-warning-600);
+
+    /* --- Danger Colors --- */
+    --kb-danger-50: #fef2f2;
+    --kb-danger-100: #fee2e2;
+    --kb-danger-200: #fecaca;
+    --kb-danger-300: #fca5a5;
+    --kb-danger-400: #f87171;
+    --kb-danger-500: #ef4444;
+    --kb-danger-600: #dc2626;
+    --kb-danger-700: #b91c1c;
+    --kb-danger-800: #991b1b;
+    --kb-danger-900: #7f1d1d;
+    --kb-danger-950: #450a0a;
+
+    --kb-danger-color: var(--kb-danger-500);
+    --kb-danger-light: var(--kb-danger-400);
+    --kb-danger-dark: var(--kb-danger-600);
+
+    /* --- Info Colors --- */
+    --kb-info-50: #eff6ff;
+    --kb-info-100: #dbeafe;
+    --kb-info-200: #bfdbfe;
+    --kb-info-300: #93c5fd;
+    --kb-info-400: #60a5fa;
+    --kb-info-500: #3b82f6;
+    --kb-info-600: #2563eb;
+    --kb-info-700: #1d4ed8;
+    --kb-info-800: #1e40af;
+    --kb-info-900: #1e3a8a;
+    --kb-info-950: #172554;
+
+    --kb-info-color: var(--kb-info-500);
+    --kb-info-light: var(--kb-info-400);
+    --kb-info-dark: var(--kb-info-600);
+
+    /* --- Neutral Colors --- */
+    --kb-gray-50: #f9fafb;
+    --kb-gray-100: #f3f4f6;
+    --kb-gray-200: #e5e7eb;
+    --kb-gray-300: #d1d5db;
+    --kb-gray-400: #9ca3af;
+    --kb-gray-500: #6b7280;
+    --kb-gray-600: #4b5563;
+    --kb-gray-700: #374151;
+    --kb-gray-800: #1f2937;
+    --kb-gray-900: #111827;
+    --kb-gray-950: #030712;
+
+    /* --- Text Colors --- */
+    --kb-text-primary: var(--kb-gray-900);
+    --kb-text-secondary: var(--kb-gray-600);
+    --kb-text-muted: var(--kb-gray-500);
+    --kb-text-disabled: var(--kb-gray-400);
+    --kb-text-inverse: #ffffff;
+
+    /* --- Background Colors --- */
+    --kb-bg-primary: #ffffff;
+    --kb-bg-secondary: var(--kb-gray-50);
+    --kb-bg-tertiary: var(--kb-gray-100);
+    --kb-bg-inverse: var(--kb-gray-900);
+
+    /* --- Border Colors --- */
+    --kb-border-color: var(--kb-gray-200);
+    --kb-border-light: var(--kb-gray-100);
+    --kb-border-dark: var(--kb-gray-300);
+
+    /* --- Typography (UCLA Branding) --- */
+    --kb-font-family-base: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --kb-font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+    --kb-font-family-heading: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+    --kb-font-size-xs: 0.75rem;    /* 12px */
+    --kb-font-size-sm: 0.875rem;   /* 14px */
+    --kb-font-size-base: 1rem;     /* 16px */
+    --kb-font-size-lg: 1.125rem;   /* 18px */
+    --kb-font-size-xl: 1.25rem;    /* 20px */
+    --kb-font-size-2xl: 1.5rem;    /* 24px */
+    --kb-font-size-3xl: 1.875rem;  /* 30px */
+    --kb-font-size-4xl: 2.25rem;   /* 36px */
+    --kb-font-size-5xl: 3rem;      /* 48px */
+
+    --kb-font-weight-light: 300;
+    --kb-font-weight-normal: 400;
+    --kb-font-weight-medium: 500;
+    --kb-font-weight-semibold: 600;
+    --kb-font-weight-bold: 700;
+    --kb-font-weight-extrabold: 800;
+
+    --kb-line-height-tight: 1.25;
+    --kb-line-height-normal: 1.5;
+    --kb-line-height-relaxed: 1.75;
+
+    --kb-letter-spacing-tight: -0.025em;
+    --kb-letter-spacing-normal: 0;
+    --kb-letter-spacing-wide: 0.025em;
+
+    /* --- Spacing Scale --- */
+    --kb-spacing-0: 0;
+    --kb-spacing-1: 0.25rem;  /* 4px */
+    --kb-spacing-2: 0.5rem;   /* 8px */
+    --kb-spacing-3: 0.75rem;  /* 12px */
+    --kb-spacing-4: 1rem;      /* 16px */
+    --kb-spacing-5: 1.25rem;   /* 20px */
+    --kb-spacing-6: 1.5rem;    /* 24px */
+    --kb-spacing-8: 2rem;      /* 32px */
+    --kb-spacing-10: 2.5rem;   /* 40px */
+    --kb-spacing-12: 3rem;     /* 48px */
+    --kb-spacing-16: 4rem;     /* 64px */
+    --kb-spacing-20: 5rem;     /* 80px */
+    --kb-spacing-24: 6rem;     /* 96px */
+
+    /* --- Border Radius --- */
+    --kb-radius-none: 0;
+    --kb-radius-sm: 0.25rem;   /* 4px */
+    --kb-radius-base: 0.375rem; /* 6px */
+    --kb-radius-md: 0.5rem;    /* 8px */
+    --kb-radius-lg: 0.75rem;   /* 12px */
+    --kb-radius-xl: 1rem;      /* 16px */
+    --kb-radius-2xl: 1.5rem;   /* 24px */
+    --kb-radius-full: 9999px;
+
+    /* --- Shadows --- */
+    --kb-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --kb-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    --kb-shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --kb-shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --kb-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --kb-shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --kb-shadow-2xl: 0 50px 100px -20px rgba(0, 0, 0, 0.25);
+    --kb-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+    --kb-shadow-primary: 0 4px 14px 0 rgba(234, 40, 69, 0.39);
+    --kb-shadow-secondary: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+    --kb-shadow-success: 0 4px 14px 0 rgba(16, 185, 129, 0.39);
+    --kb-shadow-warning: 0 4px 14px 0 rgba(245, 158, 11, 0.39);
+    --kb-shadow-danger: 0 4px 14px 0 rgba(239, 68, 68, 0.39);
+
+    /* --- Transitions --- */
+    --kb-transition-base: all 0.2s ease-in-out;
+    --kb-transition-fast: all 0.15s ease-in-out;
+    --kb-transition-slow: all 0.3s ease-in-out;
+    --kb-transition-slower: all 0.5s ease-in-out;
+
+    /* --- Z-Index Scale --- */
+    --kb-z-dropdown: 1000;
+    --kb-z-sticky: 1020;
+    --kb-z-fixed: 1030;
+    --kb-z-modal-backdrop: 1040;
+    --kb-z-modal: 1050;
+    --kb-z-popover: 1060;
+    --kb-z-tooltip: 1070;
+
+    /* --- Breakpoints (for reference in CSS) --- */
+    --kb-breakpoint-xs: 0;
+    --kb-breakpoint-sm: 576px;
+    --kb-breakpoint-md: 768px;
+    --kb-breakpoint-lg: 992px;
+    --kb-breakpoint-xl: 1200px;
+    --kb-breakpoint-2xl: 1400px;
+
+    /* --- Container --- */
+    --kb-container-max-sm: 540px;
+    --kb-container-max-md: 720px;
+    --kb-container-max-lg: 960px;
+    --kb-container-max-xl: 1140px;
+    --kb-container-max-2xl: 1320px;
+
+    /* --- Sidebar --- */
+    --kb-sidebar-width: 280px;
+    --kb-sidebar-width-collapsed: 64px;
+    --kb-header-height: 64px;
+
+    /* --- Focus Ring --- */
+    --kb-focus-ring: 0 0 0 3px rgba(234, 40, 69, 0.25);
+    --kb-focus-ring-offset: 2px;
+
+    /* --- Glassmorphism --- */
+    --kb-glass-bg: rgba(255, 255, 255, 0.7);
+    --kb-glass-border: rgba(255, 255, 255, 0.3);
+    --kb-glass-blur: 10px;
+}
+
+/* ============================================
+   DARK MODE VARIABLES
+   ============================================ */
+.dark,
+[data-theme="dark"],
+[mode="dark"] {
+    /* --- Text Colors (Dark) --- */
+    --kb-text-primary: var(--kb-gray-100);
+    --kb-text-secondary: var(--kb-gray-400);
+    --kb-text-muted: var(--kb-gray-500);
+    --kb-text-disabled: var(--kb-gray-600);
+    --kb-text-inverse: var(--kb-gray-900);
+
+    /* --- Background Colors (Dark) --- */
+    --kb-bg-primary: var(--kb-gray-900);
+    --kb-bg-secondary: var(--kb-gray-800);
+    --kb-bg-tertiary: var(--kb-gray-700);
+    --kb-bg-inverse: #ffffff;
+
+    /* --- Border Colors (Dark) --- */
+    --kb-border-color: var(--kb-gray-700);
+    --kb-border-light: var(--kb-gray-800);
+    --kb-border-dark: var(--kb-gray-600);
+
+    /* --- Shadows (Dark) --- */
+    --kb-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --kb-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+    --kb-shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+    --kb-shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+    --kb-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+    --kb-shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    --kb-shadow-2xl: 0 50px 100px -20px rgba(0, 0, 0, 0.6);
+
+    /* --- Focus Ring (Dark) --- */
+    --kb-focus-ring: 0 0 0 3px rgba(234, 40, 69, 0.4);
+
+    /* --- Glassmorphism (Dark) --- */
+    --kb-glass-bg: rgba(31, 41, 55, 0.7);
+    --kb-glass-border: rgba(75, 85, 99, 0.3);
+}
+
+/* ============================================
+   SEMANTIC COLOR ALIASES
+   ============================================ */
+:root {
+    --kb-color-white: #ffffff;
+    --kb-color-black: #000000;
+    --kb-color-transparent: transparent;
+}
+
+/* ============================================
+   GRADIENTS
+   ============================================ */
+:root {
+    --kb-gradient-primary: linear-gradient(135deg, var(--kb-primary-500), var(--kb-primary-600));
+    --kb-gradient-secondary: linear-gradient(135deg, var(--kb-secondary-500), var(--kb-secondary-600));
+    --kb-gradient-success: linear-gradient(135deg, var(--kb-success-500), var(--kb-success-600));
+    --kb-gradient-warning: linear-gradient(135deg, var(--kb-warning-500), var(--kb-warning-600));
+    --kb-gradient-danger: linear-gradient(135deg, var(--kb-danger-500), var(--kb-danger-600));
+    --kb-gradient-info: linear-gradient(135deg, var(--kb-info-500), var(--kb-info-600));
+
+    --kb-gradient-radial-primary: radial-gradient(circle, var(--kb-primary-500), var(--kb-primary-600));
+    --kb-gradient-radial-secondary: radial-gradient(circle, var(--kb-secondary-500), var(--kb-secondary-600));
+}
+
+/* ============================================
+   ANIMATION DURATIONS
+   ============================================ */
+:root {
+    --kb-duration-instant: 50ms;
+    --kb-duration-fast: 150ms;
+    --kb-duration-normal: 250ms;
+    --kb-duration-slow: 400ms;
+    --kb-duration-slower: 600ms;
+}
+
+/* ============================================
+   EASING FUNCTIONS
+   ============================================ */
+:root {
+    --kb-ease-linear: linear;
+    --kb-ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --kb-ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --kb-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --kb-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

@@ -1,0 +1,270 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Tooltips — Karibase">
+<DocsArticle
+    title="Tooltips"
+    lead="Hoverable information overlays"
+    breadcrumb={[{ name: 'Components', path: '/components' }, { name: 'Tooltips' }]}
+    prev={{ name: 'Dropdowns', path: '/components/dropdowns' }}
+    next={{ name: 'Components', path: '/components' }}
+  >
+
+    <h2 class="docs-heading docs-heading-2" id="basic-tooltip">Basic Tooltip</h2>
+    <p class="docs-text">A simple tooltip on hover:</p>
+
+    <div class="docs-preview">
+      <div class="kb-tooltip" data-kb-class="tooltipVisible:kb-tooltip-visible">
+        <button class="kb-btn kb-btn-primary" data-kb-hover-on="tooltipVisible" data-kb-hover-off="tooltipVisible">
+          Hover me
+        </button>
+        <div class="kb-tooltip-content" data-kb-target="tooltipVisible" hidden>
+          This is a tooltip
+        </div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-tooltip">
+  <button class="kb-btn kb-btn-primary">Hover me</button>
+  <div class="kb-tooltip-content">
+    This is a tooltip
+  </div>
+</div>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="tooltip-positions">Tooltip Positions</h2>
+    <p class="docs-text">Tooltips in different positions:</p>
+
+    <div class="docs-preview">
+      <div class="kb-tooltip" data-kb-class="tooltipTop:kb-tooltip-visible">
+        <button class="kb-btn kb-btn-primary" data-kb-hover-on="tooltipTop" data-kb-hover-off="tooltipTop">
+          Top
+        </button>
+        <div class="kb-tooltip-content kb-tooltip-top" data-kb-target="tooltipTop" hidden>
+          Tooltip on top
+        </div>
+      </div>
+
+      <div class="kb-tooltip" data-kb-class="tooltipBottom:kb-tooltip-visible">
+        <button class="kb-btn kb-btn-primary" data-kb-hover-on="tooltipBottom" data-kb-hover-off="tooltipBottom">
+          Bottom
+        </button>
+        <div class="kb-tooltip-content kb-tooltip-bottom" data-kb-target="tooltipBottom" hidden>
+          Tooltip on bottom
+        </div>
+      </div>
+
+      <div class="kb-tooltip" data-kb-class="tooltipLeft:kb-tooltip-visible">
+        <button class="kb-btn kb-btn-primary" data-kb-hover-on="tooltipLeft" data-kb-hover-off="tooltipLeft">
+          Left
+        </button>
+        <div class="kb-tooltip-content kb-tooltip-left" data-kb-target="tooltipLeft" hidden>
+          Tooltip on left
+        </div>
+      </div>
+
+      <div class="kb-tooltip" data-kb-class="tooltipRight:kb-tooltip-visible">
+        <button class="kb-btn kb-btn-primary" data-kb-hover-on="tooltipRight" data-kb-hover-off="tooltipRight">
+          Right
+        </button>
+        <div class="kb-tooltip-content kb-tooltip-right" data-kb-target="tooltipRight" hidden>
+          Tooltip on right
+        </div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-tooltip-content kb-tooltip-top">...</div>
+<div class="kb-tooltip-content kb-tooltip-bottom">...</div>
+<div class="kb-tooltip-content kb-tooltip-left">...</div>
+<div class="kb-tooltip-content kb-tooltip-right">...</div>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="tooltip-variants">Tooltip Variants</h2>
+    <p class="docs-text">Tooltips with different styles:</p>
+
+    <div class="docs-preview">
+      <div class="kb-tooltip" data-kb-class="tooltipPrimary:kb-tooltip-visible">
+        <button class="kb-btn kb-btn-primary" data-kb-hover-on="tooltipPrimary" data-kb-hover-off="tooltipPrimary">
+          Primary
+        </button>
+        <div class="kb-tooltip-content kb-tooltip-primary" data-kb-target="tooltipPrimary" hidden>
+          Primary tooltip
+        </div>
+      </div>
+
+      <div class="kb-tooltip" data-kb-class="tooltipSuccess:kb-tooltip-visible">
+        <button class="kb-btn kb-btn-success" data-kb-hover-on="tooltipSuccess" data-kb-hover-off="tooltipSuccess">
+          Success
+        </button>
+        <div class="kb-tooltip-content kb-tooltip-success" data-kb-target="tooltipSuccess" hidden>
+          Success tooltip
+        </div>
+      </div>
+
+      <div class="kb-tooltip" data-kb-class="tooltipWarning:kb-tooltip-visible">
+        <button class="kb-btn kb-btn-warning" data-kb-hover-on="tooltipWarning" data-kb-hover-off="tooltipWarning">
+          Warning
+        </button>
+        <div class="kb-tooltip-content kb-tooltip-warning" data-kb-target="tooltipWarning" hidden>
+          Warning tooltip
+        </div>
+      </div>
+
+      <div class="kb-tooltip" data-kb-class="tooltipDanger:kb-tooltip-visible">
+        <button class="kb-btn kb-btn-danger" data-kb-hover-on="tooltipDanger" data-kb-hover-off="tooltipDanger">
+          Danger
+        </button>
+        <div class="kb-tooltip-content kb-tooltip-danger" data-kb-target="tooltipDanger" hidden>
+          Danger tooltip
+        </div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-tooltip-content kb-tooltip-primary">...</div>
+<div class="kb-tooltip-content kb-tooltip-success">...</div>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="tooltip-with-html">Tooltip with HTML</h2>
+    <p class="docs-text">Tooltips with rich content:</p>
+
+    <div class="docs-preview">
+      <div class="kb-tooltip" data-kb-class="tooltipHtml:kb-tooltip-visible">
+        <button class="kb-btn kb-btn-primary" data-kb-hover-on="tooltipHtml" data-kb-hover-off="tooltipHtml">
+          Rich Tooltip
+        </button>
+        <div class="kb-tooltip-content" data-kb-target="tooltipHtml" hidden>
+          <strong>Bold text</strong> and <em>italic text</em>
+        </div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-tooltip-content">
+  <strong>Bold text</strong> and <em>italic text</em>
+</div>`} />
+
+  </DocsArticle>
+</DocsLayout>
+<style>
+
+.kb-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.kb-tooltip-content {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  background-color: var(--docs-text-primary);
+  color: var(--docs-bg-primary);
+  font-size: 14px;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 100;
+  margin-bottom: 8px;
+}
+
+.kb-tooltip-content::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--docs-text-primary);
+}
+
+.kb-tooltip-top {
+  bottom: 100%;
+  top: auto;
+}
+
+.kb-tooltip-bottom {
+  top: 100%;
+  bottom: auto;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.kb-tooltip-bottom::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--docs-text-primary);
+}
+
+.kb-tooltip-left {
+  left: auto;
+  right: 100%;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  margin-bottom: 0;
+  margin-right: 8px;
+}
+
+.kb-tooltip-left::after {
+  top: 50%;
+  left: 100%;
+  bottom: auto;
+  transform: translateY(-50%);
+  border-top-color: transparent;
+  border-left-color: var(--docs-text-primary);
+}
+
+.kb-tooltip-right {
+  left: 100%;
+  right: auto;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  margin-bottom: 0;
+  margin-left: 8px;
+}
+
+.kb-tooltip-right::after {
+  top: 50%;
+  left: auto;
+  right: 100%;
+  bottom: auto;
+  transform: translateY(-50%);
+  border-top-color: transparent;
+  border-right-color: var(--docs-text-primary);
+}
+
+.kb-tooltip-primary {
+  background: linear-gradient(135deg, var(--docs-primary-color), var(--docs-primary-accent));
+}
+
+.kb-tooltip-primary::after {
+  border-top-color: var(--docs-primary-accent);
+}
+
+.kb-tooltip-success {
+  background-color: #10b981;
+}
+
+.kb-tooltip-success::after {
+  border-top-color: #10b981;
+}
+
+.kb-tooltip-warning {
+  background-color: #f59e0b;
+}
+
+.kb-tooltip-warning::after {
+  border-top-color: #f59e0b;
+}
+
+.kb-tooltip-danger {
+  background-color: #ef4444;
+}
+
+.kb-tooltip-danger::after {
+  border-top-color: #ef4444;
+}
+</style>

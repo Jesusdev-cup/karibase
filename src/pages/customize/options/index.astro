@@ -1,0 +1,76 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Options — Karibase">
+<DocsArticle
+    title="Options"
+    lead="Build and configuration options for Karibase"
+    breadcrumb={[{ name: 'Customize', path: '/customize' }, { name: 'Options' }]}
+    prev={{ name: 'Sass', path: '/customize/sass' }}
+    next={{ name: 'Color', path: '/customize/color' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="build-options">Build Options</h2>
+      <p class="docs-text">Configure your build to include only what you need:</p>
+      <CodeBlock code={`// vite.config.js
+export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: \`
+          $kb-enable-dark-mode: true;
+          $kb-enable-rtl: false;
+          $kb-enable-animations: true;
+        \`
+      }
+    }
+  }
+})`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="feature-flags">Feature Flags</h2>
+      <p class="docs-text">Enable or disable features:</p>
+      <ul class="docs-list">
+        <li><code>$kb-enable-dark-mode</code> - Enable dark mode support</li>
+        <li><code>$kb-enable-rtl</code> - Enable RTL support</li>
+        <li><code>$kb-enable-animations</code> - Enable animations</li>
+        <li><code>$kb-enable-transitions</code> - Enable transitions</li>
+        <li><code>$kb-enable-shadows</code> - Enable shadows</li>
+      </ul>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="component-inclusion">Component Inclusion</h2>
+      <p class="docs-text">Include only the components you use:</p>
+      <CodeBlock code={`// Import only what you need
+@import 'karibase/scss/variables';
+@import 'karibase/scss/reboot';
+@import 'karibase/scss/base';
+@import 'karibase/scss/components/buttons';
+@import 'karibase/scss/components/cards';
+@import 'karibase/scss/components/forms';`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="optimization">Optimization</h2>
+      <p class="docs-text">Optimize your build for production:</p>
+      <CodeBlock code={`// Disable source maps in production
+export default defineConfig({
+  build: {
+    sourcemap: false,
+    minify: 'terser',
+    cssMinify: true
+  }
+})`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

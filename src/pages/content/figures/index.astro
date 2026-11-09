@@ -1,0 +1,77 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Figures — Karibase">
+<DocsArticle
+    title="Figures"
+    lead="Figure and caption components in Karibase"
+    breadcrumb={[{ name: 'Content', path: '/content' }, { name: 'Figures' }]}
+    prev={{ name: 'Tables', path: '/content/tables' }}
+    next={{ name: 'Forms', path: '/forms/overview' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="basic-figure">Basic Figure</h2>
+      <p class="docs-text">Create a basic figure with caption:</p>
+      <div class="docs-example">
+        <figure class="kb-figure">
+          <img src="https://via.placeholder.com/400x200" class="kb-img-fluid" alt="Placeholder image">
+          <figcaption class="kb-figure-caption">
+            Caption text here
+          </figcaption>
+        </figure>
+      </div>
+      <CodeBlock title="HTML" code={`<figure class="kb-figure">
+  <img src="image.jpg" class="kb-img-fluid" alt="Description">
+  <figcaption class="kb-figure-caption">
+    Caption text here
+  </figcaption>
+</figure>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="figure-alignment">Figure Alignment</h2>
+      <p class="docs-text">Align figures using text utilities:</p>
+      <div class="docs-example">
+        <figure class="kb-figure kb-text-center">
+          <img src="https://via.placeholder.com/400x200" class="kb-img-fluid" alt="Placeholder image">
+          <figcaption class="kb-figure-caption">
+            Centered caption
+          </figcaption>
+        </figure>
+      </div>
+      <CodeBlock title="HTML" code={`<figure class="kb-figure kb-text-center">
+  <img src="image.jpg" class="kb-img-fluid" alt="Description">
+  <figcaption class="kb-figure-caption">
+    Centered caption
+  </figcaption>
+</figure>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="figure-caption">Figure Caption</h2>
+      <p class="docs-text">Style the caption text:</p>
+      <div class="docs-example">
+        <figure class="kb-figure">
+          <img src="https://via.placeholder.com/400x200" alt="Placeholder image" class="kb-figure-img">
+          <figcaption class="kb-figure-caption">
+            This is a caption that describes the image above.
+          </figcaption>
+        </figure>
+      </div>
+      <CodeBlock title="HTML" code={`<figure class="kb-figure">
+  <img src="image.jpg" alt="Description" class="kb-figure-img">
+  <figcaption class="kb-figure-caption">
+    This is a caption that describes the image above.
+  </figcaption>
+</figure>`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

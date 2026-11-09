@@ -1,0 +1,113 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro'
+import DocsArticle from '../../components/DocsArticle.astro'
+import CodeBlock from '../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="JavaScript — Karibase">
+<DocsArticle
+    title="JavaScript"
+    lead="JavaScript plugins and components for Karibase"
+    prev={{ name: 'Browsers & devices', path: '/browsers-devices' }}
+    next={{ name: 'Webpack', path: '/webpack' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
+      <p class="docs-text">
+        Karibase includes optional JavaScript plugins that add interactive functionality to components. 
+        These plugins are lightweight, dependency-free, and can be used individually or all together.
+      </p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="installation">Installation</h2>
+      <p class="docs-text">Install the JavaScript package:</p>
+      <CodeBlock code={`npm install karibase-js`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="usage">Usage</h2>
+      <p class="docs-text">Import and initialize the plugins:</p>
+      <CodeBlock code={`import { Modal, Dropdown, Tooltip } from 'karibase-js'
+
+// Initialize specific plugin
+const modal = new Modal('#myModal')
+modal.show()
+
+// Initialize all plugins
+import Karibase from 'karibase-js'
+Karibase.init()`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="available-plugins">Available Plugins</h2>
+      <p class="docs-text">Karibase includes the following JavaScript plugins:</p>
+      <ul class="docs-list">
+        <li><strong>Modal:</strong> Dialog windows and overlays</li>
+        <li><strong>Dropdown:</strong> Dropdown menus</li>
+        <li><strong>Tooltip:</strong> Hover tooltips</li>
+        <li><strong>Collapse:</strong> Collapsible content</li>
+        <li><strong>Carousel:</strong> Image sliders</li>
+        <li><strong>Offcanvas:</strong> Side panels</li>
+        <li><strong>Scrollspy:</strong> Scroll-based navigation</li>
+      </ul>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="data-attributes">Data Attributes</h2>
+      <p class="docs-text">Use data attributes for quick initialization:</p>
+      <CodeBlock code={`<button data-kb-toggle="modal" data-kb-target="#myModal">
+  Open Modal
+</button>
+
+<div class="kb-modal" id="myModal">
+  <!-- Modal content -->
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="programmatic-api">Programmatic API</h2>
+      <p class="docs-text">Control components programmatically:</p>
+      <CodeBlock code={`const modal = new Modal('#myModal')
+
+// Show modal
+modal.show()
+
+// Hide modal
+modal.hide()
+
+// Toggle modal
+modal.toggle()
+
+// Dispose
+modal.dispose()`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="events">Events</h2>
+      <p class="docs-text">Listen to component events:</p>
+      <CodeBlock code={`const modal = new Modal('#myModal')
+
+modal.addEventListener('show.kb.modal', () => {
+  console.log('Modal is showing')
+})
+
+modal.addEventListener('shown.kb.modal', () => {
+  console.log('Modal is shown')
+})
+
+modal.addEventListener('hide.kb.modal', () => {
+  console.log('Modal is hiding')
+})
+
+modal.addEventListener('hidden.kb.modal', () => {
+  console.log('Modal is hidden')
+})`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

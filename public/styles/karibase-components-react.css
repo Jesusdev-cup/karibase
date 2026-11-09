@@ -1,0 +1,745 @@
+/*!
+ * Karibase CSS Framework - React-Inspired Components
+ * Inspired by: Sakai React, PrimeReact, Material UI, Ant Design
+ * Version: 2.0.0
+ */
+
+/* ========================================
+   CHIP / TAG (Inspired by Material UI & PrimeReact)
+   ======================================== */
+.kb-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--kb-spacing-1) var(--kb-spacing-3);
+  font-size: var(--kb-font-size-sm);
+  font-weight: var(--kb-font-weight-medium);
+  background-color: var(--kb-surface-hover);
+  border: 1px solid var(--kb-surface-border);
+  border-radius: var(--kb-radius-full);
+  gap: var(--kb-spacing-2);
+  transition: all var(--kb-transition-duration-base) var(--kb-easing-in-out);
+}
+
+.kb-chip:hover {
+  background-color: var(--kb-surface-active);
+}
+
+.kb-chip-primary {
+  background-color: var(--kb-primary-50);
+  border-color: var(--kb-primary-200);
+  color: var(--kb-primary);
+}
+
+.kb-chip-success {
+  background-color: var(--kb-success-50);
+  border-color: var(--kb-success-200);
+  color: var(--kb-success);
+}
+
+.kb-chip-danger {
+  background-color: var(--kb-danger-50);
+  border-color: var(--kb-danger-200);
+  color: var(--kb-danger);
+}
+
+.kb-chip-warning {
+  background-color: var(--kb-warning-50);
+  border-color: var(--kb-warning-200);
+  color: var(--kb-warning);
+}
+
+.kb-chip-info {
+  background-color: var(--kb-info-50);
+  border-color: var(--kb-info-200);
+  color: var(--kb-info);
+}
+
+.kb-chip-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--kb-radius-full);
+  background-color: var(--kb-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--kb-font-size-xs);
+  font-weight: var(--kb-font-weight-semibold);
+}
+
+.kb-chip-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kb-text-muted);
+}
+
+.kb-chip-close {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--kb-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--kb-text-muted);
+  transition: all var(--kb-transition-duration-base) var(--kb-easing-in-out);
+}
+
+.kb-chip-close:hover {
+  background-color: var(--kb-surface-border);
+  color: var(--kb-text-primary);
+}
+
+.kb-chip-deletable {
+  padding-right: var(--kb-spacing-2);
+}
+
+/* ========================================
+   AVATAR GROUP (Inspired by PrimeReact)
+   ======================================== */
+.kb-avatar-group {
+  display: flex;
+  align-items: center;
+}
+
+.kb-avatar-group .kb-avatar {
+  border: 2px solid var(--kb-surface-card);
+  margin-left: -8px;
+}
+
+.kb-avatar-group .kb-avatar:first-child {
+  margin-left: 0;
+}
+
+.kb-avatar-group .kb-avatar:hover {
+  z-index: 10;
+  transform: translateY(-2px);
+}
+
+.kb-avatar-count {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--kb-radius-full);
+  background-color: var(--kb-surface-hover);
+  border: 2px solid var(--kb-surface-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--kb-font-size-sm);
+  font-weight: var(--kb-font-weight-semibold);
+  color: var(--kb-text-secondary);
+  margin-left: -8px;
+}
+
+/* ========================================
+   RATING (Inspired by PrimeReact)
+   ======================================== */
+.kb-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--kb-spacing-1);
+}
+
+.kb-rating-star {
+  width: 20px;
+  height: 20px;
+  color: var(--kb-gray-300);
+  cursor: pointer;
+  transition: color var(--kb-transition-duration-base) var(--kb-easing-in-out);
+}
+
+.kb-rating-star.filled {
+  color: var(--kb-warning);
+}
+
+.kb-rating-star:hover {
+  color: var(--kb-warning);
+}
+
+.kb-rating-value {
+  margin-left: var(--kb-spacing-2);
+  font-size: var(--kb-font-size-sm);
+  color: var(--kb-text-secondary);
+}
+
+/* ========================================
+   SKELETON LOADING (React-inspired)
+   ======================================== */
+.kb-skeleton-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kb-spacing-3);
+}
+
+.kb-skeleton-avatar-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--kb-radius-full);
+  background: linear-gradient(90deg, var(--kb-surface-hover) 25%, var(--kb-surface-active) 50%, var(--kb-surface-hover) 75%);
+  background-size: 200% 100%;
+  animation: kb-skeleton-shimmer 1.5s infinite;
+}
+
+.kb-skeleton-rect {
+  height: 16px;
+  border-radius: var(--kb-radius-md);
+  background: linear-gradient(90deg, var(--kb-surface-hover) 25%, var(--kb-surface-active) 50%, var(--kb-surface-hover) 75%);
+  background-size: 200% 100%;
+  animation: kb-skeleton-shimmer 1.5s infinite;
+}
+
+.kb-skeleton-rect-lg {
+  height: 24px;
+  border-radius: var(--kb-radius-md);
+  background: linear-gradient(90deg, var(--kb-surface-hover) 25%, var(--kb-surface-active) 50%, var(--kb-surface-hover) 75%);
+  background-size: 200% 100%;
+  animation: kb-skeleton-shimmer 1.5s infinite;
+}
+
+@keyframes kb-skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ========================================
+   CARD HOVER EFFECTS (React-inspired)
+   ======================================== */
+.kb-card-hover {
+  transition: all var(--kb-transition-duration-base) var(--kb-easing-in-out);
+  cursor: pointer;
+}
+
+.kb-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--kb-shadow-lg);
+}
+
+.kb-card-lift {
+  transition: transform var(--kb-transition-duration-base) var(--kb-easing-in-out);
+}
+
+.kb-card-lift:hover {
+  transform: translateY(-8px);
+}
+
+/* ========================================
+   INPUT WITH ICON (Inspired by Material UI)
+   ======================================== */
+.kb-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.kb-input-wrapper .kb-input {
+  padding-left: var(--kb-spacing-10);
+}
+
+.kb-input-wrapper .kb-input-icon {
+  position: akbolute;
+  left: var(--kb-spacing-4);
+  color: var(--kb-text-muted);
+  pointer-events: none;
+}
+
+.kb-input-wrapper .kb-input-icon-right {
+  position: akbolute;
+  right: var(--kb-spacing-4);
+  color: var(--kb-text-muted);
+  pointer-events: none;
+}
+
+.kb-input-wrapper .kb-input-icon-right ~ .kb-input {
+  padding-right: var(--kb-spacing-10);
+}
+
+/* ========================================
+   FLOATING LABEL (Inspired by Material UI)
+   ======================================== */
+.kb-floating-label {
+  position: relative;
+}
+
+.kb-floating-label .kb-input {
+  padding: var(--kb-spacing-4) var(--kb-spacing-4) var(--kb-spacing-2);
+}
+
+.kb-floating-label label {
+  position: akbolute;
+  left: var(--kb-spacing-4);
+  top: var(--kb-spacing-4);
+  color: var(--kb-text-muted);
+  font-size: var(--kb-font-size-base);
+  transition: all var(--kb-transition-duration-base) var(--kb-easing-in-out);
+  pointer-events: none;
+  background-color: var(--kb-surface-card);
+  padding: 0 var(--kb-spacing-2);
+}
+
+.kb-floating-label .kb-input:focus ~ label,
+.kb-floating-label .kb-input:not(:placeholder-shown) ~ label {
+  top: -8px;
+  left: var(--kb-spacing-2);
+  font-size: var(--kb-font-size-xs);
+  color: var(--kb-primary);
+}
+
+/* ========================================
+   PROGRESS CIRCULAR (Inspired by Material UI)
+   ======================================== */
+.kb-progress-circular {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kb-progress-circular svg {
+  transform: rotate(-90deg);
+}
+
+.kb-progress-circular-circle {
+  fill: none;
+  stroke: var(--kb-surface-border);
+  stroke-width: 4;
+}
+
+.kb-progress-circular-bar {
+  fill: none;
+  stroke: var(--kb-primary);
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dashoffset var(--kb-transition-duration-slow) var(--kb-easing-in-out);
+}
+
+.kb-progress-circular-text {
+  position: akbolute;
+  font-size: var(--kb-font-size-sm);
+  font-weight: var(--kb-font-weight-semibold);
+  color: var(--kb-text-primary);
+}
+
+/* ========================================
+   STEPPER (Inspired by Material UI)
+   ======================================== */
+.kb-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kb-spacing-4);
+}
+
+.kb-stepper-horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.kb-stepper-step {
+  display: flex;
+  align-items: center;
+  gap: var(--kb-spacing-3);
+  flex: 1;
+}
+
+.kb-stepper-step:last-child {
+  flex: 0;
+}
+
+.kb-stepper-indicator {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--kb-radius-full);
+  background-color: var(--kb-surface-hover);
+  border: 2px solid var(--kb-surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--kb-font-weight-semibold);
+  color: var(--kb-text-secondary);
+  transition: all var(--kb-transition-duration-base) var(--kb-easing-in-out);
+}
+
+.kb-stepper-step.active .kb-stepper-indicator {
+  background-color: var(--kb-primary);
+  border-color: var(--kb-primary);
+  color: #fff;
+}
+
+.kb-stepper-step.completed .kb-stepper-indicator {
+  background-color: var(--kb-success);
+  border-color: var(--kb-success);
+  color: #fff;
+}
+
+.kb-stepper-content {
+  flex: 1;
+}
+
+.kb-stepper-label {
+  font-size: var(--kb-font-size-sm);
+  font-weight: var(--kb-font-weight-medium);
+  color: var(--kb-text-primary);
+}
+
+.kb-stepper-description {
+  font-size: var(--kb-font-size-xs);
+  color: var(--kb-text-muted);
+  margin-top: var(--kb-spacing-1);
+}
+
+/* ========================================
+   LIST (Inspired by Material UI)
+   ======================================== */
+.kb-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kb-list-item {
+  display: flex;
+  align-items: center;
+  padding: var(--kb-spacing-3) var(--kb-spacing-4);
+  border-bottom: 1px solid var(--kb-surface-border);
+  transition: background-color var(--kb-transition-duration-base) var(--kb-easing-in-out);
+}
+
+.kb-list-item:last-child {
+  border-bottom: none;
+}
+
+.kb-list-item:hover {
+  background-color: var(--kb-surface-hover);
+}
+
+.kb-list-item-avatar {
+  margin-right: var(--kb-spacing-3);
+}
+
+.kb-list-item-content {
+  flex: 1;
+}
+
+.kb-list-item-title {
+  font-size: var(--kb-font-size-base);
+  font-weight: var(--kb-font-weight-medium);
+  color: var(--kb-text-primary);
+  margin-bottom: var(--kb-spacing-1);
+}
+
+.kb-list-item-subtitle {
+  font-size: var(--kb-font-size-sm);
+  color: var(--kb-text-secondary);
+}
+
+.kb-list-item-action {
+  margin-left: var(--kb-spacing-3);
+}
+
+.kb-list-item-divider {
+  border-top: 1px solid var(--kb-surface-border);
+  margin: var(--kb-spacing-2) 0;
+}
+
+.kb-list-dense .kb-list-item {
+  padding: var(--kb-spacing-2) var(--kb-spacing-3);
+}
+
+/* ========================================
+   DIVIDER (React-inspired)
+   ======================================== */
+.kb-divider-vertical {
+  width: 1px;
+  height: 100%;
+  background-color: var(--kb-surface-border);
+  margin: 0 var(--kb-spacing-3);
+}
+
+.kb-divider-with-text {
+  display: flex;
+  align-items: center;
+  margin: var(--kb-spacing-4) 0;
+}
+
+.kb-divider-with-text::before,
+.kb-divider-with-text::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--kb-surface-border);
+}
+
+.kb-divider-with-text span {
+  padding: 0 var(--kb-spacing-4);
+  font-size: var(--kb-font-size-sm);
+  color: var(--kb-text-muted);
+  font-weight: var(--kb-font-weight-medium);
+}
+
+/* ========================================
+   BACKDROP (Inspired by Material UI)
+   ======================================== */
+.kb-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--kb-z-modal-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.kb-backdrop-invisible {
+  background-color: transparent;
+}
+
+/* ========================================
+   PAPER (Inspired by Material UI)
+   ======================================== */
+.kb-paper {
+  background-color: var(--kb-surface-card);
+  border-radius: var(--kb-radius-lg);
+  box-shadow: var(--kb-shadow-card);
+  padding: var(--kb-spacing-4);
+}
+
+.kb-paper-elevation-1 {
+  box-shadow: var(--kb-shadow-sm);
+}
+
+.kb-paper-elevation-2 {
+  box-shadow: var(--kb-shadow-base);
+}
+
+.kb-paper-elevation-3 {
+  box-shadow: var(--kb-shadow-md);
+}
+
+.kb-paper-elevation-4 {
+  box-shadow: var(--kb-shadow-lg);
+}
+
+.kb-paper-elevation-5 {
+  box-shadow: var(--kb-shadow-xl);
+}
+
+/* ========================================
+   MENU (Inspired by Material UI & PrimeReact)
+   ======================================== */
+.kb-menu {
+  position: akbolute;
+  z-index: var(--kb-z-dropdown);
+  min-width: 200px;
+  background-color: var(--kb-surface-card);
+  border: 1px solid var(--kb-surface-border);
+  border-radius: var(--kb-radius-lg);
+  box-shadow: var(--kb-shadow-dropdown);
+  padding: var(--kb-spacing-2);
+  list-style: none;
+}
+
+.kb-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--kb-spacing-3);
+  padding: var(--kb-spacing-2) var(--kb-spacing-3);
+  border-radius: var(--kb-radius-md);
+  cursor: pointer;
+  transition: background-color var(--kb-transition-duration-base) var(--kb-easing-in-out);
+  color: var(--kb-text-primary);
+  text-decoration: none;
+}
+
+.kb-menu-item:hover {
+  background-color: var(--kb-surface-hover);
+}
+
+.kb-menu-item.selected {
+  background-color: var(--kb-primary-50);
+  color: var(--kb-primary);
+}
+
+.kb-menu-item.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.kb-menu-item-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--kb-text-muted);
+}
+
+.kb-menu-item-text {
+  flex: 1;
+}
+
+.kb-menu-item-shortcut {
+  font-size: var(--kb-font-size-xs);
+  color: var(--kb-text-muted);
+}
+
+/* ========================================
+   NOTIFICATION / TOAST (Inspired by PrimeReact)
+   ======================================== */
+.kb-notification {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--kb-spacing-3);
+  padding: var(--kb-spacing-4);
+  background-color: var(--kb-surface-card);
+  border: 1px solid var(--kb-surface-border);
+  border-radius: var(--kb-radius-lg);
+  box-shadow: var(--kb-shadow-lg);
+  min-width: 300px;
+  animation: kb-notification-in var(--kb-transition-duration-base) var(--kb-easing-out);
+}
+
+.kb-notification-success {
+  border-left: 4px solid var(--kb-success);
+}
+
+.kb-notification-error {
+  border-left: 4px solid var(--kb-danger);
+}
+
+.kb-notification-warning {
+  border-left: 4px solid var(--kb-warning);
+}
+
+.kb-notification-info {
+  border-left: 4px solid var(--kb-info);
+}
+
+.kb-notification-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.kb-notification-success .kb-notification-icon {
+  color: var(--kb-success);
+}
+
+.kb-notification-error .kb-notification-icon {
+  color: var(--kb-danger);
+}
+
+.kb-notification-warning .kb-notification-icon {
+  color: var(--kb-warning);
+}
+
+.kb-notification-info .kb-notification-icon {
+  color: var(--kb-info);
+}
+
+.kb-notification-content {
+  flex: 1;
+}
+
+.kb-notification-title {
+  font-size: var(--kb-font-size-base);
+  font-weight: var(--kb-font-weight-semibold);
+  color: var(--kb-text-primary);
+  margin-bottom: var(--kb-spacing-1);
+}
+
+.kb-notification-message {
+  font-size: var(--kb-font-size-sm);
+  color: var(--kb-text-secondary);
+}
+
+.kb-notification-close {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--kb-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--kb-text-muted);
+  transition: all var(--kb-transition-duration-base) var(--kb-easing-in-out);
+  flex-shrink: 0;
+}
+
+.kb-notification-close:hover {
+  background-color: var(--kb-surface-hover);
+  color: var(--kb-text-primary);
+}
+
+@keyframes kb-notification-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========================================
+   DATA TABLE (Inspired by Material UI)
+   ======================================== */
+.kb-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--kb-surface-card);
+  border-radius: var(--kb-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--kb-shadow-card);
+}
+
+.kb-data-table thead {
+  background-color: var(--kb-surface-hover);
+}
+
+.kb-data-table th {
+  padding: var(--kb-spacing-3) var(--kb-spacing-4);
+  text-align: left;
+  font-size: var(--kb-font-size-xs);
+  font-weight: var(--kb-font-weight-semibold);
+  color: var(--kb-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--kb-letter-spacing-wide);
+  border-bottom: 1px solid var(--kb-surface-border);
+}
+
+.kb-data-table td {
+  padding: var(--kb-spacing-3) var(--kb-spacing-4);
+  border-bottom: 1px solid var(--kb-surface-border);
+  color: var(--kb-text-primary);
+}
+
+.kb-data-table tbody tr {
+  transition: background-color var(--kb-transition-duration-base) var(--kb-easing-in-out);
+}
+
+.kb-data-table tbody tr:hover {
+  background-color: var(--kb-surface-hover);
+}
+
+.kb-data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.kb-data-table-sticky-header thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.kb-data-table-dense th,
+.kb-data-table-dense td {
+  padding: var(--kb-spacing-2) var(--kb-spacing-3);
+}

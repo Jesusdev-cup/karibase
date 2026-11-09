@@ -1,0 +1,73 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Components — Karibase">
+<DocsArticle
+    title="Components"
+    lead="Customizing Karibase components"
+    breadcrumb={[{ name: 'Customize', path: '/customize' }, { name: 'Components' }]}
+    prev={{ name: 'Color modes', path: '/customize/color-modes' }}
+    next={{ name: 'CSS variables', path: '/customize/css-variables' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
+      <p class="docs-text">
+        Customize individual components by overriding their CSS variables or Sass variables. 
+        This allows you to maintain the component's functionality while changing its appearance.
+      </p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="button-customization">Button Customization</h2>
+      <p class="docs-text">Customize button styles:</p>
+      <CodeBlock code={`:root {
+  --kb-btn-padding-x: 1rem;
+  --kb-btn-padding-y: 0.5rem;
+  --kb-btn-font-size: 0.875rem;
+  --kb-btn-border-radius: 8px;
+  --kb-btn-transition: all 0.2s ease;
+}`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="card-customization">Card Customization</h2>
+      <p class="docs-text">Customize card styles:</p>
+      <CodeBlock code={`:root {
+  --kb-card-padding: 1.5rem;
+  --kb-card-border-radius: 12px;
+  --kb-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --kb-card-border: 1px solid var(--kb-border-color);
+}`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="form-customization">Form Customization</h2>
+      <p class="docs-text">Customize form input styles:</p>
+      <CodeBlock code={`:root {
+  --kb-input-padding-x: 0.75rem;
+  --kb-input-padding-y: 0.5rem;
+  --kb-input-border-radius: 6px;
+  --kb-input-border: 1px solid var(--kb-border-color);
+  --kb-input-focus-border: var(--kb-primary);
+}`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="component-variants">Component Variants</h2>
+      <p class="docs-text">Create custom component variants:</p>
+      <CodeBlock code={`.kb-btn-custom {
+  --kb-btn-bg: #8b5cf6;
+  --kb-btn-hover-bg: #7c3aed;
+  --kb-btn-text: white;
+}`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

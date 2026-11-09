@@ -1,0 +1,161 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = 'Karibase — CSS framework for admin dashboards & floating bots',
+  description = 'Karibase is a progressive CSS framework for building efficient, scalable dashboards, admin panels and floating assistants.'
+} = Astro.props
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${base}/logo.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href={`${base}/css/karibase.css`} />
+    <link rel="stylesheet" href={`${base}/css/karibase-admin-utilities.css`} />
+    <script is:inline>
+      ;(() => {
+        const saved = localStorage.getItem('karibase-theme')
+        document.documentElement.setAttribute('mode', saved === 'light' ? 'light' : 'dark')
+      })()
+    </script>
+    <script define:vars={{ base }}>
+      // Prefix root-absolute links/images with the site base (/karibase on Pages)
+      document.addEventListener('DOMContentLoaded', () => {
+        if (!base) return
+        document
+          .querySelectorAll('a[href^="/"]:not([href^="//"]), img[src^="/"], form[action^="/"]')
+          .forEach((el) => {
+            const attr = el.tagName === 'A' ? 'href' : el.tagName === 'IMG' ? 'src' : 'action'
+            const v = el.getAttribute(attr)
+            if (v && !v.startsWith(base)) el.setAttribute(attr, base + v)
+          })
+      })
+    </script>
+  </head>
+  <body>
+    <slot />
+    <script is:inline>
+      ;(() => {
+        // Theme toggle
+        document.addEventListener('click', (e) => {
+          const btn = e.target.closest('[data-theme-toggle]')
+          if (btn) {
+            const next = document.documentElement.getAttribute('mode') === 'dark' ? 'light' : 'dark'
+            document.documentElement.setAttribute('mode', next)
+            localStorage.setItem('karibase-theme', next)
+            return
+          }
+          // Mobile docs nav
+          if (e.target.closest('[data-nav-toggle]')) {
+            document.body.classList.toggle('nav-open')
+            return
+          }
+          // Generic show/hide/toggle targets (ported from v-if demos)
+          const applyState = (v, on) => {
+            document.querySelectorAll(`[data-kb-target="${v}"]`).forEach((el) => {
+              el.hidden = on === undefined ? !el.hidden : !on
+            })
+            document.querySelectorAll(`[data-kb-target-inv="${v}"]`).forEach((el) => {
+              el.hidden = on === undefined ? !el.hidden : on
+            })
+            document.querySelectorAll('[data-kb-class]').forEach((o) => {
+              o.dataset.kbClass.split(' ').forEach((pair) => {
+                const [key, cls] = pair.split(':')
+                if (key === v) o.classList.toggle(cls, on === undefined ? undefined : on)
+              })
+            })
+          }
+          const toggler = e.target.closest('[data-kb-toggle]')
+          if (toggler) {
+            applyState(toggler.dataset.kbToggle)
+            return
+          }
+          const shower = e.target.closest('[data-kb-show]')
+          if (shower) {
+            applyState(shower.dataset.kbShow, true)
+            return
+          }
+          const hider = e.target.closest('[data-kb-hide]')
+          if (hider) {
+            const v = hider.dataset.kbHide
+            // an element that is both hide-trigger and target of the same var is
+            // an overlay: only closes when the backdrop itself is clicked
+            const isOverlay = hider.dataset.kbTarget === v
+            if (!isOverlay || e.target === hider) applyState(v, false)
+            return
+          }
+          // Copy buttons
+          const copy = e.target.closest('[data-copy]')
+          if (copy) {
+            const block = copy.closest('.code-block, .hero-install')
+            const code = block?.querySelector('code') || block?.querySelector('.copy-src')
+            const text = copy.dataset.copy || code?.textContent || ''
+            navigator.clipboard?.writeText(text).then(() => {
+              const icon = copy.querySelector('i')
+              if (icon) {
+                icon.className = 'fas fa-check'
+                setTimeout(() => (icon.className = 'fas fa-copy'), 1500)
+              }
+            })
+            return
+          }
+          // Alert dismiss
+          const alertClose = e.target.closest('.kb-alert-close')
+          if (alertClose) {
+            const alert = alertClose.closest('.kb-alert')
+            if (alert) alert.remove()
+          }
+        })
+
+        // Hover-driven visibility (@mouseenter/@mouseleave port)
+        document.addEventListener('mouseover', (e) => {
+          const on = e.target.closest('[data-kb-hover-on]')
+          if (on && !on.contains(e.relatedTarget)) {
+            const v = on.dataset.kbHoverOn
+            document.querySelectorAll(`[data-kb-target="${v}"]`).forEach((el) => (el.hidden = false))
+            document.querySelectorAll('[data-kb-class]').forEach((o) => {
+              o.dataset.kbClass.split(' ').forEach((pair) => {
+                const [key, cls] = pair.split(':')
+                if (key === v) o.classList.add(cls)
+              })
+            })
+          }
+          const off = e.target.closest('[data-kb-hover-off]')
+          if (off && !off.contains(e.relatedTarget)) {
+            const v = off.dataset.kbHoverOff
+            document.querySelectorAll(`[data-kb-target="${v}"]`).forEach((el) => (el.hidden = true))
+            document.querySelectorAll('[data-kb-class]').forEach((o) => {
+              o.dataset.kbClass.split(' ').forEach((pair) => {
+                const [key, cls] = pair.split(':')
+                if (key === v) o.classList.remove(cls)
+              })
+            })
+          }
+        })
+      })()
+    </script>
+    <slot name="scripts" />
+  </body>
+</html>

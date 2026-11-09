@@ -1,0 +1,142 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro'
+import DocsArticle from '../../components/DocsArticle.astro'
+import CodeBlock from '../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Layout — Karibase">
+<DocsArticle
+    title="Layout"
+    lead="Grid system and layout utilities"
+    prev={{ name: 'Tables', path: '/components/tables' }}
+    next={{ name: 'Utilities', path: '/utilities' }}
+  >
+
+    <h2 class="docs-heading docs-heading-2" id="container">Container</h2>
+    <p class="docs-text">Container for centering content:</p>
+
+    <div class="docs-preview">
+      <div class="kb-container">
+        <div class="kb-container-demo">
+          Container
+        </div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-container">
+  Content
+</div>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="grid-system">Grid System</h2>
+    <p class="docs-text">Responsive grid layout:</p>
+
+    <div class="docs-preview">
+      <div class="kb-grid kb-grid-3">
+        <div class="kb-grid-item">Column 1</div>
+        <div class="kb-grid-item">Column 2</div>
+        <div class="kb-grid-item">Column 3</div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-grid kb-grid-3">
+  <div class="kb-grid-item">Column 1</div>
+  <div class="kb-grid-item">Column 2</div>
+  <div class="kb-grid-item">Column 3</div>
+</div>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="grid-variants">Grid Variants</h2>
+    <p class="docs-text">Different grid column options:</p>
+
+    <div class="docs-preview">
+      <div class="kb-grid kb-grid-2">
+        <div class="kb-grid-item">2 Columns</div>
+        <div class="kb-grid-item">2 Columns</div>
+      </div>
+      <div class="kb-grid kb-grid-4">
+        <div class="kb-grid-item">4 Columns</div>
+        <div class="kb-grid-item">4 Columns</div>
+        <div class="kb-grid-item">4 Columns</div>
+        <div class="kb-grid-item">4 Columns</div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-grid kb-grid-2">...</div>
+<div class="kb-grid kb-grid-3">...</div>
+<div class="kb-grid kb-grid-4">...</div>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="flexbox">Flexbox</h2>
+    <p class="docs-text">Flexbox utilities:</p>
+
+    <div class="docs-preview">
+      <div class="kb-flex kb-flex-between">
+        <div class="kb-flex-item">Left</div>
+        <div class="kb-flex-item">Right</div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-flex kb-flex-between">
+  <div>Left</div>
+  <div>Right</div>
+</div>`} />
+
+  </DocsArticle>
+</DocsLayout>
+<style>
+
+.kb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.kb-container-demo {
+  background-color: var(--docs-bg-tertiary);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--docs-text-primary);
+}
+
+.kb-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.kb-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.kb-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.kb-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.kb-grid-item {
+  background-color: var(--docs-bg-tertiary);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--docs-text-primary);
+}
+
+.kb-flex {
+  display: flex;
+  gap: 16px;
+}
+
+.kb-flex-between {
+  justify-content: space-between;
+}
+
+.kb-flex-item {
+  background-color: var(--docs-bg-tertiary);
+  padding: 20px;
+  border-radius: 8px;
+  color: var(--docs-text-primary);
+}
+</style>

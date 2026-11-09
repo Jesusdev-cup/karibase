@@ -1,0 +1,16 @@
+---
+interface Props {
+  previewClass?: string
+}
+
+const { previewClass = '' } = Astro.props
+const hasDefault = Astro.slots.has('default')
+const hasCode = Astro.slots.has('code')
+---
+
+{hasDefault && (
+  <div class:list={['docs-preview', previewClass]}>
+    <slot />
+  </div>
+)}
+{hasCode && <slot name="code" />}

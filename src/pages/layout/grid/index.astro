@@ -1,0 +1,82 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Grid — Karibase">
+<DocsArticle
+    title="Grid"
+    lead="Grid system in Karibase"
+    breadcrumb={[{ name: 'Layout', path: '/layout' }, { name: 'Grid' }]}
+    prev={{ name: 'Containers', path: '/layout/containers' }}
+    next={{ name: 'Columns', path: '/layout/columns' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
+      <p class="docs-text">
+        Karibase uses a flexible 12-column grid system. The grid is responsive and works with all breakpoints.
+      </p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="basic-grid">Basic Grid</h2>
+      <p class="docs-text">Create a basic grid layout:</p>
+      <CodeBlock code={`<div class="kb-grid">
+  <div class="kb-col-4">Column 1</div>
+  <div class="kb-col-4">Column 2</div>
+  <div class="kb-col-4">Column 3</div>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="responsive-grid">Responsive Grid</h2>
+      <p class="docs-text">Create responsive grid layouts:</p>
+      <CodeBlock code={`<div class="kb-grid">
+  <div class="kb-col-12 kb-col-md-6 kb-col-lg-4">
+    Column 1
+  </div>
+  <div class="kb-col-12 kb-col-md-6 kb-col-lg-4">
+    Column 2
+  </div>
+  <div class="kb-col-12 kb-col-md-12 kb-col-lg-4">
+    Column 3
+  </div>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="grid-options">Grid Options</h2>
+      <p class="docs-text">Available grid column classes:</p>
+      <div class="docs-breakpoint-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>kb-col-1</code> to <code>kb-col-12</code></td>
+              <td>Column width (1-12)</td>
+            </tr>
+            <tr>
+              <td><code>kb-col-auto</code></td>
+              <td>Auto width</td>
+            </tr>
+            <tr>
+              <td><code>kb-col-&#123;breakpoint&#125;-1</code> to <code>kb-col-&#123;breakpoint&#125;-12</code></td>
+              <td>Responsive column width</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

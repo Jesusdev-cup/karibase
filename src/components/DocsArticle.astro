@@ -1,0 +1,32 @@
+---
+import DocsBreadcrumb from './DocsBreadcrumb.astro'
+import DocsPrevNext from './DocsPrevNext.astro'
+
+interface Item { name: string; path?: string }
+interface Props {
+  title?: string
+  lead?: string
+  breadcrumb?: Item[] | false
+  prev?: { name: string; path: string } | null
+  next?: { name: string; path: string } | null
+}
+
+const { title = '', lead = '', breadcrumb = [], prev = null, next = null } = Astro.props
+
+const items =
+  breadcrumb === false
+    ? []
+    : Array.isArray(breadcrumb) && breadcrumb.length
+      ? breadcrumb
+      : title
+        ? [{ name: title }]
+        : []
+---
+
+<article class="docs-article">
+  {items.length > 0 && <DocsBreadcrumb items={items} />}
+  {title && <h1>{title}</h1>}
+  {lead && <p class="docs-lead">{lead}</p>}
+  <slot />
+  <DocsPrevNext prev={prev} next={next} />
+</article>

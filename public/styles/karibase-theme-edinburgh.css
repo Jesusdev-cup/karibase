@@ -1,0 +1,348 @@
+/*!
+ * Karibase Theme - Edinburgh
+ * Business/Consulting theme inspired by solacewp.com/edinburgh
+ * 
+ * Features:
+ * - Professional business aesthetic
+ * - Partnership-focused design
+ * - Corporate color palette
+ * - Team showcase layouts
+ */
+
+:root {
+  --kb-edinburgh-primary: #1e3a8a;
+  --kb-edinburgh-secondary: #3b82f6;
+  --kb-edinburgh-accent: #f59e0b;
+  --kb-edinburgh-success: #10b981;
+  --kb-edinburgh-light: #f1f5f9;
+  --kb-edinburgh-dark: #0f172a;
+  --kb-edinburgh-muted: #64748b;
+  --kb-edinburgh-white: #ffffff;
+  --kb-edinburgh-border: #e2e8f0;
+  --kb-edinburgh-shadow: rgba(15, 23, 42, 0.1);
+  --kb-edinburgh-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
+.kb-edinburgh-theme {
+  background-color: var(--kb-edinburgh-white);
+  color: var(--kb-edinburgh-dark);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Edinburgh Navigation */
+.kb-edinburgh-nav {
+  background: var(--kb-edinburgh-white);
+  border-bottom: 1px solid var(--kb-edinburgh-border);
+  padding: 20px 0;
+}
+
+.kb-edinburgh-nav-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--kb-edinburgh-primary);
+  text-decoration: none;
+}
+
+.kb-edinburgh-nav-menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kb-edinburgh-nav-link {
+  color: var(--kb-edinburgh-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.kb-edinburgh-nav-link:hover {
+  color: var(--kb-edinburgh-primary);
+}
+
+/* Edinburgh Hero */
+.kb-edinburgh-hero {
+  background: var(--kb-edinburgh-gradient);
+  color: var(--kb-edinburgh-white);
+  padding: 120px 0;
+  text-align: center;
+}
+
+.kb-edinburgh-hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.kb-edinburgh-hero-subtitle {
+  font-size: 20px;
+  opacity: 0.9;
+  margin: 0 0 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Process Steps */
+.kb-edinburgh-process {
+  padding: 80px 0;
+}
+
+.kb-edinburgh-process-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-edinburgh-dark);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.kb-edinburgh-process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+}
+
+.kb-edinburgh-process-step {
+  text-align: center;
+  padding: 32px;
+  background: var(--kb-edinburgh-white);
+  border: 1px solid var(--kb-edinburgh-border);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.kb-edinburgh-process-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--kb-edinburgh-shadow);
+}
+
+.kb-edinburgh-step-number {
+  width: 64px;
+  height: 64px;
+  background: var(--kb-edinburgh-primary);
+  color: var(--kb-edinburgh-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 auto 24px;
+}
+
+.kb-edinburgh-step-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--kb-edinburgh-dark);
+  margin: 0 0 12px;
+}
+
+.kb-edinburgh-step-description {
+  font-size: 16px;
+  color: var(--kb-edinburgh-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Team Section */
+.kb-edinburgh-team {
+  background: var(--kb-edinburgh-light);
+  padding: 80px 0;
+}
+
+.kb-edinburgh-team-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-edinburgh-dark);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.kb-edinburgh-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+}
+
+.kb-edinburgh-team-card {
+  background: var(--kb-edinburgh-white);
+  border: 1px solid var(--kb-edinburgh-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.kb-edinburgh-team-card:hover {
+  transform: translateY(-4px);
+}
+
+.kb-edinburgh-team-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.kb-edinburgh-team-info {
+  padding: 24px;
+  text-align: center;
+}
+
+.kb-edinburgh-team-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--kb-edinburgh-dark);
+  margin: 0 0 8px;
+}
+
+.kb-edinburgh-team-role {
+  font-size: 14px;
+  color: var(--kb-edinburgh-muted);
+  margin: 0 0 12px;
+}
+
+.kb-edinburgh-team-social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.kb-edinburgh-team-social-link {
+  width: 36px;
+  height: 36px;
+  background: var(--kb-edinburgh-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kb-edinburgh-dark);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.kb-edinburgh-team-social-link:hover {
+  background: var(--kb-edinburgh-primary);
+  color: var(--kb-edinburgh-white);
+}
+
+/* Pricing Section */
+.kb-edinburgh-pricing {
+  padding: 80px 0;
+}
+
+.kb-edinburgh-pricing-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-edinburgh-dark);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.kb-edinburgh-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.kb-edinburgh-pricing-card {
+  background: var(--kb-edinburgh-white);
+  border: 1px solid var(--kb-edinburgh-border);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kb-edinburgh-pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--kb-edinburgh-shadow);
+}
+
+.kb-edinburgh-pricing-card.featured {
+  border: 2px solid var(--kb-edinburgh-primary);
+  position: relative;
+}
+
+.kb-edinburgh-pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--kb-edinburgh-primary);
+  color: var(--kb-edinburgh-white);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.kb-edinburgh-pricing-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--kb-edinburgh-dark);
+  margin: 0 0 16px;
+}
+
+.kb-edinburgh-pricing-price {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--kb-edinburgh-primary);
+  margin: 0 0 8px;
+}
+
+.kb-edinburgh-pricing-period {
+  font-size: 16px;
+  color: var(--kb-edinburgh-muted);
+  margin: 0 0 24px;
+}
+
+.kb-edinburgh-pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+}
+
+.kb-edinburgh-pricing-feature {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--kb-edinburgh-border);
+  color: var(--kb-edinburgh-dark);
+}
+
+.kb-edinburgh-pricing-feature:last-child {
+  border-bottom: none;
+}
+
+/* Buttons */
+.kb-edinburgh-btn-primary {
+  background: var(--kb-edinburgh-primary);
+  color: var(--kb-edinburgh-white);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kb-edinburgh-btn-primary:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+.kb-edinburgh-btn-secondary {
+  background: var(--kb-edinburgh-white);
+  color: var(--kb-edinburgh-dark);
+  border: 1px solid var(--kb-edinburgh-border);
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kb-edinburgh-btn-secondary:hover {
+  background: var(--kb-edinburgh-light);
+  border-color: var(--kb-edinburgh-primary);
+}

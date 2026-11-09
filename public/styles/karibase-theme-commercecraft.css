@@ -1,0 +1,294 @@
+/*!
+ * Karibase Theme - CommerceCraft
+ * Fashion e-commerce theme inspired by solacewp.com/commercecraft
+ * 
+ * Features:
+ * - Elegant fashion-focused design
+ * - Designer showcase layouts
+ * - Luxury aesthetic with gold accents
+ * - Gift and accessories styling
+ */
+
+:root {
+  --kb-commerce-primary: #2c3e50;
+  --kb-commerce-secondary: #e74c3c;
+  --kb-commerce-accent: #f39c12;
+  --kb-commerce-gold: #d4af37;
+  --kb-commerce-rose: #e84393;
+  --kb-commerce-light: #ecf0f1;
+  --kb-commerce-dark: #1a252f;
+  --kb-commerce-muted: #95a5a6;
+  --kb-commerce-white: #ffffff;
+  --kb-commerce-border: #dcdde1;
+  --kb-commerce-shadow: rgba(44, 62, 80, 0.1);
+  --kb-commerce-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.kb-commerce-theme {
+  background-color: var(--kb-commerce-white);
+  color: var(--kb-commerce-dark);
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Designer Showcase */
+.kb-commerce-designer-showcase {
+  background: var(--kb-commerce-white);
+  padding: 64px 0;
+}
+
+.kb-commerce-designer-card {
+  background: var(--kb-commerce-light);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kb-commerce-designer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px var(--kb-commerce-shadow);
+}
+
+.kb-commerce-designer-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.kb-commerce-designer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.kb-commerce-designer-card:hover .kb-commerce-designer-image img {
+  transform: scale(1.1);
+}
+
+.kb-commerce-designer-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  padding: 24px;
+  color: var(--kb-commerce-white);
+}
+
+.kb-commerce-designer-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  font-family: 'Playfair Display', serif;
+}
+
+.kb-commerce-designer-specialty {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Product Grid */
+.kb-commerce-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+  padding: 48px 0;
+}
+
+.kb-commerce-product-item {
+  position: relative;
+  background: var(--kb-commerce-white);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.kb-commerce-product-item::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--kb-commerce-gold);
+  color: var(--kb-commerce-white);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.kb-commerce-product-item.new-arrival::before {
+  content: 'NEW';
+}
+
+.kb-commerce-product-item.sale::before {
+  content: 'SALE';
+  background: var(--kb-commerce-secondary);
+}
+
+.kb-commerce-product-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.kb-commerce-product-item:hover .kb-commerce-product-img {
+  transform: scale(1.05);
+}
+
+.kb-commerce-product-details {
+  padding: 20px;
+}
+
+.kb-commerce-product-category {
+  font-size: 12px;
+  color: var(--kb-commerce-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.kb-commerce-product-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--kb-commerce-dark);
+  margin: 0 0 12px;
+  font-family: 'Playfair Display', serif;
+}
+
+.kb-commerce-product-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--kb-commerce-secondary);
+  margin: 0 0 16px;
+}
+
+.kb-commerce-product-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.kb-commerce-btn-primary {
+  flex: 1;
+  padding: 12px 24px;
+  background: var(--kb-commerce-primary);
+  color: var(--kb-commerce-white);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.kb-commerce-btn-primary:hover {
+  background: var(--kb-commerce-dark);
+}
+
+.kb-commerce-btn-secondary {
+  padding: 12px 16px;
+  background: var(--kb-commerce-light);
+  color: var(--kb-commerce-dark);
+  border: 1px solid var(--kb-commerce-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kb-commerce-btn-secondary:hover {
+  background: var(--kb-commerce-white);
+  border-color: var(--kb-commerce-primary);
+}
+
+/* Gift Section */
+.kb-commerce-gift-section {
+  background: var(--kb-commerce-gradient);
+  color: var(--kb-commerce-white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.kb-commerce-gift-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  font-family: 'Playfair Display', serif;
+}
+
+.kb-commerce-gift-subtitle {
+  font-size: 18px;
+  opacity: 0.9;
+  margin: 0 0 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kb-commerce-gift-categories {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.kb-commerce-gift-category {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 24px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.kb-commerce-gift-category:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+.kb-commerce-gift-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.kb-commerce-gift-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Navigation */
+.kb-commerce-nav {
+  background: var(--kb-commerce-white);
+  border-bottom: 1px solid var(--kb-commerce-border);
+  padding: 20px 0;
+}
+
+.kb-commerce-nav-logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--kb-commerce-primary);
+  font-family: 'Playfair Display', serif;
+  text-decoration: none;
+}
+
+.kb-commerce-nav-menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kb-commerce-nav-link {
+  color: var(--kb-commerce-dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.kb-commerce-nav-link:hover {
+  color: var(--kb-commerce-secondary);
+}

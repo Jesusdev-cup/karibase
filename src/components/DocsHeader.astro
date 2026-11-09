@@ -1,0 +1,33 @@
+---
+const path = Astro.url.pathname
+const isDocs = path !== '/'
+---
+
+<header class="site-header">
+  <button class="icon-btn docs-menu-btn" data-nav-toggle aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+  <a href="/" class="brand">
+    <img src="/logo.svg" alt="Karibase logo" />
+    <span>Karibase</span>
+  </a>
+  <nav>
+    <a href="/introduction" class={isDocs ? 'active' : ''}>Docs</a>
+    <a href="/components">Components</a>
+    <a href="/customize">Themes</a>
+  </nav>
+  <div class="header-search">
+    <i class="fas fa-search"></i>
+    <input type="search" placeholder="Search documentation…" aria-label="Search documentation" data-nav-search />
+    <kbd>/</kbd>
+  </div>
+  <div class="header-actions">
+    <a class="icon-btn" href="https://github.com/Jesusdev-cup/karibase" target="_blank" rel="noopener" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <button class="icon-btn" data-theme-toggle aria-label="Toggle theme">
+      <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+    </button>
+    <a href="/installation" class="btn btn-primary">Get Started</a>
+  </div>
+</header>

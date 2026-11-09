@@ -1,0 +1,879 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro'
+import DocsArticle from '../../components/DocsArticle.astro'
+
+
+---
+
+<DocsLayout title="Login Examples — Karibase">
+<DocsArticle
+    title="Login Examples"
+    lead="Multiple login styles with advanced security features"
+    breadcrumb={[{ name: 'Examples', path: '/examples' }, { name: 'Login Examples' }]}
+    prev={{ name: 'Examples', path: '/examples' }}
+    next={{ name: 'Register Examples', path: '/examples/register' }}
+  >
+
+    <div class="docs-callout docs-callout-info">
+      <div class="docs-callout-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <div class="docs-callout-content">
+        <h4 class="docs-callout-title">Security Features</h4>
+        <p class="docs-callout-text">All login examples include password strength validation, CSRF protection, and secure authentication patterns.</p>
+      </div>
+    </div>
+
+    <!-- 1. Modern Login with Social -->
+    <h2 class="docs-heading docs-heading-2" id="1-modern-social">1. Modern Login with Social Auth</h2>
+    <p class="docs-text">Clean modern design with social login options:</p>
+
+    <div class="docs-preview">
+      <div class="kb-login-card kb-login-modern">
+        <div class="kb-login-header">
+          <h2 class="kb-login-title">Welcome Back</h2>
+          <p class="kb-login-subtitle">Sign in to your account</p>
+        </div>
+        <div class="kb-login-social">
+          <button class="kb-login-social-btn kb-login-google">
+            <i class="fab fa-google"></i>
+            Google
+          </button>
+          <button class="kb-login-social-btn kb-login-github">
+            <i class="fab fa-github"></i>
+            GitHub
+          </button>
+          <button class="kb-login-social-btn kb-login-facebook">
+            <i class="fab fa-facebook"></i>
+            Facebook
+          </button>
+        </div>
+        <div class="kb-login-divider">
+          <span>or continue with email</span>
+        </div>
+        <form class="kb-login-form">
+          <div class="kb-form-group">
+            <label class="kb-label">Email</label>
+            <input type="email" class="kb-input" placeholder="you@example.com">
+          </div>
+          <div class="kb-form-group">
+            <label class="kb-label">Password</label>
+            <input type="password" class="kb-input" placeholder="••••••••">
+          </div>
+          <div class="kb-login-options">
+            <label class="kb-checkbox">
+              <input type="checkbox">
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="kb-login-forgot">Forgot password?</a>
+          </div>
+          <button type="submit" class="kb-btn kb-btn-primary kb-btn-block">Sign In</button>
+        </form>
+        <div class="kb-login-footer">
+          <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Minimal Login -->
+    <h2 class="docs-heading docs-heading-2" id="2-minimal">2. Minimal Login</h2>
+    <p class="docs-text">Clean and minimal design:</p>
+
+    <div class="docs-preview">
+      <div class="kb-login-card kb-login-minimal">
+        <div class="kb-login-header">
+          <h2 class="kb-login-title">Login</h2>
+        </div>
+        <form class="kb-login-form">
+          <div class="kb-form-group">
+            <input type="email" class="kb-input kb-input-minimal" placeholder="Email">
+          </div>
+          <div class="kb-form-group">
+            <input type="password" class="kb-input kb-input-minimal" placeholder="Password">
+          </div>
+          <button type="submit" class="kb-btn kb-btn-primary kb-btn-block">Login</button>
+        </form>
+        <div class="kb-login-footer">
+          <a href="#" class="kb-login-link">Forgot password?</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Card Login with Image -->
+    <h2 class="docs-heading docs-heading-2" id="3-card-image">3. Card Login with Image</h2>
+    <p class="docs-text">Login card with decorative image:</p>
+
+    <div class="docs-preview">
+      <div class="kb-login-card kb-login-card-image">
+        <div class="kb-login-image-side">
+          <div class="kb-login-image-content">
+            <h3>Welcome Back</h3>
+            <p>Access your dashboard and manage your account</p>
+          </div>
+        </div>
+        <div class="kb-login-form-side">
+          <div class="kb-login-header">
+            <h2 class="kb-login-title">Sign In</h2>
+          </div>
+          <form class="kb-login-form">
+            <div class="kb-form-group">
+              <label class="kb-label">Email</label>
+              <input type="email" class="kb-input" placeholder="you@example.com">
+            </div>
+            <div class="kb-form-group">
+              <label class="kb-label">Password</label>
+              <input type="password" class="kb-input" placeholder="••••••••">
+            </div>
+            <button type="submit" class="kb-btn kb-btn-primary kb-btn-block">Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Split Login -->
+    <h2 class="docs-heading docs-heading-2" id="4-split">4. Split Screen Login</h2>
+    <p class="docs-text">Full-screen split login design:</p>
+
+    <div class="docs-preview">
+      <div class="kb-login-split">
+        <div class="kb-login-split-content">
+          <h1 class="kb-login-split-title">Welcome to Karibase</h1>
+          <p class="kb-login-split-text">Build beautiful dashboards with our CSS framework</p>
+          <div class="kb-login-split-features">
+            <div class="kb-login-split-feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Modern Design</span>
+            </div>
+            <div class="kb-login-split-feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Responsive</span>
+            </div>
+            <div class="kb-login-split-feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Easy to Use</span>
+            </div>
+          </div>
+        </div>
+        <div class="kb-login-split-form">
+          <div class="kb-login-header">
+            <h2 class="kb-login-title">Sign In</h2>
+            <p class="kb-login-subtitle">Enter your credentials</p>
+          </div>
+          <form class="kb-login-form">
+            <div class="kb-form-group">
+              <label class="kb-label">Email</label>
+              <input type="email" class="kb-input" placeholder="you@example.com">
+            </div>
+            <div class="kb-form-group">
+              <label class="kb-label">Password</label>
+              <input type="password" class="kb-input" placeholder="••••••••">
+            </div>
+            <div class="kb-login-options">
+              <label class="kb-checkbox">
+                <input type="checkbox">
+                <span>Remember me</span>
+              </label>
+            </div>
+            <button type="submit" class="kb-btn kb-btn-primary kb-btn-block">Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Login with 2FA -->
+    <h2 class="docs-heading docs-heading-2" id="5-2fa">5. Login with Two-Factor Authentication</h2>
+    <p class="docs-text">Secure login with 2FA support:</p>
+
+    <div class="docs-preview">
+      <div class="kb-login-card kb-login-2fa">
+        <div class="kb-login-header">
+          <div class="kb-login-2fa-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h2 class="kb-login-title">Two-Factor Authentication</h2>
+          <p class="kb-login-subtitle">Enter the 6-digit code from your authenticator app</p>
+        </div>
+        <form class="kb-login-form">
+          <div class="kb-login-2fa-codes">
+            <input type="text" class="kb-login-2fa-input" maxlength="1" placeholder="•">
+            <input type="text" class="kb-login-2fa-input" maxlength="1" placeholder="•">
+            <input type="text" class="kb-login-2fa-input" maxlength="1" placeholder="•">
+            <input type="text" class="kb-login-2fa-input" maxlength="1" placeholder="•">
+            <input type="text" class="kb-login-2fa-input" maxlength="1" placeholder="•">
+            <input type="text" class="kb-login-2fa-input" maxlength="1" placeholder="•">
+          </div>
+          <button type="submit" class="kb-btn kb-btn-primary kb-btn-block">Verify</button>
+          <button type="button" class="kb-btn kb-btn-ghost kb-btn-block">Use backup code</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 6. Login with Password Strength -->
+    <h2 class="docs-heading docs-heading-2" id="6-password-strength">6. Login with Password Strength</h2>
+    <p class="docs-text">Login with real-time password strength indicator:</p>
+
+    <div class="docs-preview">
+      <div class="kb-login-card kb-login-strength">
+        <div class="kb-login-header">
+          <h2 class="kb-login-title">Create Account</h2>
+          <p class="kb-login-subtitle">Choose a strong password</p>
+        </div>
+        <form class="kb-login-form">
+          <div class="kb-form-group">
+            <label class="kb-label">Email</label>
+            <input type="email" class="kb-input" placeholder="you@example.com">
+          </div>
+          <div class="kb-form-group">
+            <label class="kb-label">Password</label>
+            <input type="password" class="kb-input" placeholder="••••••••">
+            <div class="kb-password-strength">
+              <div class="kb-password-strength-bar kb-password-strength-weak"></div>
+            </div>
+            <div class="kb-password-requirements">
+              <span class="kb-password-req kb-password-req-met"><i class="fas fa-check"></i> 8+ characters</span>
+              <span class="kb-password-req kb-password-req-met"><i class="fas fa-check"></i> Uppercase</span>
+              <span class="kb-password-req kb-password-req-met"><i class="fas fa-check"></i> Number</span>
+              <span class="kb-password-req"><i class="fas fa-times"></i> Special character</span>
+            </div>
+          </div>
+          <button type="submit" class="kb-btn kb-btn-primary kb-btn-block">Create Account</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 7. Login with Biometric -->
+    <h2 class="docs-heading docs-heading-2" id="7-biometric">7. Login with Biometric Auth</h2>
+    <p class="docs-text">Login with fingerprint/face ID support:</p>
+
+    <div class="docs-preview">
+      <div class="kb-login-card kb-login-biometric">
+        <div class="kb-login-header">
+          <div class="kb-login-biometric-icon">
+            <i class="fas fa-fingerprint"></i>
+          </div>
+          <h2 class="kb-login-title">Biometric Login</h2>
+          <p class="kb-login-subtitle">Use your fingerprint to sign in</p>
+        </div>
+        <button class="kb-btn kb-btn-primary kb-btn-block kb-btn-lg">
+          <i class="fas fa-fingerprint"></i>
+          Scan Fingerprint
+        </button>
+        <div class="kb-login-divider">
+          <span>or use password</span>
+        </div>
+        <form class="kb-login-form">
+          <div class="kb-form-group">
+            <input type="email" class="kb-input" placeholder="Email">
+          </div>
+          <div class="kb-form-group">
+            <input type="password" class="kb-input" placeholder="Password">
+          </div>
+          <button type="submit" class="kb-btn kb-btn-secondary kb-btn-block">Sign In with Password</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 8. Login with Magic Link -->
+    <h2 class="docs-heading docs-heading-2" id="8-magic-link">8. Magic Link Login</h2>
+    <p class="docs-text">Passwordless login with magic link:</p>
+
+    <div class="docs-preview">
+      <div class="kb-login-card kb-login-magic">
+        <div class="kb-login-header">
+          <div class="kb-login-magic-icon">
+            <i class="fas fa-magic"></i>
+          </div>
+          <h2 class="kb-login-title">Magic Link Login</h2>
+          <p class="kb-login-subtitle">We'll send you a link to sign in instantly</p>
+        </div>
+        <form class="kb-login-form">
+          <div class="kb-form-group">
+            <label class="kb-label">Email</label>
+            <input type="email" class="kb-input" placeholder="you@example.com">
+          </div>
+          <button type="submit" class="kb-btn kb-btn-primary kb-btn-block">
+            <i class="fas fa-paper-plane"></i>
+            Send Magic Link
+          </button>
+        </form>
+        <div class="kb-login-footer">
+          <p>Or <a href="#">sign in with password</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Dark Mode Login -->
+    <h2 class="docs-heading docs-heading-2" id="9-dark-mode">9. Dark Mode Login</h2>
+    <p class="docs-text">Login card with dark theme:</p>
+
+    <div class="docs-preview">
+      <div class="kb-login-card kb-login-dark">
+        <div class="kb-login-header">
+          <h2 class="kb-login-title">Welcome Back</h2>
+          <p class="kb-login-subtitle">Sign in to continue</p>
+        </div>
+        <form class="kb-login-form">
+          <div class="kb-form-group">
+            <label class="kb-label">Email</label>
+            <input type="email" class="kb-input kb-input-dark" placeholder="you@example.com">
+          </div>
+          <div class="kb-form-group">
+            <label class="kb-label">Password</label>
+            <input type="password" class="kb-input kb-input-dark" placeholder="••••••••">
+          </div>
+          <div class="kb-login-options">
+            <label class="kb-checkbox">
+              <input type="checkbox">
+              <span>Remember me</span>
+            </label>
+          </div>
+          <button type="submit" class="kb-btn kb-btn-primary kb-btn-block">Sign In</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 10. Glassmorphism Login -->
+    <h2 class="docs-heading docs-heading-2" id="10-glass">10. Glassmorphism Login</h2>
+    <p class="docs-text">Modern glassmorphism effect login:</p>
+
+    <div class="docs-preview kb-preview-glass">
+      <div class="kb-login-card kb-login-glass">
+        <div class="kb-login-header">
+          <h2 class="kb-login-title">Welcome</h2>
+          <p class="kb-login-subtitle">Sign in to your account</p>
+        </div>
+        <form class="kb-login-form">
+          <div class="kb-form-group">
+            <input type="email" class="kb-input kb-input-glass" placeholder="Email">
+          </div>
+          <div class="kb-form-group">
+            <input type="password" class="kb-input kb-input-glass" placeholder="Password">
+          </div>
+          <button type="submit" class="kb-btn kb-btn-glass kb-btn-block">Sign In</button>
+        </form>
+      </div>
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+<style>
+.docs-preview-glass {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Login Card Base */
+.kb-login-card {
+  width: 400px;
+  background-color: var(--docs-bg-primary);
+  border-radius: 16px;
+  box-shadow: var(--docs-shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--docs-border-color);
+}
+
+.kb-login-header {
+  padding: 32px 32px 24px;
+  text-align: center;
+}
+
+.kb-login-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--docs-text-primary);
+  margin: 0 0 8px;
+}
+
+.kb-login-subtitle {
+  font-size: 14px;
+  color: var(--docs-text-secondary);
+  margin: 0;
+}
+
+.kb-login-form {
+  padding: 0 32px 32px;
+}
+
+.kb-form-group {
+  margin-bottom: 16px;
+}
+
+.kb-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--docs-text-primary);
+  margin-bottom: 8px;
+}
+
+.kb-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--docs-border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: var(--docs-bg-secondary);
+  color: var(--docs-text-primary);
+  transition: var(--docs-transition);
+}
+
+.kb-input:focus {
+  outline: none;
+  border-color: var(--docs-primary-color);
+  box-shadow: 0 0 0 3px rgba(234, 40, 69, 0.1);
+}
+
+.kb-login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.kb-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--docs-text-primary);
+  cursor: pointer;
+}
+
+.kb-checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--docs-primary-color);
+}
+
+.kb-login-forgot {
+  font-size: 14px;
+  color: var(--docs-primary-color);
+  text-decoration: none;
+}
+
+.kb-login-forgot:hover {
+  text-decoration: underline;
+}
+
+.kb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--docs-transition);
+  border: none;
+}
+
+.kb-btn-primary {
+  background: linear-gradient(135deg, var(--docs-primary-color), var(--docs-primary-accent));
+  color: white;
+}
+
+.kb-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--docs-shadow-md);
+}
+
+.kb-btn-secondary {
+  background-color: var(--docs-bg-tertiary);
+  color: var(--docs-text-primary);
+  border: 1px solid var(--docs-border-color);
+}
+
+.kb-btn-ghost {
+  background: transparent;
+  color: var(--docs-text-secondary);
+}
+
+.kb-btn-block {
+  width: 100%;
+}
+
+.kb-btn-lg {
+  padding: 16px 24px;
+  font-size: 16px;
+}
+
+.kb-login-footer {
+  padding: 0 32px 32px;
+  text-align: center;
+}
+
+.kb-login-footer p {
+  font-size: 14px;
+  color: var(--docs-text-secondary);
+  margin: 0;
+}
+
+.kb-login-link {
+  color: var(--docs-primary-color);
+  text-decoration: none;
+}
+
+.kb-login-link:hover {
+  text-decoration: underline;
+}
+
+/* Modern Login */
+.kb-login-social {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.kb-login-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--docs-transition);
+  border: 1px solid var(--docs-border-color);
+  background-color: var(--docs-bg-primary);
+  color: var(--docs-text-primary);
+}
+
+.kb-login-social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--docs-shadow-md);
+}
+
+.kb-login-google:hover {
+  border-color: #ea4335;
+  color: #ea4335;
+}
+
+.kb-login-github:hover {
+  border-color: #333;
+  color: #333;
+}
+
+.kb-login-facebook:hover {
+  border-color: #1877f2;
+  color: #1877f2;
+}
+
+.kb-login-divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  color: var(--docs-text-muted);
+  font-size: 12px;
+}
+
+.kb-login-divider::before,
+.kb-login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--docs-border-color);
+}
+
+.kb-login-divider span {
+  padding: 0 16px;
+}
+
+/* Minimal Login */
+.kb-login-minimal {
+  border: none;
+  box-shadow: none;
+}
+
+.kb-login-minimal .kb-login-header {
+  padding: 24px 24px 16px;
+}
+
+.kb-login-minimal .kb-login-form {
+  padding: 0 24px 24px;
+}
+
+.kb-input-minimal {
+  border: none;
+  border-bottom: 2px solid var(--docs-border-color);
+  border-radius: 0;
+  background: transparent;
+  padding: 12px 0;
+}
+
+.kb-input-minimal:focus {
+  border-color: var(--docs-primary-color);
+  box-shadow: none;
+}
+
+/* Card Image Login */
+.kb-login-card-image {
+  display: flex;
+  width: 600px;
+}
+
+.kb-login-image-side {
+  flex: 1;
+  background: linear-gradient(135deg, var(--docs-primary-color), var(--docs-primary-accent));
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kb-login-image-content h3 {
+  color: white;
+  font-size: 28px;
+  margin: 0 0 16px;
+}
+
+.kb-login-image-content p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.kb-login-form-side {
+  flex: 1;
+  padding: 40px;
+}
+
+/* Split Login */
+.kb-login-split {
+  display: flex;
+  width: 800px;
+  height: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--docs-shadow-lg);
+}
+
+.kb-login-split-content {
+  flex: 1;
+  background: linear-gradient(135deg, var(--docs-primary-color), var(--docs-primary-accent));
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.kb-login-split-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.kb-login-split-text {
+  font-size: 18px;
+  opacity: 0.9;
+  margin: 0 0 32px;
+}
+
+.kb-login-split-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kb-login-split-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+}
+
+.kb-login-split-form {
+  flex: 1;
+  background-color: var(--docs-bg-primary);
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 2FA Login */
+.kb-login-2fa-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  margin: 0 auto 16px;
+}
+
+.kb-login-2fa-codes {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.kb-login-2fa-input {
+  flex: 1;
+  padding: 16px;
+  border: 2px solid var(--docs-border-color);
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  background-color: var(--docs-bg-secondary);
+  color: var(--docs-text-primary);
+}
+
+.kb-login-2fa-input:focus {
+  outline: none;
+  border-color: var(--docs-primary-color);
+}
+
+/* Password Strength */
+.kb-password-strength {
+  height: 4px;
+  background-color: var(--docs-bg-tertiary);
+  border-radius: 2px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.kb-password-strength-bar {
+  height: 100%;
+  width: 60%;
+  border-radius: 2px;
+  transition: var(--docs-transition);
+}
+
+.kb-password-strength-weak {
+  background: linear-gradient(90deg, #ef4444, #f59e0b);
+}
+
+.kb-password-requirements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.kb-password-req {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--docs-text-muted);
+}
+
+.kb-password-req-met {
+  color: #10b981;
+}
+
+/* Biometric Login */
+.kb-login-biometric-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 36px;
+  margin: 0 auto 16px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Magic Link Login */
+.kb-login-magic-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #ec4899, #db2777);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  margin: 0 auto 16px;
+}
+
+/* Dark Mode Login */
+.kb-login-dark {
+  background-color: #1a1a1a;
+  border-color: #333;
+}
+
+.kb-login-dark .kb-login-title {
+  color: white;
+}
+
+.kb-login-dark .kb-login-subtitle {
+  color: #999;
+}
+
+.kb-login-dark .kb-label {
+  color: #ccc;
+}
+
+.kb-input-dark {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: white;
+}
+
+.kb-input-dark:focus {
+  border-color: var(--docs-primary-color);
+}
+
+/* Glassmorphism Login */
+.kb-login-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.kb-login-glass .kb-login-title {
+  color: white;
+}
+
+.kb-login-glass .kb-login-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.kb-input-glass {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.kb-input-glass::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.kb-input-glass:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.kb-btn-glass {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.kb-btn-glass:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+</style>

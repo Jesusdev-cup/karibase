@@ -1,0 +1,370 @@
+/*!
+ * Karibase Container Queries Module
+ * 
+ * This module provides Container Query support for component-level responsiveness.
+ * Container Queries allow components to respond to their own size rather than the viewport.
+ * 
+ * Usage:
+ *   <div class="kb-container-query">
+ *     <div class="kb-card">
+ *       <!-- Content that responds to container size -->
+ *     </div>
+ *   </div>
+ * 
+ * @license MIT
+ * @copyright 2026
+ */
+
+/* ========================================
+   CONTAINER QUERY SETUP
+   ======================================== */
+
+/* Enable container queries on components */
+.kb-container-query {
+  container-type: inline-size;
+  container-name: kb-component;
+}
+
+/* Container query units fallback - handled in @supports block below */
+
+/* ========================================
+   CARD COMPONENT - CONTAINER QUERIES
+   ======================================== */
+
+@container kb-component (min-width: 300px) {
+  .kb-card {
+    padding: var(--kb-space-md);
+  }
+  
+  .kb-card-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@container kb-component (min-width: 500px) {
+  .kb-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--kb-space-md);
+  }
+  
+  .kb-card-full {
+    grid-column: 1 / -1;
+  }
+}
+
+@container kb-component (min-width: 700px) {
+  .kb-card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ========================================
+   NAVIGATION - CONTAINER QUERIES
+   ======================================== */
+
+@container kb-component (min-width: 400px) {
+  .kb-nav-horizontal {
+    display: flex;
+    gap: var(--kb-space-sm);
+  }
+  
+  .kb-nav-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: var(--kb-space-sm);
+  }
+}
+
+@container kb-component (min-width: 600px) {
+  .kb-nav-horizontal .kb-nav-item {
+    padding: var(--kb-space-sm) var(--kb-space-md);
+  }
+}
+
+/* ========================================
+   GRID SYSTEM - CONTAINER QUERIES
+   ======================================== */
+
+@container kb-component (min-width: 350px) {
+  .kb-grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container kb-component (min-width: 500px) {
+  .kb-grid-responsive {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@container kb-component (min-width: 700px) {
+  .kb-grid-responsive {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ========================================
+   TYPOGRAPHY - CONTAINER QUERIES
+   ======================================== */
+
+@container kb-component (max-width: 300px) {
+  .kb-text-responsive {
+    font-size: var(--kb-font-size-sm);
+  }
+  
+  .kb-heading-responsive {
+    font-size: var(--kb-font-size-lg);
+  }
+}
+
+@container kb-component (min-width: 300px) and (max-width: 600px) {
+  .kb-text-responsive {
+    font-size: var(--kb-font-size-base);
+  }
+  
+  .kb-heading-responsive {
+    font-size: var(--kb-font-size-xl);
+  }
+}
+
+@container kb-component (min-width: 600px) {
+  .kb-text-responsive {
+    font-size: var(--kb-font-size-lg);
+  }
+  
+  .kb-heading-responsive {
+    font-size: var(--kb-font-size-2xl);
+  }
+}
+
+/* ========================================
+   BUTTON GROUPS - CONTAINER QUERIES
+   ======================================== */
+
+@container kb-component (max-width: 400px) {
+  .kb-button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .kb-button-group .kb-btn {
+    width: 100%;
+  }
+}
+
+@container kb-component (min-width: 400px) {
+  .kb-button-group {
+    flex-direction: row;
+  }
+  
+  .kb-button-group .kb-btn {
+    width: auto;
+  }
+}
+
+/* ========================================
+   FORMS - CONTAINER QUERIES
+   ======================================== */
+
+@container kb-component (max-width: 400px) {
+  .kb-form-row {
+    flex-direction: column;
+  }
+  
+  .kb-form-row .kb-form-group {
+    width: 100%;
+  }
+}
+
+@container kb-component (min-width: 400px) {
+  .kb-form-row {
+    flex-direction: row;
+    gap: var(--kb-space-md);
+  }
+  
+  .kb-form-row .kb-form-group {
+    flex: 1;
+  }
+}
+
+/* ========================================
+   TABLES - CONTAINER QUERIES
+   ======================================== */
+
+@container kb-component (max-width: 500px) {
+  .kb-table-responsive {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .kb-table {
+    font-size: var(--kb-font-size-sm);
+  }
+  
+  .kb-table-hide-mobile {
+    display: none;
+  }
+}
+
+@container kb-component (min-width: 500px) {
+  .kb-table-hide-mobile {
+    display: table-cell;
+  }
+}
+
+/* ========================================
+   SIDEBAR - CONTAINER QUERIES
+   ======================================== */
+
+@container kb-component (max-width: 300px) {
+  .kb-sidebar {
+    width: 100%;
+  }
+  
+  .kb-sidebar-nav {
+    display: none;
+  }
+  
+  .kb-sidebar-toggle {
+    display: block;
+  }
+}
+
+@container kb-component (min-width: 300px) {
+  .kb-sidebar {
+    width: 250px;
+  }
+  
+  .kb-sidebar-nav {
+    display: block;
+  }
+  
+  .kb-sidebar-toggle {
+    display: none;
+  }
+}
+
+/* ========================================
+   DASHBOARD WIDGETS - CONTAINER QUERIES
+   ======================================== */
+
+@container kb-component (min-width: 400px) {
+  .kb-widget {
+    padding: var(--kb-space-md);
+  }
+  
+  .kb-widget-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container kb-component (min-width: 600px) {
+  .kb-widget-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@container kb-component (min-width: 800px) {
+  .kb-widget {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--kb-space-md);
+  }
+}
+
+/* ========================================
+   IMAGE GALLERY - CONTAINER QUERIES
+   ======================================== */
+
+@container kb-component (min-width: 300px) {
+  .kb-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container kb-component (min-width: 500px) {
+  .kb-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@container kb-component (min-width: 700px) {
+  .kb-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES FOR CONTAINER QUERIES
+   ======================================== */
+
+/* Container size utilities */
+.kb-container-sm {
+  container-type: inline-size;
+  container-name: kb-sm;
+}
+
+.kb-container-md {
+  container-type: inline-size;
+  container-name: kb-md;
+}
+
+.kb-container-lg {
+  container-type: inline-size;
+  container-name: kb-lg;
+}
+
+/* Container query style utilities */
+@container kb-sm (min-width: 20rem) {
+  .kb-show-sm {
+    display: block !important;
+  }
+  
+  .kb-hide-sm {
+    display: none !important;
+  }
+}
+
+@container kb-md (min-width: 40rem) {
+  .kb-show-md {
+    display: block !important;
+  }
+  
+  .kb-hide-md {
+    display: none !important;
+  }
+}
+
+@container kb-lg (min-width: 60rem) {
+  .kb-show-lg {
+    display: block !important;
+  }
+  
+  .kb-hide-lg {
+    display: none !important;
+  }
+}
+
+/* ========================================
+   FALLBACK FOR BROWSERS WITHOUT SUPPORT
+   ======================================== */
+
+@supports not (container-type: inline-size) {
+  /* Use media queries as fallback */
+  @media (min-width: 768px) {
+    .kb-card {
+      padding: var(--kb-space-md);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .kb-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--kb-space-md);
+    }
+  }
+}

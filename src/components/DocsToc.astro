@@ -1,0 +1,46 @@
+<aside class="docs-toc" data-toc hidden>
+  <div class="toc-title">On this page</div>
+  <nav data-toc-nav></nav>
+  <div class="toc-contribute">
+    <div class="toc-title">Contribute</div>
+    <a href="https://github.com/Jesusdev-cup/karibase" target="_blank" rel="noopener">
+      <i class="fas fa-pen"></i> Edit this page
+    </a>
+    <a href="https://github.com/Jesusdev-cup/karibase/issues" target="_blank" rel="noopener">
+      <i class="fas fa-lightbulb"></i> Give feedback
+    </a>
+  </div>
+</aside>
+
+<script>
+  const toc = document.querySelector<HTMLElement>('[data-toc]')
+  const nav = document.querySelector<HTMLElement>('[data-toc-nav]')
+  const headings = Array.from(
+    document.querySelectorAll<HTMLElement>('.docs-article h2[id], .docs-article h3[id]')
+  )
+
+  if (toc && nav && headings.length) {
+    toc.hidden = false
+    const links = headings.map((h) => {
+      const a = document.createElement('a')
+      a.href = `#${h.id}`
+      a.textContent = h.textContent?.trim() || ''
+      a.dataset.tocLink = h.id
+      if (h.tagName === 'H3') a.style.paddingLeft = '28px'
+      nav.appendChild(a)
+      return a
+    })
+
+    const onScroll = () => {
+      let active = links[0]
+      for (const h of headings) {
+        if (h.getBoundingClientRect().top <= 100) {
+          active = links.find((l) => l.dataset.tocLink === h.id) || active
+        }
+      }
+      links.forEach((l) => l.classList.toggle('active', l === active))
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+  }
+</script>

@@ -1,0 +1,303 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Validation — Karibase">
+<DocsArticle
+    title="Validation"
+    lead="Form validation styles in Karibase"
+    breadcrumb={[{ name: 'Forms', path: '/forms' }, { name: 'Validation' }]}
+    prev={{ name: 'Layout', path: '/forms/layout' }}
+    next={{ name: 'Components', path: '/components/accordion' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
+      <p class="docs-text">
+        Karibase provides validation styles for form controls. Use these styles to provide feedback to users 
+        about the validity of their input.
+      </p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="valid-inputs">Valid Inputs</h2>
+      <p class="docs-text">Valid input styles with real-time validation:</p>
+      <div class="docs-example">
+        <div class="kb-form-group">
+          <label for="validationValid" class="kb-label">Username</label>
+          <input 
+            type="text" 
+            class="kb-input" 
+            id="validationValid" data-live-validate="username" 
+            name="username"
+           
+            placeholder="Enter username"
+          >
+          <div class="kb-valid-feedback" data-live-valid="username" hidden>Looks good!</div>
+        </div>
+      </div>
+      <CodeBlock title="HTML" code={`<div class="kb-form-group">
+  <label for="validationValid" class="kb-label">Username</label>
+  <input 
+    type="text" 
+    class="kb-input" 
+    id="validationValid" 
+    v-model="validationForm.username"
+    :class="{ 'kb-is-valid': validationForm.username.length >= 3 }"
+    placeholder="Enter username"
+  >
+  <div class="kb-valid-feedback">Looks good!</div>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="invalid-inputs">Invalid Inputs</h2>
+      <p class="docs-text">Invalid input styles with error messages:</p>
+      <div class="docs-example">
+        <div class="kb-form-group">
+          <label for="validationInvalid" class="kb-label">Password</label>
+          <input 
+            type="password" 
+            class="kb-input" 
+            id="validationInvalid" data-live-validate="password" 
+            name="password"
+           
+            placeholder="Enter password"
+          >
+          <div class="kb-invalid-feedback" data-live-invalid="password" hidden>Password must be at least 8 characters</div>
+        </div>
+      </div>
+      <CodeBlock title="HTML" code={`<div class="kb-form-group">
+  <label for="validationInvalid" class="kb-label">Password</label>
+  <input 
+    type="password" 
+    class="kb-input" 
+    id="validationInvalid" 
+    v-model="validationForm.password"
+    :class="{ 'kb-is-invalid': validationForm.password.length > 0 && validationForm.password.length < 8 }"
+    placeholder="Enter password"
+  >
+  <div class="kb-invalid-feedback">Password must be at least 8 characters</div>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="tooltips">Tooltips</h2>
+      <p class="docs-text">Validation with tooltips:</p>
+      <CodeBlock code={`<div class="kb-form-group position-relative">
+  <label for="validationTooltip01" class="kb-label">Username</label>
+  <input type="text" class="kb-input kb-is-invalid" id="validationTooltip01">
+  <div class="kb-invalid-tooltip">
+    Please choose a unique and valid username.
+  </div>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="custom-validation">Custom Validation</h2>
+      <p class="docs-text">Complete form with custom validation:</p>
+      <div class="docs-example">
+        <form data-custom-form novalidate class="kb-was-validated">
+          <div class="kb-form-group">
+            <label for="validationCustom01" class="kb-label">First name</label>
+            <input 
+              type="text" 
+              class="kb-input" 
+              id="validationCustom01" 
+              name="firstName"
+             
+              data-validate="firstName"
+              required
+              minlength="2"
+            >
+            <div class="kb-valid-feedback" data-valid-for="firstName" hidden>Looks good!</div>
+            <div class="kb-invalid-feedback" data-invalid-for="firstName" hidden></div>
+          </div>
+          <div class="kb-form-group">
+            <label for="validationCustom02" class="kb-label">Last name</label>
+            <input 
+              type="text" 
+              class="kb-input" 
+              id="validationCustom02" 
+              name="lastName"
+             
+              data-validate="lastName"
+              required
+              minlength="2"
+            >
+            <div class="kb-valid-feedback" data-valid-for="lastName" hidden>Looks good!</div>
+            <div class="kb-invalid-feedback" data-invalid-for="lastName" hidden></div>
+          </div>
+          <div class="kb-form-group">
+            <label for="validationCustom03" class="kb-label">Email</label>
+            <input 
+              type="email" 
+              class="kb-input" 
+              id="validationCustom03" 
+              name="email"
+             
+              data-validate="email"
+              required
+            >
+            <div class="kb-valid-feedback" data-valid-for="email" hidden>Valid email!</div>
+            <div class="kb-invalid-feedback" data-invalid-for="email" hidden></div>
+          </div>
+          <button class="kb-btn kb-btn-primary" type="submit">Submit form</button>
+        </form>
+      </div>
+      <CodeBlock title="HTML" code={`<form @submit.prevent="submitCustomForm" class="kb-was-validated">
+  <div class="kb-form-group">
+    <label for="validationCustom01" class="kb-label">First name</label>
+    <input 
+      type="text" 
+      class="kb-input" 
+      id="validationCustom01" 
+      v-model="customForm.firstName"
+      :class="{ 'kb-is-valid': customValidation.firstName.valid, 'kb-is-invalid': customValidation.firstName.invalid }"
+      @blur="validateCustomField('firstName')"
+      required
+      minlength="2"
+    >
+    <div class="kb-valid-feedback">Looks good!</div>
+    <div class="kb-invalid-feedback">{{ customValidation.firstName.message }}</div>
+  </div>
+  <button class="kb-btn kb-btn-primary" type="submit">Submit form</button>
+</form>`} />
+      <CodeBlock title="JavaScript" code={`import { ref, reactive } from 'vue'
+
+export default {
+  setup() {
+    const customForm = reactive({
+      firstName: '',
+      lastName: '',
+      email: ''
+    })
+
+    const customValidation = reactive({
+      firstName: { valid: false, invalid: false, message: '' },
+      lastName: { valid: false, invalid: false, message: '' },
+      email: { valid: false, invalid: false, message: '' }
+    })
+
+    const validateCustomField = (field) => {
+      switch(field) {
+        case 'firstName':
+        case 'lastName':
+          const value = field === 'firstName' ? customForm.firstName : customForm.lastName
+          if (value.length < 2) {
+            customValidation[field].valid = false
+            customValidation[field].invalid = true
+            customValidation[field].message = \`\${field === 'firstName' ? 'First' : 'Last'} name must be at least 2 characters\`
+          } else {
+            customValidation[field].valid = true
+            customValidation[field].invalid = false
+            customValidation[field].message = ''
+          }
+          break
+        case 'email':
+          const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/
+          if (!emailRegex.test(customForm.email)) {
+            customValidation.email.valid = false
+            customValidation.email.invalid = true
+            customValidation.email.message = 'Please enter a valid email address'
+          } else {
+            customValidation.email.valid = true
+            customValidation.email.invalid = false
+            customValidation.email.message = ''
+          }
+          break
+      }
+    }
+
+    const submitCustomForm = () => {
+      validateCustomField('firstName')
+      validateCustomField('lastName')
+      validateCustomField('email')
+
+      const isValid = Object.values(customValidation).every(v => v.valid)
+
+      if (isValid) {
+        alert('Form submitted successfully!')
+      } else {
+        alert('Please fix the errors before submitting')
+      }
+    }
+
+    return {
+      customForm,
+      customValidation,
+      validateCustomField,
+      submitCustomForm
+    }
+  }
+}`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+
+
+<script>
+  // Live validation demos
+  const userInput = document.querySelector('[data-live-validate="username"]')
+  const userOk = document.querySelector('[data-live-valid="username"]')
+  userInput?.addEventListener('input', () => {
+    const ok = userInput.value.length >= 3
+    userInput.classList.toggle('kb-is-valid', ok)
+    if (userOk) userOk.hidden = !ok
+  })
+
+  const passInput = document.querySelector('[data-live-validate="password"]')
+  const passErr = document.querySelector('[data-live-invalid="password"]')
+  passInput?.addEventListener('input', () => {
+    const bad = passInput.value.length > 0 && passInput.value.length < 8
+    passInput.classList.toggle('kb-is-invalid', bad)
+    if (passErr) passErr.hidden = !bad
+  })
+
+  // Custom validation form
+  const form = document.querySelector('[data-custom-form]')
+  const inputs = form?.querySelectorAll('[data-validate]') ?? []
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+  const setState = (field, state, message = '') => {
+    const input = form.querySelector(`[data-validate="${field}"]`)
+    const valid = form.querySelector(`[data-valid-for="${field}"]`)
+    const invalid = form.querySelector(`[data-invalid-for="${field}"]`)
+    input.classList.toggle('kb-is-valid', state === 'valid')
+    input.classList.toggle('kb-is-invalid', state === 'invalid')
+    if (valid) valid.hidden = state !== 'valid'
+    if (invalid) {
+      invalid.hidden = state !== 'invalid'
+      invalid.textContent = message
+    }
+    return state === 'valid'
+  }
+
+  const validate = (field) => {
+    const input = form.querySelector(`[data-validate="${field}"]`)
+    if (field === 'email') {
+      return emailRe.test(input.value)
+        ? setState('email', 'valid')
+        : setState('email', 'invalid', 'Please enter a valid email address')
+    }
+    const label = field === 'firstName' ? 'First' : 'Last'
+    return input.value.length >= 2
+      ? setState(field, 'valid')
+      : setState(field, 'invalid', `${label} name must be at least 2 characters`)
+  }
+
+  inputs.forEach((input) => {
+    input.addEventListener('blur', () => validate(input.dataset.validate))
+  })
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const ok = [...inputs].map((i) => validate(i.dataset.validate)).every(Boolean)
+    alert(ok ? 'Form submitted successfully!' : 'Please fix the errors before submitting')
+  })
+</script>

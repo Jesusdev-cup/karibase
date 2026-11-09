@@ -1,0 +1,56 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Range — Karibase">
+<DocsArticle
+    title="Range"
+    lead="Range input components in Karibase"
+    breadcrumb={[{ name: 'Forms', path: '/forms' }, { name: 'Range' }]}
+    prev={{ name: 'Checks & radios', path: '/forms/checks-radios' }}
+    next={{ name: 'Input group', path: '/forms/input-group' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
+      <p class="docs-text">
+        Range inputs are used for selecting a value from a range. They are styled with the .kb-range class 
+        and can be customized with min, max, and step attributes.
+      </p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="basic-range">Basic Range</h2>
+      <p class="docs-text">Basic range input:</p>
+      <CodeBlock code={`<label for="formRange" class="kb-label">Example range</label>
+<input type="range" class="kb-range" id="formRange">`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="disabled-range">Disabled Range</h2>
+      <p class="docs-text">Disabled range input:</p>
+      <CodeBlock code={`<label for="disabledRange" class="kb-label">Disabled range</label>
+<input type="range" class="kb-range" id="disabledRange" disabled>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="min-max">Min and Max</h2>
+      <p class="docs-text">Set min and max values:</p>
+      <CodeBlock code={`<label for="minMaxRange" class="kb-label">Min and max</label>
+<input type="range" class="kb-range" id="minMaxRange" min="0" max="10">`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="steps">Steps</h2>
+      <p class="docs-text">Set step increments:</p>
+      <CodeBlock code={`<label for="stepRange" class="kb-label">Steps</label>
+<input type="range" class="kb-range" id="stepRange" min="0" max="100" step="10">`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

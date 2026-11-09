@@ -1,0 +1,110 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="CSS variables — Karibase">
+<DocsArticle
+    title="CSS variables"
+    lead="Design tokens and CSS custom properties in Karibase"
+    breadcrumb={[{ name: 'Customize', path: '/customize' }, { name: 'CSS variables' }]}
+    prev={{ name: 'Components', path: '/customize/components' }}
+    next={{ name: 'Optimize', path: '/customize/optimize' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
+      <p class="docs-text">
+        Karibase uses CSS custom properties (CSS variables) as design tokens. This makes it easy to customize 
+        the framework without modifying the source code.
+      </p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="root-variables">Root Variables</h2>
+      <p class="docs-text">All variables are defined on the :root pseudo-class:</p>
+      <CodeBlock code={`:root {
+  /* Colors */
+  --kb-primary: #ea2845;
+  --kb-secondary: #6366f1;
+  --kb-success: #10b981;
+  --kb-warning: #f59e0b;
+  --kb-danger: #ef4444;
+  --kb-info: #3b82f6;
+
+  /* Spacing */
+  --kb-spacing-xs: 0.25rem;
+  --kb-spacing-sm: 0.5rem;
+  --kb-spacing-md: 1rem;
+  --kb-spacing-lg: 1.5rem;
+  --kb-spacing-xl: 2rem;
+
+  /* Typography */
+  --kb-font-family: 'Inter', sans-serif;
+  --kb-font-size-base: 1rem;
+  --kb-line-height: 1.6;
+
+  /* Border radius */
+  --kb-radius-sm: 4px;
+  --kb-radius-md: 8px;
+  --kb-radius-lg: 12px;
+  --kb-radius-xl: 16px;
+
+  /* Shadows */
+  --kb-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --kb-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --kb-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overriding">Overriding Variables</h2>
+      <p class="docs-text">Override variables in your CSS:</p>
+      <CodeBlock code={`:root {
+  --kb-primary: #8b5cf6;
+  --kb-secondary: #ec4899;
+  --kb-radius-lg: 16px;
+}`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="component-variables">Component Variables</h2>
+      <p class="docs-text">Component-specific variables:</p>
+      <CodeBlock code={`:root {
+  /* Button variables */
+  --kb-btn-padding-x: 1rem;
+  --kb-btn-padding-y: 0.5rem;
+  --kb-btn-font-size: 0.875rem;
+  --kb-btn-border-radius: 8px;
+
+  /* Card variables */
+  --kb-card-padding: 1.5rem;
+  --kb-card-border-radius: 12px;
+  --kb-card-shadow: var(--kb-shadow-md);
+
+  /* Input variables */
+  --kb-input-padding-x: 0.75rem;
+  --kb-input-padding-y: 0.5rem;
+  --kb-input-border-radius: 6px;
+}`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="dark-mode-variables">Dark Mode Variables</h2>
+      <p class="docs-text">Override variables for dark mode:</p>
+      <CodeBlock code={`[mode="dark"] {
+  --kb-bg-primary: #1a1a1a;
+  --kb-bg-secondary: #2a2a2a;
+  --kb-bg-tertiary: #3a3a3a;
+  --kb-text-primary: #ffffff;
+  --kb-text-secondary: #cccccc;
+  --kb-border-color: #444444;
+}`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

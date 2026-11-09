@@ -1,0 +1,345 @@
+/*!
+ * Karibase Theme - Kelion
+ * Influencer/Personal Brand theme inspired by solacewp.com/kelion
+ * 
+ * Features:
+ * - Personal branding focused design
+ * - Social media integration
+ * - Content creator aesthetic
+ * - Portfolio showcase layouts
+ */
+
+:root {
+  --kb-kelion-primary: #ec4899;
+  --kb-kelion-secondary: #8b5cf6;
+  --kb-kelion-accent: #f97316;
+  --kb-kelion-success: #22c55e;
+  --kb-kelion-dark: #1f2937;
+  --kb-kelion-light: #fef3c7;
+  --kb-kelion-muted: #9ca3af;
+  --kb-kelion-white: #ffffff;
+  --kb-kelion-border: #e5e7eb;
+  --kb-kelion-shadow: rgba(31, 41, 55, 0.1);
+  --kb-kelion-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+}
+
+.kb-kelion-theme {
+  background-color: var(--kb-kelion-white);
+  color: var(--kb-kelion-dark);
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+/* Kelion Navigation */
+.kb-kelion-nav {
+  background: var(--kb-kelion-white);
+  border-bottom: 1px solid var(--kb-kelion-border);
+  padding: 16px 0;
+}
+
+.kb-kelion-nav-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--kb-kelion-primary);
+  text-decoration: none;
+}
+
+.kb-kelion-nav-menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kb-kelion-nav-link {
+  color: var(--kb-kelion-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.kb-kelion-nav-link:hover {
+  color: var(--kb-kelion-primary);
+}
+
+/* Kelion Hero */
+.kb-kelion-hero {
+  background: var(--kb-kelion-gradient);
+  color: var(--kb-kelion-white);
+  padding: 120px 0;
+  text-align: center;
+}
+
+.kb-kelion-hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.kb-kelion-hero-subtitle {
+  font-size: 20px;
+  opacity: 0.9;
+  margin: 0 0 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Profile Section */
+.kb-kelion-profile {
+  padding: 80px 0;
+}
+
+.kb-kelion-profile-card {
+  background: var(--kb-kelion-white);
+  border: 1px solid var(--kb-kelion-border);
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.kb-kelion-profile-header {
+  background: var(--kb-kelion-gradient);
+  padding: 40px;
+  text-align: center;
+  color: var(--kb-kelion-white);
+}
+
+.kb-kelion-profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--kb-kelion-white);
+  margin: 0 auto 24px;
+  object-fit: cover;
+}
+
+.kb-kelion-profile-name {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.kb-kelion-profile-tagline {
+  font-size: 18px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.kb-kelion-profile-body {
+  padding: 40px;
+}
+
+.kb-kelion-profile-bio {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--kb-kelion-dark);
+  margin: 0 0 32px;
+}
+
+.kb-kelion-profile-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 24px 0;
+  border-top: 1px solid var(--kb-kelion-border);
+  border-bottom: 1px solid var(--kb-kelion-border);
+}
+
+.kb-kelion-stat-item {
+  text-align: center;
+}
+
+.kb-kelion-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--kb-kelion-primary);
+}
+
+.kb-kelion-stat-label {
+  font-size: 14px;
+  color: var(--kb-kelion-muted);
+  margin-top: 4px;
+}
+
+/* Projects Grid */
+.kb-kelion-projects {
+  padding: 80px 0;
+}
+
+.kb-kelion-projects-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-kelion-dark);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.kb-kelion-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+}
+
+.kb-kelion-project-card {
+  background: var(--kb-kelion-white);
+  border: 1px solid var(--kb-kelion-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kb-kelion-project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--kb-kelion-shadow);
+}
+
+.kb-kelion-project-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.kb-kelion-project-content {
+  padding: 24px;
+}
+
+.kb-kelion-project-category {
+  font-size: 12px;
+  color: var(--kb-kelion-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.kb-kelion-project-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--kb-kelion-dark);
+  margin: 0 0 12px;
+}
+
+.kb-kelion-project-description {
+  font-size: 14px;
+  color: var(--kb-kelion-muted);
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.kb-kelion-project-link {
+  color: var(--kb-kelion-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.kb-kelion-project-link:hover {
+  color: var(--kb-kelion-secondary);
+}
+
+/* Social Links */
+.kb-kelion-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.kb-kelion-social-link {
+  width: 48px;
+  height: 48px;
+  background: var(--kb-kelion-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kb-kelion-dark);
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.kb-kelion-social-link:hover {
+  background: var(--kb-kelion-primary);
+  color: var(--kb-kelion-white);
+  transform: translateY(-4px);
+}
+
+/* FAQ Section */
+.kb-kelion-faq {
+  background: var(--kb-kelion-light);
+  padding: 80px 0;
+}
+
+.kb-kelion-faq-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-kelion-dark);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.kb-kelion-faq-item {
+  background: var(--kb-kelion-white);
+  border: 1px solid var(--kb-kelion-border);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.kb-kelion-faq-question {
+  padding: 20px 24px;
+  font-weight: 600;
+  color: var(--kb-kelion-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.kb-kelion-faq-question:hover {
+  background: var(--kb-kelion-light);
+}
+
+.kb-kelion-faq-answer {
+  padding: 0 24px 24px;
+  color: var(--kb-kelion-muted);
+  line-height: 1.6;
+}
+
+/* Buttons */
+.kb-kelion-btn-primary {
+  background: var(--kb-kelion-primary);
+  color: var(--kb-kelion-white);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kb-kelion-btn-primary:hover {
+  background: #db2777;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+}
+
+.kb-kelion-btn-secondary {
+  background: var(--kb-kelion-white);
+  color: var(--kb-kelion-dark);
+  border: 1px solid var(--kb-kelion-border);
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kb-kelion-btn-secondary:hover {
+  background: var(--kb-kelion-light);
+  border-color: var(--kb-kelion-primary);
+}

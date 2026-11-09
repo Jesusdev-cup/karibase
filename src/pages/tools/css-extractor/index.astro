@@ -1,0 +1,343 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+---
+
+<DocsLayout title="CSS Extractor — Karibase">
+<DocsArticle
+    title="CSS Extractor"
+    lead="Extract CSS styles from any website"
+    prev={{ name: 'Tools', path: '/tools' }}
+    next={{ name: 'Customizer', path: '/customize' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2">Extract Styles</h2>
+      <p class="docs-text">Enter a URL to extract CSS styles from that website:</p>
+
+      <div class="extractor-form">
+        <input
+          id="extractor-url"
+          type="url"
+          placeholder="https://example.com"
+          class="extractor-input"
+        />
+        <button id="extractor-run" class="extractor-button">
+          <span id="extractor-label">Extract CSS</span>
+        </button>
+      </div>
+
+      <div id="extractor-error" class="extractor-error" hidden></div>
+    </div>
+
+    <div id="extractor-result" class="docs-section" hidden>
+      <h2 class="docs-heading docs-heading-2">Extracted CSS</h2>
+      <div class="extractor-actions">
+        <button id="extractor-copy" class="extractor-action-button">
+          <i class="fas fa-copy"></i> Copy CSS
+        </button>
+        <button id="extractor-download" class="extractor-action-button">
+          <i class="fas fa-download"></i> Download CSS
+        </button>
+        <button id="extractor-clear" class="extractor-action-button extractor-action-button-danger">
+          <i class="fas fa-trash"></i> Clear
+        </button>
+      </div>
+      <div class="docs-code-block">
+        <pre><code id="extractor-output"></code></pre>
+      </div>
+    </div>
+
+    <div id="extractor-stats" class="docs-section" hidden>
+      <h2 class="docs-heading docs-heading-2">Statistics</h2>
+      <div class="extractor-stats">
+        <div class="stat-item">
+          <span class="stat-label">Total Rules:</span>
+          <span class="stat-value" id="stat-rules">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Selectors:</span>
+          <span class="stat-value" id="stat-selectors">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Properties:</span>
+          <span class="stat-value" id="stat-properties">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">File Size:</span>
+          <span class="stat-value" id="stat-size">0 Bytes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2">How it works</h2>
+      <p class="docs-text">The CSS Extractor tool:</p>
+      <ul class="docs-list">
+        <li>Fetches the HTML from the specified URL</li>
+        <li>Parses all <code>&lt;style&gt;</code> tags and external CSS files</li>
+        <li>Extracts and combines all CSS rules</li>
+        <li>Provides statistics about the extracted styles</li>
+        <li>Allows you to copy or download the extracted CSS</li>
+      </ul>
+      <p class="docs-text docs-warning">
+        <strong>Note:</strong> Due to CORS restrictions, this tool works best with websites that allow cross-origin requests. For production use, consider using a proxy server.
+      </p>
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+<style>
+
+.docs-warning {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 4px;
+}
+
+.extractor-form {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.extractor-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid var(--docs-border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: var(--docs-transition);
+}
+
+.extractor-input:focus {
+  outline: none;
+  border-color: var(--docs-primary-color);
+}
+
+.extractor-button {
+  padding: 12px 24px;
+  background-color: var(--docs-primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--docs-transition);
+}
+
+.extractor-button:hover:not(:disabled) {
+  background-color: var(--docs-primary-color-dark);
+}
+
+.extractor-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.extractor-error {
+  background-color: #f8d7da;
+  border-left: 4px solid #dc3545;
+  color: #721c24;
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-radius: 4px;
+}
+
+.extractor-actions {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.extractor-action-button {
+  padding: 8px 16px;
+  background-color: var(--docs-bg-secondary);
+  border: 1px solid var(--docs-border-color);
+  border-radius: 6px;
+  color: var(--docs-text-primary);
+  cursor: pointer;
+  transition: var(--docs-transition);
+  font-size: 14px;
+}
+
+.extractor-action-button:hover {
+  background-color: var(--docs-border-color);
+}
+
+.extractor-action-button-danger {
+  background-color: #f8d7da;
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+.extractor-action-button-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.extractor-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.stat-item {
+  background-color: var(--docs-bg-secondary);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--docs-border-color);
+}
+
+.stat-label {
+  display: block;
+  font-size: 14px;
+  color: var(--docs-text-secondary);
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--docs-primary-color);
+}
+</style>
+
+<script>
+  const urlInput = document.querySelector('#extractor-url')
+  const runBtn = document.querySelector('#extractor-run')
+  const runLabel = document.querySelector('#extractor-label')
+  const errorEl = document.querySelector('#extractor-error')
+  const resultEl = document.querySelector('#extractor-result')
+  const statsEl = document.querySelector('#extractor-stats')
+  const outputEl = document.querySelector('#extractor-output')
+
+  let extracted = ''
+
+  const parseCSSRules = (css) => {
+    let rules = 0
+    let selectors = 0
+    let properties = 0
+    const matches = css.match(/[^{}]+\{[^{}]*\}/g)
+    if (matches) {
+      rules = matches.length
+      matches.forEach((rule) => {
+        selectors += rule.split('{')[0].split(',').length
+        const props = rule.match(/[^:]+:[^;]+;/g)
+        if (props) properties += props.length
+      })
+    }
+    return { rules, selectors, properties }
+  }
+
+  const formatBytes = (bytes) => {
+    if (bytes === 0) return '0 Bytes'
+    const k = 1024
+    const sizes = ['Bytes', 'KB', 'MB', 'GB']
+    const i = Math.floor(Math.log(bytes) / Math.log(k))
+    return Math.round((bytes / Math.pow(k, i)) * 100) / 100 + ' ' + sizes[i]
+  }
+
+  const showError = (msg) => {
+    errorEl.textContent = msg || ''
+    errorEl.hidden = !msg
+  }
+
+  const extract = async () => {
+    const url = urlInput.value.trim()
+    if (!url) {
+      showError('Please enter a URL')
+      return
+    }
+
+    runBtn.disabled = true
+    runLabel.textContent = 'Extracting...'
+    showError('')
+    resultEl.hidden = true
+    statsEl.hidden = true
+    extracted = ''
+
+    try {
+      const proxy = (u) => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`
+      const response = await fetch(proxy(url))
+      const data = await response.json()
+      if (!data.contents) throw new Error('Failed to fetch website content')
+
+      const doc = new DOMParser().parseFromString(data.contents, 'text/html')
+
+      let css = ''
+      let ruleCount = 0
+      let selectorCount = 0
+      let propertyCount = 0
+      const tally = (text) => {
+        const r = parseCSSRules(text)
+        ruleCount += r.rules
+        selectorCount += r.selectors
+        propertyCount += r.properties
+      }
+
+      doc.querySelectorAll('style').forEach((tag) => {
+        css += `/* Inline Style */\n${tag.textContent}\n\n`
+        tally(tag.textContent)
+      })
+
+      for (const link of doc.querySelectorAll('link[rel="stylesheet"]')) {
+        const href = link.getAttribute('href')
+        if (!href) continue
+        const fullUrl = new URL(href, url).href
+        try {
+          const res = await fetch(proxy(fullUrl))
+          const cssData = await res.json()
+          if (cssData.contents) {
+            css += `/* External: ${href} */\n${cssData.contents}\n\n`
+            tally(cssData.contents)
+          }
+        } catch {
+          css += `/* Could not load: ${href} */\n\n`
+        }
+      }
+
+      extracted = css
+      outputEl.textContent = css
+      resultEl.hidden = false
+      document.querySelector('#stat-rules').textContent = ruleCount
+      document.querySelector('#stat-selectors').textContent = selectorCount
+      document.querySelector('#stat-properties').textContent = propertyCount
+      document.querySelector('#stat-size').textContent = formatBytes(css.length)
+      statsEl.hidden = false
+    } catch (err) {
+      showError(`Error extracting CSS: ${err.message}`)
+    } finally {
+      runBtn.disabled = false
+      runLabel.textContent = 'Extract CSS'
+    }
+  }
+
+  runBtn.addEventListener('click', extract)
+  urlInput.addEventListener('keyup', (e) => e.key === 'Enter' && extract())
+
+  document.querySelector('#extractor-copy').addEventListener('click', () => {
+    navigator.clipboard?.writeText(extracted)
+  })
+  document.querySelector('#extractor-download').addEventListener('click', () => {
+    const blob = new Blob([extracted], { type: 'text/css' })
+    const a = document.createElement('a')
+    a.href = URL.createObjectURL(blob)
+    a.download = 'extracted-styles.css'
+    a.click()
+    URL.revokeObjectURL(a.href)
+  })
+  document.querySelector('#extractor-clear').addEventListener('click', () => {
+    extracted = ''
+    urlInput.value = ''
+    outputEl.textContent = ''
+    resultEl.hidden = true
+    statsEl.hidden = true
+    showError('')
+  })
+</script>

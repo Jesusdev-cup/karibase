@@ -1,0 +1,71 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Columns — Karibase">
+<DocsArticle
+    title="Columns"
+    lead="Column utilities in Karibase"
+    breadcrumb={[{ name: 'Layout', path: '/layout' }, { name: 'Columns' }]}
+    prev={{ name: 'Grid', path: '/layout/grid' }}
+    next={{ name: 'Gutters', path: '/layout/gutters' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="basic-columns">Basic Columns</h2>
+      <p class="docs-text">Create basic column layouts:</p>
+      <div class="docs-example">
+        <div class="kb-columns">
+          <div class="kb-column">Column 1</div>
+          <div class="kb-column">Column 2</div>
+          <div class="kb-column">Column 3</div>
+        </div>
+      </div>
+      <CodeBlock title="HTML" code={`<div class="kb-columns">
+  <div class="kb-column">Column 1</div>
+  <div class="kb-column">Column 2</div>
+  <div class="kb-column">Column 3</div>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="column-sizes">Column Sizes</h2>
+      <p class="docs-text">Control column sizes:</p>
+      <div class="docs-example">
+        <div class="kb-columns">
+          <div class="kb-column kb-column-25">25%</div>
+          <div class="kb-column kb-column-50">50%</div>
+          <div class="kb-column kb-column-25">25%</div>
+        </div>
+      </div>
+      <CodeBlock title="HTML" code={`<div class="kb-columns">
+  <div class="kb-column kb-column-25">25%</div>
+  <div class="kb-column kb-column-50">50%</div>
+  <div class="kb-column kb-column-25">25%</div>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="responsive-columns">Responsive Columns</h2>
+      <p class="docs-text">Responsive column layouts:</p>
+      <div class="docs-example">
+        <div class="kb-columns">
+          <div class="kb-column kb-column-100 kb-column-md-50 kb-column-lg-33">
+            Responsive column
+          </div>
+        </div>
+      </div>
+      <CodeBlock title="HTML" code={`<div class="kb-columns">
+  <div class="kb-column kb-column-100 kb-column-md-50 kb-column-lg-33">
+    Responsive column
+  </div>
+</div>`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

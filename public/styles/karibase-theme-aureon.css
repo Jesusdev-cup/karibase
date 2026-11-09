@@ -1,0 +1,336 @@
+/*!
+ * Karibase Theme - Aureon
+ * Business Strategy/Consulting theme inspired by solacewp.com/aureon
+ * 
+ * Features:
+ * - Strategic business aesthetic
+ * - Growth-focused design
+ * - Professional color palette
+ * - Data-driven layouts
+ */
+
+:root {
+  --kb-aureon-primary: #1e40af;
+  --kb-aureon-secondary: #3b82f6;
+  --kb-aureon-accent: #f59e0b;
+  --kb-aureon-success: #10b981;
+  --kb-aureon-dark: #0f172a;
+  --kb-aureon-light: #f8fafc;
+  --kb-aureon-muted: #64748b;
+  --kb-aureon-white: #ffffff;
+  --kb-aureon-border: #e2e8f0;
+  --kb-aureon-shadow: rgba(15, 23, 42, 0.1);
+  --kb-aureon-gradient: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+}
+
+.kb-aureon-theme {
+  background-color: var(--kb-aureon-white);
+  color: var(--kb-aureon-dark);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Aureon Navigation */
+.kb-aureon-nav {
+  background: var(--kb-aureon-white);
+  border-bottom: 1px solid var(--kb-aureon-border);
+  padding: 20px 0;
+}
+
+.kb-aureon-nav-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--kb-aureon-primary);
+  text-decoration: none;
+}
+
+.kb-aureon-nav-menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kb-aureon-nav-link {
+  color: var(--kb-aureon-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.kb-aureon-nav-link:hover {
+  color: var(--kb-aureon-primary);
+}
+
+/* Aureon Hero */
+.kb-aureon-hero {
+  background: var(--kb-aureon-gradient);
+  color: var(--kb-aureon-white);
+  padding: 120px 0;
+  text-align: center;
+}
+
+.kb-aureon-hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.kb-aureon-hero-subtitle {
+  font-size: 20px;
+  opacity: 0.9;
+  margin: 0 0 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Process Steps */
+.kb-aureon-process {
+  padding: 80px 0;
+}
+
+.kb-aureon-process-steps {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin: 48px 0;
+}
+
+.kb-aureon-process-step {
+  text-align: center;
+  max-width: 200px;
+}
+
+.kb-aureon-step-number {
+  width: 64px;
+  height: 64px;
+  background: var(--kb-aureon-primary);
+  color: var(--kb-aureon-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 auto 16px;
+}
+
+.kb-aureon-step-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--kb-aureon-dark);
+  margin: 0;
+}
+
+/* Services Grid */
+.kb-aureon-services {
+  padding: 80px 0;
+}
+
+.kb-aureon-services-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-aureon-dark);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.kb-aureon-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.kb-aureon-service-card {
+  background: var(--kb-aureon-white);
+  border: 1px solid var(--kb-aureon-border);
+  border-radius: 12px;
+  padding: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kb-aureon-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--kb-aureon-shadow);
+}
+
+.kb-aureon-service-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--kb-aureon-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--kb-aureon-primary);
+  margin-bottom: 24px;
+}
+
+.kb-aureon-service-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--kb-aureon-dark);
+  margin: 0 0 12px;
+}
+
+.kb-aureon-service-description {
+  font-size: 16px;
+  color: var(--kb-aureon-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Metrics Section */
+.kb-aureon-metrics {
+  background: var(--kb-aureon-dark);
+  color: var(--kb-aureon-white);
+  padding: 80px 0;
+}
+
+.kb-aureon-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+}
+
+.kb-aureon-metric-card {
+  text-align: center;
+}
+
+.kb-aureon-metric-value {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--kb-aureon-accent);
+  margin: 0 0 8px;
+}
+
+.kb-aureon-metric-label {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Testimonials */
+.kb-aureon-testimonials {
+  padding: 80px 0;
+}
+
+.kb-aureon-testimonials-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-aureon-dark);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.kb-aureon-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.kb-aureon-testimonial-card {
+  background: var(--kb-aureon-white);
+  border: 1px solid var(--kb-aureon-border);
+  border-radius: 12px;
+  padding: 32px;
+  transition: transform 0.3s ease;
+}
+
+.kb-aureon-testimonial-card:hover {
+  transform: translateY(-4px);
+}
+
+.kb-aureon-testimonial-quote {
+  font-size: 16px;
+  color: var(--kb-aureon-dark);
+  line-height: 1.8;
+  margin: 0 0 24px;
+  font-style: italic;
+}
+
+.kb-aureon-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.kb-aureon-testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.kb-aureon-testimonial-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--kb-aureon-dark);
+  margin: 0;
+}
+
+.kb-aureon-testimonial-role {
+  font-size: 14px;
+  color: var(--kb-aureon-muted);
+  margin: 0;
+}
+
+/* CTA Section */
+.kb-aureon-cta {
+  background: var(--kb-aureon-light);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.kb-aureon-cta-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-aureon-dark);
+  margin: 0 0 16px;
+}
+
+.kb-aureon-cta-subtitle {
+  font-size: 18px;
+  color: var(--kb-aureon-muted);
+  margin: 0 0 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+.kb-aureon-btn-primary {
+  background: var(--kb-aureon-primary);
+  color: var(--kb-aureon-white);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kb-aureon-btn-primary:hover {
+  background: #1e3a8a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.kb-aureon-btn-secondary {
+  background: var(--kb-aureon-white);
+  color: var(--kb-aureon-dark);
+  border: 1px solid var(--kb-aureon-border);
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kb-aureon-btn-secondary:hover {
+  background: var(--kb-aureon-light);
+  border-color: var(--kb-aureon-primary);
+}

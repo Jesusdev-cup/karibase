@@ -1,0 +1,42 @@
+---
+import { navSections } from '../config/navigation.js'
+
+const current = Astro.url.pathname.replace(/\/$/, '') || '/'
+---
+
+<aside class="docs-sidebar" data-sidebar>
+  {navSections.map((section) => (
+    <section>
+      <h3>{section.title}</h3>
+      <ul>
+        {section.items.map((item) => (
+          <li data-nav-item={item.name.toLowerCase()}>
+            <a href={item.path} class={current === item.path ? 'active' : ''} aria-current={current === item.path ? 'page' : undefined}>
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</aside>
+
+<script>
+  const input = document.querySelector<HTMLInputElement>('[data-nav-search]')
+  const items = document.querySelectorAll<HTMLElement>('[data-nav-item]')
+  const filter = () => {
+    const q = (input?.value || '').trim().toLowerCase()
+    items.forEach((li) => li.classList.toggle('hidden', !!q && !li.dataset.navItem!.includes(q)))
+    document.querySelectorAll('.docs-sidebar section').forEach((sec) => {
+      const visible = sec.querySelectorAll('li:not(.hidden)').length > 0
+      sec.classList.toggle('hidden', !visible)
+    })
+  }
+  input?.addEventListener('input', filter)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement !== input) {
+      e.preventDefault()
+      input?.focus()
+    }
+  })
+</script>

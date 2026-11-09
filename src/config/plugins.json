@@ -1,0 +1,291 @@
+{
+  "generated": "2026-10-15T13:23:03.654Z",
+  "plugins": {
+    "arc-careers": {
+      "name": "Arc Careers",
+      "styles": [
+        {
+          "file": "plugins/arc-careers/assets/css/admin.css",
+          "kind": "source",
+          "source": "assets/css/admin.css"
+        },
+        {
+          "file": "plugins/arc-careers/assets/css/arc-careers.css",
+          "kind": "source",
+          "source": "assets/css/arc-careers.css"
+        },
+        {
+          "file": "plugins/arc-careers/assets/vendor/intl-tel-input/css/intlTelInput.css",
+          "kind": "vendor",
+          "source": "assets/vendor/intl-tel-input/css/intlTelInput.css"
+        }
+      ],
+      "inline": []
+    },
+    "arc-employee-time-clock": {
+      "name": "Arc Employee Time Clock",
+      "styles": [
+        {
+          "file": "plugins/arc-employee-time-clock/assets/css/admin.css",
+          "kind": "source",
+          "source": "assets/css/admin.css"
+        },
+        {
+          "file": "plugins/arc-employee-time-clock/assets/css/tailwind.css",
+          "kind": "vendor",
+          "source": "assets/css/tailwind.css"
+        },
+        {
+          "file": "plugins/arc-employee-time-clock/assets/css/tailwind.input.css",
+          "kind": "vendor",
+          "source": "assets/css/tailwind.input.css"
+        },
+        {
+          "file": "plugins/arc-employee-time-clock/assets/css/time-clock.css",
+          "kind": "source",
+          "source": "assets/css/time-clock.css"
+        }
+      ],
+      "inline": [
+        {
+          "file": "plugins/arc-employee-time-clock/inline/includes-class-public.css",
+          "kind": "inline",
+          "dynamic": false,
+          "source": "includes/class-public.php#1"
+        },
+        {
+          "file": "plugins/arc-employee-time-clock/inline/includes-class-share-links.css",
+          "kind": "inline",
+          "dynamic": false,
+          "source": "includes/class-share-links.php#1"
+        },
+        {
+          "file": "plugins/arc-employee-time-clock/inline/includes-class-time-tracking-eod-review.css",
+          "kind": "inline",
+          "dynamic": false,
+          "source": "includes/class-time-tracking-eod-review.php#1"
+        },
+        {
+          "file": "plugins/arc-employee-time-clock/inline/includes-class-time-tracking-reports.css",
+          "kind": "inline",
+          "dynamic": false,
+          "source": "includes/class-time-tracking-reports.php#1"
+        }
+      ]
+    },
+    "arc-starter-templates": {
+      "name": "Arc Starter Templates",
+      "styles": [
+        {
+          "file": "plugins/arc-starter-templates/admin/css/admin.css",
+          "kind": "source",
+          "source": "admin/css/admin.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/admin/css/chat.css",
+          "kind": "source",
+          "source": "admin/css/chat.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/admin/css/karibase/karibase-theme-blogify.css",
+          "kind": "source",
+          "source": "admin/css/karibase/karibase-theme-blogify.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/admin/css/karibase/karibase-theme-commercecraft.css",
+          "kind": "source",
+          "source": "admin/css/karibase/karibase-theme-commercecraft.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/admin/css/karibase/karibase-theme-edinburgh.css",
+          "kind": "source",
+          "source": "admin/css/karibase/karibase-theme-edinburgh.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/admin/css/karibase/karibase-theme-flexiweb.css",
+          "kind": "source",
+          "source": "admin/css/karibase/karibase-theme-flexiweb.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/admin/css/karibase/karibase-theme-kelion.css",
+          "kind": "source",
+          "source": "admin/css/karibase/karibase-theme-kelion.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/admin/css/karibase/karibase-theme-printifix.css",
+          "kind": "source",
+          "source": "admin/css/karibase/karibase-theme-printifix.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/admin/css/karibase/karibase-theme-retailridge.css",
+          "kind": "source",
+          "source": "admin/css/karibase/karibase-theme-retailridge.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/assets/css/editor.css",
+          "kind": "source",
+          "source": "assets/css/editor.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/assets/css/elementor-bridge.css",
+          "kind": "source",
+          "source": "assets/css/elementor-bridge.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/assets/css/karibase-templates.css",
+          "kind": "source",
+          "source": "assets/css/karibase-templates.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/assets/css/tailwind.css",
+          "kind": "vendor",
+          "source": "assets/css/tailwind.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/assets/css/tailwind.input.css",
+          "kind": "vendor",
+          "source": "assets/css/tailwind.input.css"
+        },
+        {
+          "file": "plugins/arc-starter-templates/assets/css/tw/index.css",
+          "kind": "vendor",
+          "source": "assets/css/tw/index.css"
+        }
+      ],
+      "inline": [
+        {
+          "file": "plugins/arc-starter-templates/inline/includes-class-arc-st-admin.css",
+          "kind": "inline",
+          "dynamic": true,
+          "source": "includes/class-arc-st-admin.php#1"
+        }
+      ]
+    },
+    "intranet-plugin": {
+      "name": "Intranet Plugin",
+      "styles": [
+        {
+          "file": "plugins/intranet-plugin/assets/css/admin-intranet.css",
+          "kind": "source",
+          "source": "assets/css/admin-intranet.css"
+        },
+        {
+          "file": "plugins/intranet-plugin/assets/css/chatbot.css",
+          "kind": "source",
+          "source": "assets/css/chatbot.css"
+        },
+        {
+          "file": "plugins/intranet-plugin/assets/css/panel.css",
+          "kind": "source",
+          "source": "assets/css/panel.css"
+        },
+        {
+          "file": "plugins/intranet-plugin/assets/css/tailwind.css",
+          "kind": "vendor",
+          "source": "assets/css/tailwind.css"
+        },
+        {
+          "file": "plugins/intranet-plugin/assets/css/tailwind.input.css",
+          "kind": "vendor",
+          "source": "assets/css/tailwind.input.css"
+        }
+      ],
+      "inline": [
+        {
+          "file": "plugins/intranet-plugin/inline/includes-admin-class-demo-seeder.css",
+          "kind": "inline",
+          "dynamic": false,
+          "source": "includes/admin/class-demo-seeder.php#1"
+        },
+        {
+          "file": "plugins/intranet-plugin/inline/includes-frontend-class-branding.css",
+          "kind": "inline",
+          "dynamic": true,
+          "source": "includes/frontend/class-branding.php#1"
+        },
+        {
+          "file": "plugins/intranet-plugin/inline/includes-frontend-class-branding-2.css",
+          "kind": "inline",
+          "dynamic": true,
+          "source": "includes/frontend/class-branding.php#2"
+        },
+        {
+          "file": "plugins/intranet-plugin/inline/includes-frontend-class-branding-3.css",
+          "kind": "inline",
+          "dynamic": false,
+          "source": "includes/frontend/class-branding.php#3"
+        },
+        {
+          "file": "plugins/intranet-plugin/inline/includes-frontend-class-playbooks-cpt.css",
+          "kind": "inline",
+          "dynamic": false,
+          "source": "includes/frontend/class-playbooks-cpt.php#1"
+        },
+        {
+          "file": "plugins/intranet-plugin/inline/includes-frontend-class-pwa.css",
+          "kind": "inline",
+          "dynamic": true,
+          "source": "includes/frontend/class-pwa.php#1"
+        },
+        {
+          "file": "plugins/intranet-plugin/inline/includes-frontend-templates-calendar.css",
+          "kind": "inline",
+          "dynamic": false,
+          "source": "includes/frontend/templates/calendar.php#1"
+        },
+        {
+          "file": "plugins/intranet-plugin/inline/includes-frontend-templates-employee-detail.css",
+          "kind": "inline",
+          "dynamic": false,
+          "source": "includes/frontend/templates/employee-detail.php#1"
+        },
+        {
+          "file": "plugins/intranet-plugin/inline/includes-frontend-templates-partials-create-forms.css",
+          "kind": "inline",
+          "dynamic": false,
+          "source": "includes/frontend/templates/partials/create-forms.php#1"
+        },
+        {
+          "file": "plugins/intranet-plugin/inline/includes-integrations-class-protected-media.css",
+          "kind": "inline",
+          "dynamic": true,
+          "source": "includes/integrations/class-protected-media.php#1"
+        }
+      ]
+    },
+    "ix-projects": {
+      "name": "Ix Projects",
+      "styles": [
+        {
+          "file": "plugins/ix-projects/assets/css/admin-projects.css",
+          "kind": "source",
+          "source": "assets/css/admin-projects.css"
+        },
+        {
+          "file": "plugins/ix-projects/assets/css/task-board.css",
+          "kind": "source",
+          "source": "assets/css/task-board.css"
+        },
+        {
+          "file": "plugins/ix-projects/assets/css/task-form-layout-admin.css",
+          "kind": "source",
+          "source": "assets/css/task-form-layout-admin.css"
+        }
+      ],
+      "inline": [
+        {
+          "file": "plugins/ix-projects/inline/includes-class-board-export.css",
+          "kind": "inline",
+          "dynamic": false,
+          "source": "includes/class-board-export.php#1"
+        },
+        {
+          "file": "plugins/ix-projects/inline/includes-class-intranet-modules.css",
+          "kind": "inline",
+          "dynamic": false,
+          "source": "includes/class-intranet-modules.php#1"
+        }
+      ]
+    }
+  }
+}

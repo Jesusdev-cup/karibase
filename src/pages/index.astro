@@ -1,0 +1,185 @@
+---
+import Base from '../layouts/Base.astro'
+
+const features = [
+  {
+    icon: 'fa-table-columns',
+    title: 'Admin dashboards',
+    text: 'A complete component kit for control panels: cards, tables, stats, charts and layouts ready to compose.'
+  },
+  {
+    icon: 'fa-robot',
+    title: 'Floating bots',
+    text: 'First-class styles for chat widgets and AI assistants — panels, bubbles, launchers and states built in.'
+  },
+  {
+    icon: 'fa-moon',
+    title: 'Dark mode native',
+    text: 'Flip the mode attribute and every component adapts. Design tokens keep both themes consistent.'
+  },
+  {
+    icon: 'fa-palette',
+    title: '12+ theme presets',
+    text: 'RetailRidge, CommerceCraft, Blogify, Clinic and more — swap the whole look by loading one stylesheet.'
+  },
+  {
+    icon: 'fa-layer-group',
+    title: 'Cascade layers',
+    text: 'Predictable specificity out of the box. Karibase styles live in layers your own CSS can safely override.'
+  },
+  {
+    icon: 'fa-bolt',
+    title: 'Zero JavaScript required',
+    text: 'Pure CSS classes for every component. Optional JS helpers exist, but nothing is mandatory.'
+  }
+]
+
+const themes = [
+  { name: 'RetailRidge', swatch: 'linear-gradient(135deg,#0ea5e9,#22d3ee)' },
+  { name: 'CommerceCraft', swatch: 'linear-gradient(135deg,#8b5cf6,#c084fc)' },
+  { name: 'Blogify', swatch: 'linear-gradient(135deg,#f59e0b,#fbbf24)' },
+  { name: 'Flexiweb', swatch: 'linear-gradient(135deg,#10b981,#34d399)' },
+  { name: 'Edinburgh', swatch: 'linear-gradient(135deg,#6366f1,#818cf8)' },
+  { name: 'Kelion', swatch: 'linear-gradient(135deg,#ec4899,#f472b6)' },
+  { name: 'Aureon', swatch: 'linear-gradient(135deg,#eab308,#fde047)' },
+  { name: 'Archeon', swatch: 'linear-gradient(135deg,#14b8a6,#2dd4bf)' },
+  { name: 'Clinic', swatch: 'linear-gradient(135deg,#06b6d4,#67e8f9)' },
+  { name: 'Dashboard', swatch: 'linear-gradient(135deg,#ea2845,#ff7a18)' },
+  { name: 'Builder', swatch: 'linear-gradient(135deg,#f97316,#fb923c)' },
+  { name: 'Printifix', swatch: 'linear-gradient(135deg,#64748b,#94a3b8)' }
+]
+---
+
+<Base>
+  <div class="landing">
+    <nav class="site-nav">
+      <a href="/" class="brand">
+        <img src="/logo.svg" alt="Karibase logo" />
+        <span>Karibase</span>
+      </a>
+      <div class="site-nav-links">
+        <a href="/introduction">Docs</a>
+        <a href="/components">Components</a>
+        <a href="/customize">Themes</a>
+        <a href="https://github.com/Jesusdev-cup/karibase" target="_blank" rel="noopener">GitHub</a>
+        <button class="icon-btn" data-theme-toggle aria-label="Toggle theme">
+          <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+        </button>
+        <a href="/installation" class="btn btn-primary">Get Started</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <a href="/getting-started" class="hero-badge">
+        <i class="fas fa-rocket"></i> v2.1.0 — now with 12 theme presets <i class="fas fa-arrow-right"></i>
+      </a>
+      <h1>
+        The CSS framework for <span class="gradient">admin dashboards</span> and floating bots
+      </h1>
+      <p>
+        Karibase gives you a complete design system for control panels and AI assistants —
+        components, utilities, dark mode and themes in a single stylesheet.
+      </p>
+      <div class="hero-cta">
+        <a href="/installation" class="btn btn-primary">
+          Get Started <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="/components" class="btn btn-ghost">
+          <i class="fas fa-cubes"></i> Browse components
+        </a>
+      </div>
+      <div class="hero-install">
+        <span><span class="prompt">$</span> npm install karibase</span>
+        <button data-copy="npm install karibase" aria-label="Copy install command" type="button">
+          <i class="fas fa-copy"></i>
+        </button>
+      </div>
+    </header>
+
+    <section class="section section-center">
+      <div class="section-eyebrow">Why Karibase</div>
+      <h2>Everything a dashboard needs.<br />Nothing it doesn't.</h2>
+      <p class="section-sub">
+        Built for back-office products: predictable layering, accessible markup patterns
+        and components that feel at home in dense admin UIs.
+      </p>
+      <div class="feature-grid">
+        {features.map((f) => (
+          <div class="feature-card">
+            <div class="f-icon"><i class={`fas ${f.icon}`}></i></div>
+            <h3>{f.title}</h3>
+            <p>{f.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="section section-center">
+      <div class="section-eyebrow">Themes</div>
+      <h2>Twelve looks, one API</h2>
+      <p class="section-sub">
+        Every preset ships as a standalone stylesheet. Load one and the whole
+        component library re-skins itself.
+      </p>
+      <div class="theme-grid">
+        {themes.map((t) => (
+          <a href="/customize" class="theme-card">
+            <div class="theme-swatch" style={`background:${t.swatch}`}></div>
+            <span>{t.name}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <h2>Start building your panel today</h2>
+      <p>One CSS file. Zero config. Works with plain HTML, React, Vue or anything else.</p>
+      <div class="hero-cta">
+        <a href="/quick-start" class="btn btn-primary">Quick start <i class="fas fa-arrow-right"></i></a>
+        <a href="/download" class="btn btn-ghost"><i class="fas fa-download"></i> Download</a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div>
+          <a href="/" class="brand" style="margin-bottom:16px">
+            <img src="/logo.svg" alt="Karibase logo" />
+            <span>Karibase</span>
+          </a>
+          <p class="foot-note">
+            A progressive CSS framework for modern dashboards, admin panels and floating assistants.
+          </p>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/introduction">Documentation</a></li>
+            <li><a href="/components">Components</a></li>
+            <li><a href="/customize">Customize</a></li>
+            <li><a href="/tools">Tools</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/Jesusdev-cup/karibase" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://github.com/Jesusdev-cup/karibase/issues" target="_blank" rel="noopener">Issues</a></li>
+            <li><a href="/contribute">Contribute</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>More</h4>
+          <ul>
+            <li><a href="/getting-started">Getting started</a></li>
+            <li><a href="/download">Download</a></li>
+            <li><a href="/tools/css-extractor">CSS Extractor</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Karibase. MIT License.</p>
+      </div>
+    </footer>
+  </div>
+</Base>

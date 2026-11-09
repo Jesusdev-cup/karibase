@@ -1,0 +1,229 @@
+/* =========================================================
+   Ash River Collective - Brand CSS (WordPress Ready)
+   Paste into: Appearance > Customize > Additional CSS
+   ========================================================= */
+
+/* ---------- Brand Variables ---------- */
+:root {
+  --ash-navy: #0F1C2E;     /* Primary - Deep navy from logo */
+  --ash-blue: #1F3A5F;     /* Secondary - Dark blue */
+  --ash-teal: #2E7D6B;     /* Accent - Teal from logo */
+  --ash-sky: #5DADE2;      /* Light sky blue from logo */
+  --ash-cyan: #4ECDC4;     /* Bright cyan from logo */
+  --ash-aqua: #7FDBDA;     /* Light aqua from logo */
+  --ash-gold: #C8B38E;     /* Warm neutral - Gold from logo */
+  --ash-amber: #FFD700;    /* Bright amber accent */
+  --ash-bg: #F4F6F8;       /* Light background */
+  --ash-text: #1A1A1A;     /* Body text */
+  --ash-white: #FFFFFF;
+  --ash-radius: 14px;
+  --ash-shadow: 0 10px 30px rgba(15, 28, 46, .12);
+  --ash-header-height: 80px;
+}
+
+/* ---------- Global ---------- */
+body {
+  color: var(--ash-text);
+  background: var(--ash-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--ash-blue);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--ash-sky);
+  text-decoration: underline;
+}
+
+/* ---------- Headings ---------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--ash-navy);
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Cards ---------- */
+.ash-card {
+  background: var(--ash-white);
+  border-radius: var(--ash-radius);
+  box-shadow: var(--ash-shadow);
+  border: 1px solid rgba(15, 28, 46, .08);
+  padding: 24px;
+}
+
+/* ---------- Buttons (generic + WP block buttons) ---------- */
+.wp-block-button__link,
+button,
+input[type="submit"],
+.ash-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: var(--ash-navy);
+  color: var(--ash-white) !important;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: 0 10px 22px rgba(15, 28, 46, .18);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.wp-block-button__link:hover,
+button:hover,
+input[type="submit"]:hover,
+.ash-btn:hover {
+  background: var(--ash-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(15, 28, 46, .22);
+  text-decoration: none;
+}
+
+/* Secondary button style: add class "is-style-outline" in Gutenberg */
+.wp-block-button.is-style-outline .wp-block-button__link {
+  background: transparent;
+  color: var(--ash-navy) !important;
+  border-color: var(--ash-navy);
+  box-shadow: none;
+}
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+  background: var(--ash-bg);
+  border-color: var(--ash-blue);
+  color: var(--ash-blue) !important;
+}
+
+/* ---------- Forms ---------- */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 28, 46, .18);
+  padding: 12px 14px;
+  background: var(--ash-white);
+  color: var(--ash-text);
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--ash-teal);
+  box-shadow: 0 0 0 4px rgba(46, 125, 107, .18);
+}
+
+/* ---------- Footer ---------- */
+footer,
+.site-footer {
+  background: var(--ash-navy);
+  color: rgba(255, 255, 255, .88);
+}
+footer a,
+.site-footer a {
+  color: var(--ash-gold);
+}
+footer a:hover,
+.site-footer a:hover {
+  color: var(--ash-white);
+}
+
+/* ---------- Mobile tweaks ---------- */
+@media (max-width: 768px) {
+  .ash-card {
+    padding: 18px;
+  }
+  .wp-block-button__link,
+  button,
+  input[type="submit"],
+  .ash-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ---------- Fixed Menu Styling ---------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(15, 28, 46, .98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(15, 28, 46, .08);
+  box-shadow: 0 4px 20px rgba(15, 28, 46, .12);
+  transition: all 0.3s ease;
+}
+
+/* Prevent content from jumping under fixed header */
+body {
+  padding-top: var(--ash-header-height);
+}
+
+/* Enhanced header on scroll */
+.site-header.scrolled {
+  background: rgba(15, 28, 46, 1);
+  box-shadow: 0 6px 30px rgba(15, 28, 46, .18);
+}
+
+/* Logo and title styling in fixed header */
+.site-header .site-title a,
+.site-header .site-logo a {
+  color: var(--ash-white);
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.site-header .site-title a:hover,
+.site-header .site-logo a:hover {
+  color: var(--ash-sky);
+}
+
+/* ---------- Navigation Menu Styling ---------- */
+.site-header nav,
+.site-header .main-navigation,
+.site-header .nav-menu {
+  background: var(--ash-navy);
+  padding: 0 20px;
+}
+
+.site-header nav a,
+.site-header .main-navigation a,
+.site-header .nav-menu a {
+  color: var(--ash-white);
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.site-header nav a:hover,
+.site-header .main-navigation a:hover,
+.site-header .nav-menu a:hover {
+  color: var(--ash-sky);
+  background: rgba(93, 173, 226, 0.1);
+  text-decoration: none;
+}
+
+/* Active menu item styling */
+.site-header .current-menu-item a,
+.site-header .current_page_item a {
+  color: var(--ash-sky);
+  background: rgba(93, 173, 226, 0.15);
+  border-radius: 8px;
+}

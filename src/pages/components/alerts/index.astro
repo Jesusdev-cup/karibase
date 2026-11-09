@@ -1,0 +1,184 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Alerts — Karibase">
+<DocsArticle
+    title="Alerts"
+    lead="Feedback messages for user notifications"
+    breadcrumb={[{ name: 'Components', path: '/components' }, { name: 'Alerts' }]}
+    prev={{ name: 'Modals', path: '/components/modals' }}
+    next={{ name: 'Charts', path: '/components/charts' }}
+  >
+
+    <h2 class="docs-heading docs-heading-2" id="basic-alerts">Basic Alerts</h2>
+    <p class="docs-text">Alert messages in different variants:</p>
+
+    <div class="docs-preview">
+      <div class="kb-alert kb-alert-info">
+        <div class="kb-alert-icon">
+          <i class="fas fa-info-circle"></i>
+        </div>
+        <div class="kb-alert-content">
+          <h4 class="kb-alert-title">Info</h4>
+          <p class="kb-alert-message">This is an informational message.</p>
+        </div>
+        <button class="kb-alert-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-alert kb-alert-info">
+  <div class="kb-alert-icon">
+    <i class="fas fa-info-circle"></i>
+  </div>
+  <div class="kb-alert-content">
+    <h4 class="kb-alert-title">Info</h4>
+    <p class="kb-alert-message">Message</p>
+  </div>
+</div>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="simple-alerts">Simple Alerts</h2>
+    <p class="docs-text">Compact alert messages without title:</p>
+
+    <div class="docs-preview">
+      <div class="kb-alert kb-alert-info kb-alert-simple">
+        <i class="fas fa-info-circle"></i>
+        <span>This is a simple info message.</span>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div class="kb-alert kb-alert-info kb-alert-simple">
+  <i class="fas fa-info-circle"></i>
+  <span>Simple message</span>
+</div>`} />
+
+    <h2 class="docs-heading docs-heading-2" id="dismissible-alerts">Dismissible Alerts</h2>
+    <p class="docs-text">Alerts that can be closed:</p>
+
+    <div class="docs-preview">
+      <div class="kb-alert kb-alert-info" data-kb-target="showAlert">
+        <div class="kb-alert-icon">
+          <i class="fas fa-info-circle"></i>
+        </div>
+        <div class="kb-alert-content">
+          <p class="kb-alert-message">This alert can be dismissed.</p>
+        </div>
+        <button class="kb-alert-close" data-kb-hide="showAlert" data-kb-close>
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <button class="kb-btn kb-btn-primary kb-btn-sm" data-kb-show="showAlert" data-kb-target-inv="showAlert" hidden>
+        Show Alert
+      </button>
+    </div>
+
+    <CodeBlock code={`<div class="kb-alert kb-alert-info">
+  <div class="kb-alert-icon">
+    <i class="fas fa-info-circle"></i>
+  </div>
+  <div class="kb-alert-content">
+    <p class="kb-alert-message">Message</p>
+  </div>
+  <button class="kb-alert-close">
+    <i class="fas fa-times"></i>
+  </button>
+</div>`} />
+
+  </DocsArticle>
+</DocsLayout>
+<style>
+
+.kb-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.kb-alert-info {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.2);
+  color: #1e40af;
+}
+
+.kb-alert-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.2);
+  color: #065f46;
+}
+
+.kb-alert-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.2);
+  color: #92400e;
+}
+
+.kb-alert-danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.2);
+  color: #991b1b;
+}
+
+.kb-alert-icon {
+  flex-shrink: 0;
+  font-size: 20px;
+}
+
+.kb-alert-content {
+  flex: 1;
+}
+
+.kb-alert-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: inherit;
+}
+
+.kb-alert-message {
+  font-size: 14px;
+  margin: 0;
+  color: inherit;
+  opacity: 0.9;
+}
+
+.kb-alert-close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: var(--docs-transition);
+  opacity: 0.7;
+}
+
+.kb-alert-close:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+}
+
+.kb-alert-simple {
+  align-items: center;
+  gap: 8px;
+}
+
+.kb-alert-simple span {
+  font-size: 14px;
+  color: inherit;
+}
+</style>

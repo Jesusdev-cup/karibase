@@ -1,0 +1,95 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Layout — Karibase">
+<DocsArticle
+    title="Layout"
+    lead="Form layout utilities in Karibase"
+    breadcrumb={[{ name: 'Forms', path: '/forms' }, { name: 'Layout' }]}
+    prev={{ name: 'Floating labels', path: '/forms/floating-labels' }}
+    next={{ name: 'Validation', path: '/forms/validation' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
+      <p class="docs-text">
+        Form layout utilities help you organize form elements in a structured way. Use grid and spacing 
+        utilities to create complex form layouts.
+      </p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="form-grid">Form Grid</h2>
+      <p class="docs-text">Use grid for form layout:</p>
+      <CodeBlock code={`<div class="kb-grid">
+  <div class="kb-col-6">
+    <div class="kb-form-group">
+      <label class="kb-label">First name</label>
+      <input type="text" class="kb-input">
+    </div>
+  </div>
+  <div class="kb-col-6">
+    <div class="kb-form-group">
+      <label class="kb-label">Last name</label>
+      <input type="text" class="kb-input">
+    </div>
+  </div>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="form-row">Form Row</h2>
+      <p class="docs-text">Use form row for horizontal forms:</p>
+      <CodeBlock code={`<div class="kb-form-row">
+  <div class="kb-col-7">
+    <input type="text" class="kb-input" placeholder="City">
+  </div>
+  <div class="kb-col-3">
+    <input type="text" class="kb-input" placeholder="State">
+  </div>
+  <div class="kb-col-2">
+    <input type="text" class="kb-input" placeholder="Zip">
+  </div>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="horizontal-form">Horizontal Form</h2>
+      <p class="docs-text">Horizontal form layout:</p>
+      <CodeBlock code={`<div class="kb-form-group kb-row">
+  <label for="inputEmail" class="kb-col-sm-2 kb-label">Email</label>
+  <div class="kb-col-sm-10">
+    <input type="email" class="kb-input" id="inputEmail">
+  </div>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="inline-form">Inline Form</h2>
+      <p class="docs-text">Inline form layout:</p>
+      <CodeBlock code={`<form class="kb-form-inline">
+  <div class="kb-form-group">
+    <label for="inlineFormInputName" class="kb-visually-hidden">Name</label>
+    <input type="text" class="kb-input kb-input-sm" id="inlineFormInputName" placeholder="Jane Doe">
+  </div>
+  <div class="kb-form-group">
+    <label for="inlineFormInputGroupUsername" class="kb-visually-hidden">Username</label>
+    <div class="kb-input-group kb-input-group-sm">
+      <div class="kb-input-group-prepend">
+        <div class="kb-input-group-text">@</div>
+      </div>
+      <input type="text" class="kb-input" id="inlineFormInputGroupUsername" placeholder="Username">
+    </div>
+  </div>
+  <button type="submit" class="kb-btn kb-btn-primary kb-btn-sm">Submit</button>
+</form>`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

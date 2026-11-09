@@ -1,0 +1,28 @@
+{
+  "name": "karibase",
+  "type": "module",
+  "version": "2.1.0",
+  "description": "Karibase — CSS framework specialized in admin dashboards and floating bots. Docs site built with Astro.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run build:css && astro build",
+    "preview": "astro preview",
+    "build:css": "node build-css.js",
+    "build:css:dev": "node build-css.js --dev",
+    "extract:plugins": "node extract-plugin-styles.js",
+    "build:themes": "node build-arc-themes.js",
+    "sync:plugins": "npm run extract:plugins && npm run build:themes",
+    "convert:views": "node scripts/convert.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.4.7"
+  },
+  "devDependencies": {
+    "@csstools/postcss-cascade-layers": "^4.0.6",
+    "autoprefixer": "^10.5.2",
+    "cssnano": "^6.1.2",
+    "postcss": "^8.5.16",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^15.1.0"
+  }
+}

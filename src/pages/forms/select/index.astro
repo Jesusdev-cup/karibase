@@ -1,0 +1,76 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Select — Karibase">
+<DocsArticle
+    title="Select"
+    lead="Select dropdown components in Karibase"
+    breadcrumb={[{ name: 'Forms', path: '/forms' }, { name: 'Select' }]}
+    prev={{ name: 'Form control', path: '/forms/form-control' }}
+    next={{ name: 'Checks & radios', path: '/forms/checks-radios' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
+      <p class="docs-text">
+        Select components are used for dropdown menus. They are styled with the .kb-select class and 
+        can be customized with various options.
+      </p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="basic-select">Basic Select</h2>
+      <p class="docs-text">Basic select dropdown:</p>
+      <CodeBlock code={`<div class="kb-form-group">
+  <label for="exampleSelect" class="kb-label">Example select</label>
+  <select class="kb-select" id="exampleSelect">
+    <option selected>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="sizing">Sizing</h2>
+      <p class="docs-text">Control select size:</p>
+      <CodeBlock code={`<select class="kb-select kb-select-sm">
+  <!-- Small select -->
+</select>
+
+<select class="kb-select">
+  <!-- Default select -->
+</select>
+
+<select class="kb-select kb-select-lg">
+  <!-- Large select -->
+</select>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="multiple">Multiple</h2>
+      <p class="docs-text">Multiple select:</p>
+      <CodeBlock code={`<select class="kb-select" multiple>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="disabled">Disabled</h2>
+      <p class="docs-text">Disabled select:</p>
+      <CodeBlock code={`<select class="kb-select" disabled>
+  <option selected>Disabled select</option>
+</select>`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

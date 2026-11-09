@@ -1,0 +1,75 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro'
+import DocsArticle from '../../components/DocsArticle.astro'
+import CodeBlock from '../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Webpack — Karibase">
+<DocsArticle
+    title="Webpack"
+    lead="Using Karibase with Webpack"
+    prev={{ name: 'JavaScript', path: '/javascript' }}
+    next={{ name: 'Parcel', path: '/parcel' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="installation">Installation</h2>
+      <p class="docs-text">Install Karibase and required loaders:</p>
+      <CodeBlock code={`npm install karibase
+npm install --save-dev css-loader style-loader sass-loader sass`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="configuration">Configuration</h2>
+      <p class="docs-text">Configure webpack to handle Karibase styles:</p>
+      <CodeBlock code={`// webpack.config.js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
+    ]
+  }
+}`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="importing">Importing</h2>
+      <p class="docs-text">Import Karibase in your JavaScript:</p>
+      <CodeBlock code={`// Import compiled CSS
+import 'karibase/css/karibase.css'
+
+// Or import SCSS for customization
+import 'karibase/scss/karibase.scss'`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="customization">Customization</h2>
+      <p class="docs-text">Customize Karibase with SCSS variables:</p>
+      <CodeBlock code={`// styles.scss
+@import 'karibase/scss/variables';
+
+// Override variables
+$kb-primary: #ea2845;
+$kb-secondary: #6366f1;
+
+@import 'karibase/scss/karibase';`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="optimization">Optimization</h2>
+      <p class="docs-text">Optimize your build with these plugins:</p>
+      <CodeBlock code={`npm install --save-dev mini-css-extract-plugin css-minimizer-webpack-plugin`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

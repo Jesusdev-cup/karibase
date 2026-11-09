@@ -1,0 +1,313 @@
+/*!
+ * Karibase Theme - Flexiweb
+ * Technology/SaaS theme inspired by solacewp.com/flexiweb
+ * 
+ * Features:
+ * - Modern tech-focused design
+ * - Precision and innovation aesthetic
+ * - Responsive design showcase
+ * - Global color palette
+ */
+
+:root {
+  --kb-flexi-primary: #2563eb;
+  --kb-flexi-secondary: #7c3aed;
+  --kb-flexi-accent: #06b6d4;
+  --kb-flexi-success: #10b981;
+  --kb-flexi-warning: #f59e0b;
+  --kb-flexi-danger: #ef4444;
+  --kb-flexi-light: #f8fafc;
+  --kb-flexi-dark: #0f172a;
+  --kb-flexi-muted: #64748b;
+  --kb-flexi-white: #ffffff;
+  --kb-flexi-border: #e2e8f0;
+  --kb-flexi-shadow: rgba(15, 23, 42, 0.1);
+  --kb-flexi-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+}
+
+.kb-flexi-theme {
+  background-color: var(--kb-flexi-white);
+  color: var(--kb-flexi-dark);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Flexiweb Navigation */
+.kb-flexi-nav {
+  background: var(--kb-flexi-white);
+  border-bottom: 1px solid var(--kb-flexi-border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.kb-flexi-nav-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--kb-flexi-primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.kb-flexi-nav-menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kb-flexi-nav-link {
+  color: var(--kb-flexi-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.kb-flexi-nav-link:hover {
+  color: var(--kb-flexi-primary);
+}
+
+/* Flexiweb Hero */
+.kb-flexi-hero {
+  background: var(--kb-flexi-gradient);
+  color: var(--kb-flexi-white);
+  padding: 120px 0;
+  text-align: center;
+}
+
+.kb-flexi-hero-title {
+  font-size: 56px;
+  font-weight: 800;
+  margin: 0 0 24px;
+  letter-spacing: -1px;
+}
+
+.kb-flexi-hero-subtitle {
+  font-size: 20px;
+  opacity: 0.9;
+  margin: 0 0 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kb-flexi-hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+.kb-flexi-hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.kb-flexi-hero-feature-icon {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Feature Cards */
+.kb-flexi-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  padding: 80px 0;
+}
+
+.kb-flexi-feature-card {
+  background: var(--kb-flexi-white);
+  border: 1px solid var(--kb-flexi-border);
+  border-radius: 12px;
+  padding: 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kb-flexi-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--kb-flexi-shadow);
+}
+
+.kb-flexi-feature-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--kb-flexi-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--kb-flexi-primary);
+  margin-bottom: 24px;
+}
+
+.kb-flexi-feature-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--kb-flexi-dark);
+  margin: 0 0 12px;
+}
+
+.kb-flexi-feature-description {
+  font-size: 16px;
+  color: var(--kb-flexi-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Team Section */
+.kb-flexi-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  padding: 80px 0;
+}
+
+.kb-flexi-team-card {
+  background: var(--kb-flexi-white);
+  border: 1px solid var(--kb-flexi-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.kb-flexi-team-card:hover {
+  transform: translateY(-4px);
+}
+
+.kb-flexi-team-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.kb-flexi-team-info {
+  padding: 24px;
+  text-align: center;
+}
+
+.kb-flexi-team-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--kb-flexi-dark);
+  margin: 0 0 8px;
+}
+
+.kb-flexi-team-role {
+  font-size: 14px;
+  color: var(--kb-flexi-muted);
+  margin: 0;
+}
+
+/* FAQ Section */
+.kb-flexi-faq {
+  background: var(--kb-flexi-light);
+  padding: 80px 0;
+}
+
+.kb-flexi-faq-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--kb-flexi-dark);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+.kb-flexi-faq-item {
+  background: var(--kb-flexi-white);
+  border: 1px solid var(--kb-flexi-border);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.kb-flexi-faq-question {
+  padding: 20px 24px;
+  font-weight: 600;
+  color: var(--kb-flexi-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.kb-flexi-faq-question:hover {
+  background: var(--kb-flexi-light);
+}
+
+.kb-flexi-faq-answer {
+  padding: 0 24px 24px;
+  color: var(--kb-flexi-muted);
+  line-height: 1.6;
+}
+
+/* Buttons */
+.kb-flexi-btn-primary {
+  background: var(--kb-flexi-primary);
+  color: var(--kb-flexi-white);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kb-flexi-btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.kb-flexi-btn-secondary {
+  background: var(--kb-flexi-white);
+  color: var(--kb-flexi-dark);
+  border: 1px solid var(--kb-flexi-border);
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kb-flexi-btn-secondary:hover {
+  background: var(--kb-flexi-light);
+  border-color: var(--kb-flexi-primary);
+}
+
+/* CTA Section */
+.kb-flexi-cta {
+  background: var(--kb-flexi-dark);
+  color: var(--kb-flexi-white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.kb-flexi-cta-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.kb-flexi-cta-subtitle {
+  font-size: 18px;
+  opacity: 0.9;
+  margin: 0 0 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}

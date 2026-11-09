@@ -1,0 +1,107 @@
+---
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import DocsArticle from '../../../components/DocsArticle.astro'
+import CodeBlock from '../../../components/CodeBlock.astro'
+
+
+---
+
+<DocsLayout title="Breakpoints — Karibase">
+<DocsArticle
+    title="Breakpoints"
+    lead="Responsive breakpoints in Karibase"
+    breadcrumb={[{ name: 'Layout', path: '/layout' }, { name: 'Breakpoints' }]}
+    prev={{ name: 'Optimize', path: '/customize/optimize' }}
+    next={{ name: 'Containers', path: '/layout/containers' }}
+  >
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
+      <p class="docs-text">
+        Karibase uses a mobile-first approach with responsive breakpoints. The framework includes predefined 
+        breakpoints for common screen sizes.
+      </p>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="available-breakpoints">Available Breakpoints</h2>
+      <p class="docs-text">Karibase includes these breakpoints:</p>
+      <div class="docs-breakpoint-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Breakpoint</th>
+              <th>Min Width</th>
+              <th>Devices</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>xs</code></td>
+              <td>< 576px</td>
+              <td>Extra small phones</td>
+            </tr>
+            <tr>
+              <td><code>sm</code></td>
+              <td>≥ 576px</td>
+              <td>Small phones</td>
+            </tr>
+            <tr>
+              <td><code>md</code></td>
+              <td>≥ 768px</td>
+              <td>Tablets</td>
+            </tr>
+            <tr>
+              <td><code>lg</code></td>
+              <td>≥ 992px</td>
+              <td>Desktops</td>
+            </tr>
+            <tr>
+              <td><code>xl</code></td>
+              <td>≥ 1200px</td>
+              <td>Large desktops</td>
+            </tr>
+            <tr>
+              <td><code>xxl</code></td>
+              <td>≥ 1400px</td>
+              <td>Extra large desktops</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="media-queries">Media Queries</h2>
+      <p class="docs-text">Use media queries with these breakpoints:</p>
+      <CodeBlock code={`/* Mobile first approach */
+@media (min-width: 576px) {
+  /* Small devices and up */
+}
+
+@media (min-width: 768px) {
+  /* Medium devices and up */
+}
+
+@media (min-width: 992px) {
+  /* Large devices and up */
+}
+
+@media (min-width: 1200px) {
+  /* Extra large devices and up */
+}`} />
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-heading docs-heading-2" id="mixins">Mixins</h2>
+      <p class="docs-text">Use Sass mixins for breakpoints:</p>
+      <CodeBlock code={`.element {
+  @include breakpoint(md) {
+    /* Styles for medium screens and up */
+  }
+}`} />
+    </div>
+
+  </DocsArticle>
+</DocsLayout>
+

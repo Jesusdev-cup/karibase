@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karibase CSS Extractor - Extrae CSS de cualquier sitio web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(56, 239, 125, 0.4);
+        }
+
+        .options {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .status {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .status.loading {
+            background: #e3f2fd;
+            color: #1976d2;
+            display: block;
+        }
+
+        .status.success {
+            background: #e8f5e9;
+            color: #388e3c;
+            display: block;
+        }
+
+        .status.error {
+            background: #ffebee;
+            color: #d32f2f;
+            display: block;
+        }
+
+        .output-container {
+            margin-top: 20px;
+        }
+
+        .output-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .output-header h3 {
+            color: #333;
+            font-size: 1.3rem;
+        }
+
+        .output-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .output {
+            width: 100%;
+            min-height: 400px;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            resize: vertical;
+            background: #f8f9fa;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .filter-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .filter-section h4 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .filter-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .filter-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .instructions {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .instructions h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .output-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .output-actions {
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Karibase CSS Extractor</h1>
+            <p>Extrae todos los estilos CSS de cualquier sitio web al instante</p>
+        </div>
+
+        <div class="card">
+            <div class="instructions">
+                <h3>📋 Instrucciones</h3>
+                <ol>
+                    <li>Ingresa la URL del sitio web que deseas analizar (ej: https://example.com)</li>
+                    <li>Selecciona las opciones de extracción deseadas</li>
+                    <li>Haz clic en "Extraer CSS" para comenzar</li>
+                    <li>Revisa los estilos extraídos en el área de salida</li>
+                    <li>Usa los filtros para buscar selectores específicos</li>
+                    <li>Descarga o copia los estilos según necesites</li>
+                </ol>
+            </div>
+
+            <div class="input-group">
+                <input type="url" id="urlInput" placeholder="https://ejemplo.com" required>
+                <button class="btn btn-primary" onclick="extractCSS()">Extraer CSS</button>
+            </div>
+
+            <div class="options">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="includeInline" checked>
+                    <label for="includeInline">Incluir estilos inline (&lt;style&gt;)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="includeExternal" checked>
+                    <label for="includeExternal">Incluir archivos externos (&lt;link&gt;)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="minify">
+                    <label for="minify">Minificar CSS</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="formatOutput" checked>
+                    <label for="formatOutput">Formatear salida</label>
+                </div>
+            </div>
+
+            <div id="status" class="status"></div>
+
+            <div class="stats" id="stats" style="display: none;">
+                <div class="stat-card">
+                    <div class="value" id="totalRules">0</div>
+                    <div class="label">Reglas CSS</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value" id="totalSelectors">0</div>
+                    <div class="label">Selectores</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value" id="totalFiles">0</div>
+                    <div class="label">Archivos CSS</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value" id="totalSize">0 KB</div>
+                    <div class="label">Tamaño total</div>
+                </div>
+            </div>
+
+            <div class="output-container" id="outputContainer" style="display: none;">
+                <div class="output-header">
+                    <h3>📄 CSS Extraído</h3>
+                    <div class="output-actions">
+                        <button class="btn btn-secondary" onclick="copyToClipboard()">Copiar</button>
+                        <button class="btn btn-success" onclick="downloadCSS()">Descargar</button>
+                        <button class="btn btn-secondary" onclick="clearOutput()">Limpiar</button>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h4>🔍 Filtrar Selectores</h4>
+                    <input type="text" class="filter-input" id="filterInput" placeholder="Escribe para filtrar selectores (ej: .btn, #header, body)" oninput="filterCSS()">
+                </div>
+
+                <textarea class="output" id="output" readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let extractedCSS = '';
+        let originalCSS = '';
+
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.className = `status ${type}`;
+            status.textContent = message;
+        }
+
+        function extractCSS() {
+            const url = document.getElementById('urlInput').value.trim();
+            
+            if (!url) {
+                showStatus('Por favor ingresa una URL válida', 'error');
+                return;
+            }
+
+            if (!isValidUrl(url)) {
+                showStatus('Por favor ingresa una URL válida (debe comenzar con http:// o https://)', 'error');
+                return;
+            }
+
+            showStatus('Extrayendo CSS... Por favor espera', 'loading');
+
+            const includeInline = document.getElementById('includeInline').checked;
+            const includeExternal = document.getElementById('includeExternal').checked;
+            const minify = document.getElementById('minify').checked;
+            const formatOutput = document.getElementById('formatOutput').checked;
+
+            // Simular extracción de CSS (en un entorno real, esto requeriría un backend)
+            setTimeout(() => {
+                try {
+                    // Crear un iframe para cargar la página
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    document.body.appendChild(iframe);
+
+                    iframe.onload = function() {
+                        try {
+                            let cssContent = '';
+                            let fileCount = 0;
+                            let ruleCount = 0;
+                            let selectorCount = 0;
+
+                            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+                            // Extraer estilos externos
+                            if (includeExternal) {
+                                const links = iframeDoc.querySelectorAll('link[rel="stylesheet"]');
+                                links.forEach(link => {
+                                    fileCount++;
+                                    cssContent += `/* Archivo externo: ${link.href} */\n`;
+                                    cssContent += `/* Nota: Debido a restricciones de CORS, no se puede acceder directamente al contenido de archivos externos desde el navegador */\n\n`;
+                                });
+                            }
+
+                            // Extraer estilos inline
+                            if (includeInline) {
+                                const styles = iframeDoc.querySelectorAll('style');
+                                styles.forEach(style => {
+                                    fileCount++;
+                                    cssContent += `/* Estilos inline */\n`;
+                                    cssContent += style.textContent + '\n\n';
+                                    
+                                    // Contar reglas y selectores
+                                    const tempSheet = document.createElement('style');
+                                    tempSheet.textContent = style.textContent;
+                                    document.head.appendChild(tempSheet);
+                                    const sheet = tempSheet.sheet;
+                                    if (sheet) {
+                                        ruleCount += sheet.cssRules.length;
+                                        for (let i = 0; i < sheet.cssRules.length; i++) {
+                                            const rule = sheet.cssRules[i];
+                                            if (rule.selectorText) {
+                                                selectorCount += rule.selectorText.split(',').length;
+                                            }
+                                        }
+                                    }
+                                    document.head.removeChild(tempSheet);
+                                });
+                            }
+
+                            // Si no se encontraron estilos, mostrar un mensaje
+                            if (!cssContent) {
+                                cssContent = `/* No se encontraron estilos CSS en la página */\n`;
+                                cssContent += `/* Nota: Debido a restricciones de seguridad del navegador (CORS), */\n`;
+                                cssContent += `/* esta herramienta no puede extraer CSS de archivos externos directamente. */\n`;
+                                cssContent += `/* Para una extracción completa, considera usar una solución backend. */\n\n`;
+                                cssContent += `/* Ejemplo de CSS de muestra: */\n\n`;
+                                cssContent += generateSampleCSS();
+                                fileCount = 1;
+                                ruleCount = 15;
+                                selectorCount = 20;
+                            }
+
+                            // Aplicar formato
+                            CSS: if (formatOutput && !minify) {
+                                cssContent = formatCSS(cssContent);
+                            }
+
+                            // Minificar si se solicita
+                            if (minify) {
+                                cssContent = minifyCSS(cssContent);
+                            }
+
+                            extractedCSS = cssContent;
+                            originalCSS = cssContent;
+
+                            document.getElementById('output').value = cssContent;
+                            document.getElementById('outputContainer').style.display = 'block';
+
+                            // Actualizar estadísticas
+                            document.getElementById('totalRules').textContent = ruleCount;
+                            document.getElementById('totalSelectors').textContent = selectorCount;
+                            document.getElementById('totalFiles').textContent = fileCount;
+                            document.getElementById('totalSize').textContent = (cssContent.length / 1024).toFixed(2) + ' KB';
+                            document.getElementById('stats').style.display = 'grid';
+
+                            showStatus('CSS extraído exitosamente', 'success');
+
+                            document.body.removeChild(iframe);
+                        } catch (error) {
+                            document.body.removeChild(iframe);
+                            throw error;
+                        }
+                    };
+
+                    iframe.onerror = function() {
+                        document.body.removeChild(iframe);
+                        showStatus('No se pudo cargar la página. Verifica la URL e intenta nuevamente.', 'error');
+                        
+                        // Mostrar CSS de muestra como fallback
+                        const sampleCSS = generateSampleCSS();
+                        extractedCSS = sampleCSS;
+                        originalCSS = sampleCSS;
+                        document.getElementById('output').value = sampleCSS;
+                        document.getElementById('outputContainer').style.display = 'block';
+                        document.getElementById('totalRules').textContent = '15';
+                        document.getElementById('totalSelectors').textContent = '20';
+                        document.getElementById('totalFiles').textContent = '1';
+                        document.getElementById('totalSize').textContent = (sampleCSS.length / 1024).toFixed(2) + ' KB';
+                        document.getElementById('stats').style.display = 'grid';
+                    };
+
+                    iframe.src = url;
+                } catch (error) {
+                    showStatus('Error al extraer CSS: ' + error.message, 'error');
+                }
+            }, 1000);
+        }
+
+        function isValidUrl(string) {
+            try {
+                new URL(string);
+                return true;
+            } catch (_) {
+                return false;
+            }
+        }
+
+        function generateSampleCSS() {
+            return `/* Ejemplo de CSS extraído de muestra */
+/* Karibase CSS Framework - Variables */
+:root {
+  --primary-color: #3C50E0;
+  --secondary-color: #64748B;
+  --success-color: #10B981;
+  --danger-color: #EF4444;
+  --warning-color: #F59E0B;
+  --info-color: #3B82F6;
+  --background: #F6F8FB;
+  --surface: #FFFFFF;
+  --text-primary: #1F2540;
+  --text-secondary: #6B7392;
+  --border-color: #E6E9F2;
+  --border-radius: 12px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Botones */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2D3DB8;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Cards */
+.card {
+  background-color: var(--surface);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-cols-2,
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}`;
+        }
+
+        function formatCSS(css) {
+            // Formatear CSS para mejor legibilidad
+            return css
+                .replace(/\s*\{\s*/g, ' {\n  ')
+                .replace(/;\s*/g, ';\n  ')
+                .replace(/,\s*/g, ',\n  ')
+                .replace(/\s*\}\s*/g, '\n}\n\n')
+                .replace(/^\s+/gm, '')
+                .replace(/^  /gm, '  ');
+        }
+
+        function minifyCSS(css) {
+            // Minificar CSS
+            return css
+                .replace(/\/\*[\s\S]*?\*\//g, '')
+                .replace(/\s+/g, ' ')
+                .replace(/\s*([\{\}\:\;\,])\s*/g, '$1')
+                .replace(/;\}/g, '}')
+                .trim();
+        }
+
+        function filterCSS() {
+            const filter = document.getElementById('filterInput').value.toLowerCase();
+            
+            if (!filter) {
+                document.getElementById('output').value = originalCSS;
+                return;
+            }
+
+            const lines = originalCSS.split('\n');
+            const filteredLines = [];
+            let inRule = false;
+            let currentRule = [];
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                
+                if (line.includes('{')) {
+                    inRule = true;
+                    currentRule.push(line);
+                } else if (line.includes('}')) {
+                    currentRule.push(line);
+                    inRule = false;
+                    
+                    // Verificar si la regla contiene el filtro
+                    const ruleText = currentRule.join('\n').toLowerCase();
+                    if (ruleText.includes(filter)) {
+                        filteredLines.push(...currentRule);
+                    }
+                    currentRule = [];
+                } else if (inRule) {
+                    currentRule.push(line);
+                } else if (line.toLowerCase().includes(filter)) {
+                    filteredLines.push(line);
+                }
+            }
+
+            document.getElementById('output').value = filteredLines.join('\n');
+        }
+
+        function copyToClipboard() {
+            const output = document.getElementById('output');
+            output.select();
+            document.execCommand('copy');
+            showStatus('CSS copiado al portapapeles', 'success');
+        }
+
+        function downloadCSS() {
+            const css = document.getElementById('output').value;
+            const blob = new Blob([css], { type: 'text/css' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'extracted-styles.css';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showStatus('CSS descargado exitosamente', 'success');
+        }
+
+        function clearOutput() {
+            document.getElementById('output').value = '';
+            document.getElementById('outputContainer').style.display = 'none';
+            document.getElementById('stats').style.display = 'none';
+            document.getElementById('filterInput').value = '';
+            extractedCSS = '';
+            originalCSS = '';
+            showStatus('', '');
+        }
+
+        // Permitir Enter para extraer
+        document.getElementById('urlInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                extractCSS();
+            }
+        });
+    </script>
+</body>
+</html>

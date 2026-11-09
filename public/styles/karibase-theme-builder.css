@@ -1,0 +1,249 @@
+/*!
+ * Karibase Theme - Builder Bot
+ * Builder/Automation theme inspired by builder-bot-clone-main
+ * 
+ * Features:
+ * - BuilderBot blue (#2D5BFF)
+ * - WhatsApp green integration
+ * - HSL color system
+ * - Dark mode support
+ * - Gradient backgrounds
+ */
+
+:root {
+  --kb-builder-background: 0 0% 100%;
+  --kb-builder-foreground: 222 25% 10%;
+  --kb-builder-card: 0 0% 100%;
+  --kb-builder-card-foreground: 222 25% 10%;
+  --kb-builder-popover: 0 0% 100%;
+  --kb-builder-popover-foreground: 222 25% 10%;
+  --kb-builder-primary: 226 100% 59%;
+  --kb-builder-primary-foreground: 0 0% 100%;
+  --kb-builder-primary-glow: 226 100% 70%;
+  --kb-builder-secondary: 222 15% 96%;
+  --kb-builder-secondary-foreground: 222 25% 10%;
+  --kb-builder-muted: 222 15% 96%;
+  --kb-builder-muted-foreground: 222 10% 45%;
+  --kb-builder-accent: 226 100% 96%;
+  --kb-builder-accent-foreground: 226 100% 40%;
+  --kb-builder-whatsapp: 142 70% 49%;
+  --kb-builder-whatsapp-foreground: 0 0% 100%;
+  --kb-builder-destructive: 0 84% 60%;
+  --kb-builder-destructive-foreground: 0 0% 100%;
+  --kb-builder-border: 222 15% 90%;
+  --kb-builder-input: 222 15% 90%;
+  --kb-builder-ring: 226 100% 59%;
+  --kb-builder-radius: 0.75rem;
+  --kb-builder-gradient-hero: linear-gradient(135deg, hsl(226 100% 59%) 0%, hsl(250 95% 65%) 100%);
+  --kb-builder-gradient-soft: linear-gradient(180deg, hsl(226 100% 98%) 0%, hsl(0 0% 100%) 100%);
+  --kb-builder-shadow-elegant: 0 20px 60px -20px hsl(226 100% 59% / 0.25);
+  --kb-builder-shadow-card: 0 4px 20px -4px hsl(222 25% 10% / 0.06);
+  --kb-builder-sidebar-background: 0 0% 100%;
+  --kb-builder-sidebar-foreground: 222 25% 20%;
+  --kb-builder-sidebar-primary: 226 100% 59%;
+  --kb-builder-sidebar-primary-foreground: 0 0% 100%;
+  --kb-builder-sidebar-accent: 226 100% 96%;
+  --kb-builder-sidebar-accent-foreground: 226 100% 40%;
+  --kb-builder-sidebar-border: 222 15% 92%;
+  --kb-builder-sidebar-ring: 226 100% 59%;
+}
+
+.kb-builder-theme {
+  background-color: hsl(var(--kb-builder-background));
+  color: hsl(var(--kb-builder-foreground));
+  border-color: hsl(var(--kb-builder-border));
+  font-feature-settings: "ss01", "cv11";
+}
+
+.kb-builder-theme.dark {
+  --kb-builder-background: 222 30% 6%;
+  --kb-builder-foreground: 0 0% 98%;
+  --kb-builder-card: 222 30% 9%;
+  --kb-builder-card-foreground: 0 0% 98%;
+  --kb-builder-popover: 222 30% 9%;
+  --kb-builder-popover-foreground: 0 0% 98%;
+  --kb-builder-primary: 226 100% 65%;
+  --kb-builder-primary-foreground: 222 30% 6%;
+  --kb-builder-primary-glow: 226 100% 75%;
+  --kb-builder-secondary: 222 20% 14%;
+  --kb-builder-secondary-foreground: 0 0% 98%;
+  --kb-builder-muted: 222 20% 14%;
+  --kb-builder-muted-foreground: 222 10% 65%;
+  --kb-builder-accent: 226 60% 18%;
+  --kb-builder-accent-foreground: 226 100% 80%;
+  --kb-builder-whatsapp: 142 70% 49%;
+  --kb-builder-whatsapp-foreground: 0 0% 100%;
+  --kb-builder-destructive: 0 70% 50%;
+  --kb-builder-destructive-foreground: 0 0% 98%;
+  --kb-builder-border: 222 20% 16%;
+  --kb-builder-input: 222 20% 16%;
+  --kb-builder-ring: 226 100% 65%;
+  --kb-builder-gradient-hero: linear-gradient(135deg, hsl(226 100% 59%) 0%, hsl(265 90% 60%) 100%);
+  --kb-builder-gradient-soft: linear-gradient(180deg, hsl(222 30% 8%) 0%, hsl(222 30% 6%) 100%);
+  --kb-builder-shadow-elegant: 0 20px 60px -20px hsl(226 100% 59% / 0.4);
+  --kb-builder-shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+  --kb-builder-sidebar-background: 222 30% 8%;
+  --kb-builder-sidebar-foreground: 0 0% 90%;
+  --kb-builder-sidebar-primary: 226 100% 65%;
+  --kb-builder-sidebar-primary-foreground: 222 30% 6%;
+  --kb-builder-sidebar-accent: 222 20% 14%;
+  --kb-builder-sidebar-accent-foreground: 0 0% 98%;
+  --kb-builder-sidebar-border: 222 20% 16%;
+  --kb-builder-sidebar-ring: 226 100% 65%;
+}
+
+/* Builder Bot Primary Color */
+.kb-builder-primary {
+  background-color: hsl(var(--kb-builder-primary));
+  color: hsl(var(--kb-builder-primary-foreground));
+}
+
+/* WhatsApp Integration */
+.kb-builder-whatsapp {
+  background-color: hsl(var(--kb-builder-whatsapp));
+  color: hsl(var(--kb-builder-whatsapp-foreground));
+}
+
+.kb-builder-whatsapp-btn {
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+}
+
+.kb-builder-whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+/* Builder Cards */
+.kb-builder-card {
+  background: hsl(var(--kb-builder-card));
+  border: 1px solid hsl(var(--kb-builder-border));
+  border-radius: var(--kb-builder-radius);
+  color: hsl(var(--kb-builder-card-foreground));
+  box-shadow: var(--kb-builder-shadow-card);
+  transition: all 0.3s ease;
+}
+
+.kb-builder-card:hover {
+  box-shadow: var(--kb-builder-shadow-elegant);
+  transform: translateY(-4px);
+}
+
+/* Builder Buttons */
+.kb-builder-btn-primary {
+  background: hsl(var(--kb-builder-primary));
+  color: hsl(var(--kb-builder-primary-foreground));
+  border: none;
+  border-radius: var(--kb-builder-radius);
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(45, 91, 255, 0.3);
+}
+
+.kb-builder-btn-primary:hover {
+  background: hsl(var(--kb-builder-primary-glow));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(45, 91, 255, 0.4);
+}
+
+.kb-builder-btn-secondary {
+  background: hsl(var(--kb-builder-secondary));
+  color: hsl(var(--kb-builder-secondary-foreground));
+  border: 1px solid hsl(var(--kb-builder-border));
+  border-radius: var(--kb-builder-radius);
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kb-builder-btn-secondary:hover {
+  background: hsl(var(--kb-builder-accent));
+  border-color: hsl(var(--kb-builder-primary));
+}
+
+/* Builder Sidebar */
+.kb-builder-sidebar {
+  background: hsl(var(--kb-builder-sidebar-background));
+  border-right: 1px solid hsl(var(--kb-builder-sidebar-border));
+  color: hsl(var(--kb-builder-sidebar-foreground));
+  width: 280px;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.kb-builder-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: hsl(var(--kb-builder-sidebar-foreground));
+  text-decoration: none;
+  border-radius: var(--kb-builder-radius);
+  transition: all 0.3s ease;
+  margin-bottom: 8px;
+}
+
+.kb-builder-sidebar-link:hover {
+  background: hsl(var(--kb-builder-sidebar-accent));
+  color: hsl(var(--kb-builder-sidebar-accent-foreground));
+}
+
+.kb-builder-sidebar-link.active {
+  background: hsl(var(--kb-builder-sidebar-primary));
+  color: hsl(var(--kb-builder-sidebar-primary-foreground));
+}
+
+/* Builder Hero */
+.kb-builder-hero {
+  background: var(--kb-builder-gradient-hero);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.kb-builder-hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.kb-builder-hero-subtitle {
+  font-size: 20px;
+  opacity: 0.9;
+  margin: 0 0 32px;
+}
+
+/* Utility Classes */
+.kb-builder-bg-gradient-hero {
+  background-image: var(--kb-builder-gradient-hero);
+}
+
+.kb-builder-bg-gradient-soft {
+  background-image: var(--kb-builder-gradient-soft);
+}
+
+.kb-builder-shadow-elegant {
+  box-shadow: var(--kb-builder-shadow-elegant);
+}
+
+.kb-builder-shadow-card {
+  box-shadow: var(--kb-builder-shadow-card);
+}
